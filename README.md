@@ -8,16 +8,18 @@ This is a personally maintained skill, not an official Cohub release.
 
 Ask your skill-capable agent:
 
-> Install the cohub skill from https://github.com/atou42/cohub-skill, directory skills/cohub. If I already have a cohub skill, compare the versions and preserve my customizations rather than overwriting it.
+> Install the cohub skill from https://github.com/atou42/cohub-skill, directory skills/cohub, then guide me through its first-time setup. If I already have a cohub skill, compare the versions and preserve my customizations rather than overwriting it.
 
 For manual installation, place the entire `skills/cohub` directory in your agent's supported skills directory. Keep `references/` alongside `SKILL.md`; do not overwrite an existing installation without reviewing it.
 
-The skill does not bundle or automatically install the CLI. Install and authenticate separately:
+The skill includes a one-time init guide. Your agent checks for the CLI, installs it with your approval if missing, helps you log in, and verifies your identity. It does not bundle the CLI. To install and log in manually:
 
 ```bash
 npm install -g @neta-art/cohub-cli
 cohub auth login
 ```
+
+After successful setup, the agent removes only the init guide and its marked entry section from an authorized, writable local installation. Failed setup keeps the guide for retry. Source checkouts, shared mounts, plugin caches, and read-only installations retain it; this public repository always ships the complete guide. The ongoing CLI and identity checks remain in the skill after cleanup.
 
 ## Use
 

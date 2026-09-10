@@ -7,6 +7,12 @@ description: Use the Cohub CLI to generate or edit images, video, speech, and mu
 
 Keep working locally with the user's familiar development tools. Use Cohub for generation and published links without requiring a new development environment or knowledge of platform internals.
 
+<!-- COHUB_INIT_START -->
+## First-Time Setup
+
+If `references/init.md` is present, read [Init](references/init.md) before the first workflow or when the user requests setup. It guides CLI installation, login, and optional cleanup of this local setup section after successful verification. If the guide was retained because cleanup was unsafe or declined, successful setup need not be repeated; follow the shared identity checks below.
+<!-- COHUB_INIT_END -->
+
 ## Read by Task
 
 - Publish local HTML, a website, or an app, or update a published version: read [Publish](references/publish.md).

@@ -1,5 +1,7 @@
 # Cohub Skill
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 A minimal skill for local agents to generate media and publish local websites with the Cohub CLI. Keep your existing development tools; use Cohub for generation and hosted links.
 
 This is a personally maintained skill, not an official Cohub release.
@@ -11,6 +13,8 @@ Ask your skill-capable agent:
 > Install the cohub skill from https://github.com/atou42/cohub-skill, directory skills/cohub, then guide me through its first-time setup. If I already have a cohub skill, compare the versions and preserve my customizations rather than overwriting it.
 
 For manual installation, place the entire `skills/cohub` directory in your agent's supported skills directory. Keep `references/` alongside `SKILL.md`; do not overwrite an existing installation without reviewing it.
+
+For Chinese instructions, install `zh-CN/skills/cohub` instead. Both editions use the skill name `cohub`; install only one. When switching languages, preserve local customizations and completed setup rather than blindly replacing the installed files.
 
 The skill includes a one-time init guide. Your agent checks for the CLI, installs it with your approval if missing, helps you log in, and verifies your identity. It does not bundle the CLI. To install and log in manually:
 

@@ -1,6 +1,6 @@
 ---
 name: cohub
-description: Use the Cohub CLI to generate or edit images, video, speech, and music for local agents, and publish local websites or apps as stable links. Use when the user requests Cohub publishing, Cohub generation, or a combination of both; not for internal Space administration, cross-agent delegation, or App backend development.
+description: Use Cohub from a local agent to generate media, publish local websites, or discover login-protected creative capabilities such as Style, AVG, Fandom, and OKP search. Use for Cohub generation, publishing, or its creative capability directory; not internal Space administration or cross-agent delegation.
 ---
 
 # Cohub
@@ -15,6 +15,7 @@ If `references/init.md` is present, read [Init](references/init.md) before the f
 
 ## Read by Task
 
+- Discover or use Cohub's Style, AVG, Fandom, or OKP search capabilities: read [Creative Capabilities](references/capabilities.md). This is an authenticated remote directory, not a bundled copy of those skills.
 - Publish local HTML, a website, or an app, or update a published version: read [Publish](references/publish.md).
 - Generate or edit images, video, speech, or music: read [Generate](references/generate.md).
 - Generate assets and then publish a page: read Generate first, then Publish. Generation alone does not authorize public publication.
@@ -30,6 +31,6 @@ If `references/init.md` is present, read [Init](references/init.md) before the f
 
 ## Boundaries
 
-Maintain only the publish and generate workflows. Do not load internal organizational knowledge or add Actions, Commerce, App SDK backend development, or experimental capabilities. Explain when a request exceeds this skill's scope; a generic shell command does not substitute for authorization.
+Maintain local publish and generate workflows plus the authenticated creative-directory entry point. Do not load internal organizational knowledge or add Actions, Commerce, or internal Space administration. Capability-specific runtime requirements must be checked through the selected remote guide; this entry point does not itself implement App backends or grant execution authorization.
 
 Deliver actual links or local files, necessary task identifiers, and any unfinished work. Successful command submission does not prove the result is usable.

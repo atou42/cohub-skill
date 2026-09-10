@@ -1,6 +1,6 @@
 ---
 name: cohub
-description: 用 Cohub CLI 为本地 Agent 生成或编辑图片、视频、语音、音乐，并把本地网页或应用发布为稳定链接。用户提到 Cohub 发布、Cohub 生成，或明确要组合这两类能力时使用；不负责内部 Space 治理、跨 Agent 委派或 App 后端开发。
+description: 本地 Agent 通过 Cohub 生成媒体、发布本地网页，或访问登录后可读的创作能力目录，包括 Style、AVG、Fandom 和 OKP 搜索。用户要求 Cohub 生成、发布或使用其创作能力目录时使用；不负责内部 Space 治理或跨 Agent 委派。
 ---
 
 # Cohub
@@ -15,6 +15,7 @@ description: 用 Cohub CLI 为本地 Agent 生成或编辑图片、视频、语�
 
 ## 按任务读取
 
+- 查找或使用 Cohub 的 Style、AVG、Fandom、OKP 搜索：读[创作能力](references/创作能力.md)。这是登录后读取的远端目录，不在本地打包这些技能的副本。
 - 发布本地 HTML、网页或应用，更新已发布版本：读[发布](references/发布.md)。
 - 生成或编辑图片、视频、语音、音乐：读[生成](references/生成.md)。
 - 生成素材后发布页面：先读生成，再读发布。生成本身不包含公开发布授权。
@@ -30,6 +31,6 @@ description: 用 Cohub CLI 为本地 Agent 生成或编辑图片、视频、语�
 
 ## 边界
 
-只维护 publish 和 generate 两条流程。不加载内部组织知识，不加入 Actions、Commerce、App SDK 服务端开发或实验能力。需要这些能力时说明超出本 skill 范围，不以通用 shell 执行替代授权。
+维护本地 publish、generate 流程及登录后的创作能力目录入口。不加载内部组织知识，不加入 Actions、Commerce 或内部 Space 治理。具体能力的运行时要求通过选中的远端指南核对；本入口不自行实现 App 后端，也不授予额外执行权限。
 
 完成时给真实链接或本地文件、必要的任务标识和未完成项。命令提交成功不等于结果可用。

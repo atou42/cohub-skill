@@ -25,20 +25,27 @@ cohub auth login
 
 ## 使用
 
+- 「看看 Cohub 有哪些创作能力，帮我选择合适的流程。」
 - 「用 Cohub 生成一张背景图，保存到这个项目的素材目录。」
 - 「用 Cohub 公开发布这个本地网站。」
 - 「生成素材，接入这个页面，再用 Cohub 公开发布页面。」
 
-[主入口](zh-CN/skills/cohub/SKILL.md) 按任务读取独立的[生成](zh-CN/skills/cohub/references/生成.md)和[发布](zh-CN/skills/cohub/references/发布.md)说明。生成本身不包含公开发布授权。
+[主入口](zh-CN/skills/cohub/SKILL.md) 按任务读取独立的[生成](zh-CN/skills/cohub/references/生成.md)、[发布](zh-CN/skills/cohub/references/发布.md)和[创作能力](zh-CN/skills/cohub/references/创作能力.md)说明。生成本身不包含公开发布授权。
+
+## 登录后的能力目录
+
+[Cohub Creator Capabilities](https://cohub.run/spaces/965d7601-25d8-4fd7-a006-7d4f38085bdf) 是独立维护的登录后能力目录，首批包含 Style、AVG、Fandom、OKP 搜索。公开 skill 只保留连接方法，不打包目录或上游技能。新任务读取实时目录，无需重装 skill 来获取目录更新。
+
+目录已配置为登录用户 guest、匿名无权限。来源 Space 和外部服务保留各自的权限与依赖。Style 当前需要单独取得来源权限；AVG 需要配套运行时和素材，不是只读一段说明就能运行。本版没有付费门。已验证行为和剩余限制见[发布验收记录](docs/capability-release.md)。
 
 ## 修改
 
-中文版完整内容位于 `zh-CN/skills/cohub/`：`SKILL.md` 是入口，`references/init.md` 是一次性初始化引导，`references/生成.md` 和 `references/发布.md` 分别描述两条工作流。
+中文版完整内容位于 `zh-CN/skills/cohub/`：`SKILL.md` 是入口，`references/init.md` 是一次性初始化引导，`references/生成.md` 和 `references/发布.md` 分别描述两条工作流，`references/创作能力.md` 连接远端目录。
 
 可以按自己的习惯修改安装副本。保留命令、参数名和 init 标记；修改 init 标记内的内容后，Agent 会保留该部分而不是自动清理。仓库中的两种语言版本是独立文件，修改共享行为时需要同步更新，避免说明不一致。
 
 ## 范围与兼容性
 
-支持模型实际提供的媒体生成与编辑，以及本地 HTML 或构建后的静态站点发布。不包括内部 Space 治理、Agent 委派、Actions、Commerce 或 App SDK 后端开发。发布静态产物不会部署其后端。
+支持模型实际提供的媒体生成与编辑、本地 HTML 或构建后的静态站点发布，以及登录后的创作能力发现。不包括内部 Space 治理、Agent 委派、Actions 或 Commerce。本入口不部署具体能力所需的后端，发布静态产物也不会部署其后端。
 
 命令参数已对照 CLI 6.9.1。本地发布要求至少 6.7.0；Home Space 默认值从 6.8.0 起支持。实际使用仍以本机 CLI 帮助和当前模型 schema 为准。打包此 skill 时未执行真实付费生成或端到端 App 发布。

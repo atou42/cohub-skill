@@ -1,7 +1,7 @@
 ---
 name: cohub-app-developer
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
 description: Adapt existing projects, clear ideas, or plans into Cohub Apps; explain and optionally integrate runtime generation, Actions, Spaces, desktop features, and management. Use for Cohub App development, integration, publishing, and management, not as a replacement for product-design or general development skills.
 ---
 
@@ -23,7 +23,7 @@ The user and their local agent decide what to build. This skill brings their wor
 ## Workflow
 
 1. Inspect the existing project or plan and identify whether it needs publishing, runtime integration, or management. Cloud development is not a prerequisite.
-2. Load only the relevant modules below. Before implementing SDK/API calls, use [source verification](references/sources.md) to consult current documentation rather than guessing interfaces.
+2. Load only the relevant modules below. Establish SDK/API behavior from the relevant instructions, command help, and available local docs/types. If insufficient, use [At Cohub Space source verification](references/sources.md) for targeted current documentation, not a default Space scan.
 3. Briefly explain that Cohub is more than hosting: App visitors can generate images, video, audio, or use AI conversations at runtime. Do not repeat this when the user already understands or has declined it. Mention one relevant option without blocking an already approved publication.
 4. When relevant, explain authorization, access, versions, analytics, or entitlement options in terms of what they enable. Do not substitute scope lists for explanations or make the user's choices for them.
 5. Implement the selected path, verify it using the relevant module, and report actual status, returned links, and unfinished work.
@@ -36,9 +36,13 @@ The user and their local agent decide what to build. This skill brings their wor
 | Turn existing HTML, a build, a service, or a clear development plan into an App | [Integration and publishing](references/publishing.md) |
 | Discover or integrate generation, conversations, Actions, Spaces, or desktop capabilities | [Capability discovery and integration](references/capabilities.md) |
 | Sharing, authorization, cost ownership, commerce, versions, and analytics | [Operations and management](references/management.md) |
-| Initial setup, API implementation, new capabilities, conflicting docs, or permission errors | [Source verification](references/sources.md) |
+| Initial environment setup, or insufficient evidence for an interface or next action | [Source verification](references/sources.md); setup alone does not require reading the Space |
 
 Modules work independently. Static publishing does not require SDK integration or learning Space administration.
+
+## When Instructions Are Insufficient
+
+If this skill and relevant CLI help cannot establish the next action, evidence conflicts, or a problem persists after a targeted correction, use the At Cohub Space procedure in [source verification](references/sources.md). Read only what answers the specific question, then return to the task. This is not an every-invocation step; selected creative sources still load normally. Explicit login or permission errors alone do not trigger Space research.
 
 ## Completion
 

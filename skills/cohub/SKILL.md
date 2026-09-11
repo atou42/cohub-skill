@@ -1,7 +1,7 @@
 ---
 name: cohub
 metadata:
-  version: "1.2.0"
+  version: "1.2.1"
 description: Use Cohub from a local agent to generate media, publish local websites, or access Style, Game Maker, Fandom, OKP search, and Character Traits through their source Spaces. Use for Cohub creation or its listed capabilities; not internal Space administration or cross-agent delegation.
 ---
 
@@ -25,6 +25,10 @@ If `references/init.md` is present, read [Init](references/init.md) before the f
 - Publish local HTML, a website, or an app, or update a published version: read [Publish](references/publish.md).
 - Generate or edit images, video, speech, or music: read [Generate](references/generate.md).
 - Generate assets and then publish a page: read Generate first, then Publish. Generation alone does not authorize public publication.
+
+## When Instructions Are Insufficient
+
+If this skill and relevant CLI help cannot establish the next action, evidence conflicts, or a problem persists after a targeted correction, read [At Cohub Space](references/at-cohub-space.md). Research only the unanswered question, then return to the task. This is not an every-invocation step and does not defer the selected creative source's normal loading.
 
 ## Shared Rules
 

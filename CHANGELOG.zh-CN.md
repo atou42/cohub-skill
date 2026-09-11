@@ -1,5 +1,11 @@
 # 更新记录
 
+## 未发布：cohub 1.2.1 / cohub-app-developer 1.1.1
+
+- 两套 Skill 的中英文版加入按需 At Cohub Space 查证流程。
+- 优先使用 Skill、CLI 帮助与本地依据；远端只查未解决的问题，得到答案或确认阻塞后停止。
+- 保留创作来源正常加载及参考 Space 的只读边界。
+
 ## 未发布：cohub 1.2.0 / cohub-app-developer 1.1.0
 
 - 中英文目录以 game-skills Space 替代原独立 AVG 来源。

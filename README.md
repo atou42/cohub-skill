@@ -8,7 +8,7 @@ This is a personally maintained skill, not an official Cohub release.
 
 ## Versioning
 
-Pending versions: **cohub 1.2.0** and **cohub-app-developer 1.1.0**. See the [changelog](CHANGELOG.md) for changes.
+Pending versions: **cohub 1.2.1** and **cohub-app-developer 1.1.1**. See the [changelog](CHANGELOG.md) for changes.
 
 Each skill uses semantic versions independently: MAJOR for incompatible workflow or installation changes, MINOR for compatible capabilities, PATCH for fixes and clarifications. English and Chinese editions advance together. Unversioned older installations remain version-unknown.
 

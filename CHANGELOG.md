@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased: cohub 1.2.1 / cohub-app-developer 1.1.1
+
+- Add an on-demand At Cohub Space reference workflow to both skills and languages.
+- Prefer skill instructions, CLI help, and local evidence; bound remote reading to unresolved questions and stop when answered or blocked.
+- Preserve normal creative-source loading and read-only reference boundaries.
+
 ## Unreleased: cohub 1.2.0 / cohub-app-developer 1.1.0
 
 - Replace the standalone AVG source with the game-skills Space in both languages.

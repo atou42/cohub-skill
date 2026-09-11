@@ -1,7 +1,7 @@
 ---
 name: cohub
 metadata:
-  version: "1.2.0"
+  version: "1.2.1"
 description: 本地 Agent 通过 Cohub 生成媒体、发布本地网页，或直接读取 Style、Game Maker、Fandom、OKP 搜索和 Character Traits 的来源 Space。用户要求 Cohub 创作或使用所列能力时使用；不负责内部 Space 治理或跨 Agent 委派。
 ---
 
@@ -25,6 +25,10 @@ description: 本地 Agent 通过 Cohub 生成媒体、发布本地网页，或�
 - 发布本地 HTML、网页或应用，更新已发布版本：读[发布](references/发布.md)。
 - 生成或编辑图片、视频、语音、音乐：读[生成](references/生成.md)。
 - 生成素材后发布页面：先读生成，再读发布。生成本身不包含公开发布授权。
+
+## 说明不足时
+
+当本 Skill 和相关 CLI 帮助不足以确定下一步、证据冲突，或问题经针对性修正后仍出现时，读取[At Cohub Space 查证指引](references/在CohubSpace查证.md)。只查当前缺失的信息，找到依据后回到原任务。这不是每次调用的必做步骤，也不推迟已选创作来源的正常加载。
 
 ## 共同约定
 

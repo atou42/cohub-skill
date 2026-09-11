@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "skills": {
     "cohub": {
-      "version": "1.2.0",
+      "version": "1.2.1",
       "notes": {
-        "en": "Replace the standalone AVG source with Game Maker and direct genre routing.",
-        "zh-CN": "以 Game Maker 替代独立 AVG 来源，并按游戏类型直达子模块。"
+        "en": "Add targeted At Cohub Space fallback research without default Space scans.",
+        "zh-CN": "增加按需 At Cohub Space 查证，不默认扫描 Space。"
       }
     },
     "cohub-app-developer": {
-      "version": "1.1.0",
+      "version": "1.1.1",
       "notes": {
-        "en": "Use the game-skills Space for AVG, city builders, fighting games, and general game creation.",
-        "zh-CN": "游戏能力统一使用 game-skills Space，覆盖 AVG、城建、格斗及通用游戏制作。"
+        "en": "Prefer local interface evidence and use At Cohub Space only for unresolved questions.",
+        "zh-CN": "优先利用本地接口依据，仅为未解决的问题按需查证 Cohub Space。"
       }
     }
   }

@@ -50,7 +50,9 @@ test('init cleanup preserves all source rows and ongoing workflows', () => {
     assert(!cleaned.includes('references/init.md'));
     assert(cleaned.includes('cohub auth whoami --json'));
     assert.deepEqual(sources(cleaned), sources(original));
-    assert.equal([...cleaned.matchAll(/\]\(references\//g)].length, 3);
+    const referenceTargets = text => [...text.matchAll(/\]\((references\/[^)]+)\)/g)]
+      .map(([, target]) => target).filter(target => target !== 'references/init.md');
+    assert.deepEqual(referenceTargets(cleaned), referenceTargets(original));
     checkLinks(new URL(dir + 'SKILL.md', root), cleaned);
   }
 });

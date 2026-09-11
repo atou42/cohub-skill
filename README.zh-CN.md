@@ -14,13 +14,13 @@
 
 ## 安装
 
-当前工作树为 **2.0.0 开发候选版，尚未发布**。正式版由 [versions.json](versions.json) 指向；目前最新正式 cohub 仍为 1.1.0，尚不包含本次合并。不要把 main 候选版当成正式升级。
+最新正式版：[Cohub 2.0.0](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.0.0)。[versions.json](versions.json) 指向已核实的发布标签与提交；正式安装使用该标签，不使用可能更新的 main 工作树。
 
 可以对 Agent 说：
 
 > 从 https://github.com/atou42/cohub-skill 安装最新正式发布的 cohub 简体中文版。先检查你实际会加载的 Skill 目录中是否已有 cohub 或 cohub-app-developer，保留定制内容；不要同时安装中英文版。安装后告诉我版本、说明语言和位置，不改变我们的对话语言。需要时引导安装 CLI 和登录。
 
-明确要试用本次开发候选版时，指定 main 的 zh-CN/skills/cohub 目录。完整保留 references、scripts 和 version.json。已有安装、语言切换及旧 App Developer 迁移见[安装与迁移](zh-CN/skills/cohub/references/安装与迁移.md)。不会未经授权删除旧安装。
+安装本正式版时，指定 cohub-v2.0.0 标签下的 zh-CN/skills/cohub 目录；仅在明确试用开发版时使用 main。完整保留 references、scripts 和 version.json。已有安装、语言切换及旧 App Developer 迁移见[安装与迁移](zh-CN/skills/cohub/references/安装与迁移.md)。不会未经授权删除旧安装。
 
 ## 开始使用
 

@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "skills": {
     "cohub": {
-      "version": "1.1.0",
+      "version": "2.0.0",
       "released": true,
-      "tag": "cohub-v1.1.0",
-      "commit": "064d4705a09074b62855a5adbc6bffdddbd27172",
+      "tag": "cohub-v2.0.0",
+      "commit": "3bc2941f62533895739f6c589a7672d21d6aa754",
       "notes": {
-        "en": "Latest stable release: version metadata and update notifications.",
-        "zh-CN": "最新正式版：安装版本记录和升级提示。"
+        "en": "Cohub 2.0.0 includes App Developer. Install one instruction language and preserve customizations during migration.",
+        "zh-CN": "Cohub 2.0.0 已包含 App Developer。只安装一种说明语言，迁移时保留定制内容。"
       }
     },
     "cohub-app-developer": {
@@ -17,8 +17,8 @@
       "tag": "cohub-app-developer-v1.0.0",
       "commit": "064d4705a09074b62855a5adbc6bffdddbd27172",
       "notes": {
-        "en": "Latest standalone stable release. Unified cohub is still in development.",
-        "zh-CN": "最新独立正式版；统一 cohub 仍在开发中。"
+        "en": "Final standalone release; migrate to unified cohub 2.0.0 using the repository instructions.",
+        "zh-CN": "最后的独立版本；按仓库指引迁移至统一 cohub 2.0.0。"
       }
     }
   }

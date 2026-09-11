@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased: cohub 2.0.0
+## cohub 2.0.0
+
+Release date: 2026-09-11.
 
 - Consolidate App Developer into the single cohub package as an on-demand module.
 - Add single-language installation, migration and conversation-language preservation.

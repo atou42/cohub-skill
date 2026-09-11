@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "skills": {
+    "cohub": {
+      "version": "1.1.0",
+      "notes": {
+        "en": "Read-only update notifications and corrected creative Space sources.",
+        "zh-CN": "新增只读升级提示，并修正创作 Space 来源。"
+      }
+    },
+    "cohub-app-developer": {
+      "version": "1.0.0",
+      "notes": {
+        "en": "Bilingual App integration, creative Space modules, and read-only update notifications.",
+        "zh-CN": "中英文 App 接入、创作 Space 模块和只读升级提示。"
+      }
+    }
+  }
+}

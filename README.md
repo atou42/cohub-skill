@@ -6,7 +6,40 @@ A minimal skill for local agents to generate media and publish local websites wi
 
 This is a personally maintained skill, not an official Cohub release.
 
+## Versioning
+
+Current versions: **cohub 1.1.0** and **cohub-app-developer 1.0.0**. See the [changelog](CHANGELOG.md) for changes.
+
+Each skill uses semantic versions independently: MAJOR for incompatible workflow or installation changes, MINOR for compatible capabilities, PATCH for fixes and clarifications. English and Chinese editions advance together. Unversioned older installations remain version-unknown.
+
+For a release, update both editions' `SKILL.md metadata.version` and `version.json`, the root `versions.json`, and both changelogs together. Check version agreement and links before publishing. After authorized publication, tag each skill as `cohub-v1.1.0` or `cohub-app-developer-v1.0.0` respectively; never move an existing release tag. Do not label a local candidate as released before publication succeeds. Source Space content updates alone need no skill release.
+
+## Available Skills
+
+| Skill | Purpose | English | Chinese |
+|---|---|---|---|
+| `cohub` | Lightweight media generation and local publishing | [Install source](skills/cohub/SKILL.md) | [中文版](zh-CN/skills/cohub/SKILL.md) |
+| `cohub-app-developer` | Adapt existing projects into Cohub Apps and optionally integrate runtime generation, Actions, Spaces, and management | [Install source](skills/cohub-app-developer/SKILL.md) | [中文版](zh-CN/skills/cohub-app-developer/SKILL.md) |
+
+Install either skill independently, or both. App Developer preserves your existing product-design and development workflow; it does not restart requirements discovery. It explains relevant Cohub options without adding features you did not choose.
+
+To install App Developer, ask your agent:
+
+> Install cohub-app-developer from https://github.com/atou42/cohub-skill, directory skills/cohub-app-developer. Preserve any existing customizations. Check the CLI and guide me through login if needed.
+
+For Chinese, use `zh-CN/skills/cohub-app-developer`. Install only one language per skill name, keeping the entire directory including `references/`. App Developer's setup instructions remain available; it does not use the removable init flow described below for `cohub`.
+
+Example requests: "Publish my existing project as a Cohub App without redesigning it" or "Explain how this App could use runtime generation, then integrate only the option I choose."
+
+App Developer references current files in the Cohub source Space; access is account-dependent. It does not require Feishu access. Both editions were checked for structure and reference links; live publication and paid execution have not been tested for this package.
+
 ## Install
+
+Both skills check the public upstream `versions.json` at each invocation and compare it with their installed `version.json`. New releases trigger a notice, never an automatic installation or overwrite. Failed checks are reported without blocking the task. This check survives init cleanup. Maintainers keep English and Chinese versions in sync.
+
+App Developer also directly loads the selected Style, independent AVG, Fandom, OKP search, or Character Traits Space through its [creative modules](skills/cohub-app-developer/references/creative-spaces.md). Website onboarding is not part of this change.
+
+The following sections describe the lightweight `cohub` skill.
 
 Ask your skill-capable agent:
 
@@ -38,7 +71,7 @@ The [entry point](skills/cohub/SKILL.md) contains the creative capability table 
 
 Style, AVG, Fandom, OKP search, and Character Traits are listed directly in `SKILL.md`, with their purpose, source Space ID, and entry path. After authentication, the agent reads the chosen source directly. There is no intermediate directory or catalog-version negotiation, and upstream packages are not bundled here.
 
-Source Spaces and external services retain their own permissions and dependencies. Style and Character Traits currently require explicit source access; an AVG build needs its runtime and assets, not just a text instruction. There is no paid gate or guarantee that every signed-in user can access every source. Adding capabilities or changing entry paths requires updating the skill; changes within a source do not. The former directory Space is retained but no longer used by this skill.
+Source Spaces and external services retain their own permissions and dependencies. Character Traits was opened for anonymous reading, not execution; an AVG build needs its runtime and assets, not just a text instruction. There is no paid gate or guarantee that every signed-in user can access every source. Adding capabilities or changing entry paths requires updating the skill; changes within a source do not. The former directory Space is retained but no longer used by this skill.
 
 ## Scope and Compatibility
 

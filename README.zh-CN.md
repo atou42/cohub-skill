@@ -6,7 +6,40 @@
 
 这是个人维护的 skill，不是 Cohub 官方发行版。
 
+## 版本管理
+
+当前版本：**cohub 1.1.0**、**cohub-app-developer 1.0.0**。具体变化见[更新记录](CHANGELOG.zh-CN.md)。
+
+两套 Skill 独立使用语义版本：不兼容的工作流或安装变化升主版本，兼容的新能力升次版本，修复和说明更正升补丁版本。中英文同步升级；早期没有版本信息的安装仍标为版本未知。
+
+发布时同时更新两种语言的 `SKILL.md metadata.version`、`version.json`、根目录 `versions.json` 和双语更新记录，先检查版本一致性与引用。取得发布授权并成功发布后，分别使用 `cohub-v1.1.0`、`cohub-app-developer-v1.0.0` 标签，不移动已有发布标签；发布成功前不把本地候选标成已发布。来源 Space 内容变化不要求每次发布 Skill。
+
+## 可选 Skill
+
+| Skill | 用途 | 英文版 | 中文版 |
+|---|---|---|---|
+| `cohub` | 轻量媒体生成与本地发布 | [安装来源](skills/cohub/SKILL.md) | [安装来源](zh-CN/skills/cohub/SKILL.md) |
+| `cohub-app-developer` | 将已有项目适配为 Cohub App，按需接入运行时生成、Actions、Space 与管理能力 | [安装来源](skills/cohub-app-developer/SKILL.md) | [安装来源](zh-CN/skills/cohub-app-developer/SKILL.md) |
+
+可以独立安装其中一个，也可以同时安装。App Developer 保留你已有的产品设计和开发流程，不重新做需求探索；会说明相关 Cohub 能力，但不自动增加未选择的功能。
+
+安装中文版 App Developer，把这段话交给 Agent：
+
+> 从 https://github.com/atou42/cohub-skill 安装 cohub-app-developer，目录是 zh-CN/skills/cohub-app-developer。保留已有定制，检查 CLI，需要时引导我登录。
+
+英文版目录为 `skills/cohub-app-developer`。每个 Skill 名称只安装一种语言，并保留包含 `references/` 的完整目录。App Developer 的环境引导会保留，不使用下文 `cohub` 的可移除 init 流程。
+
+使用示例：「把现有项目发布成 Cohub App，不重新设计」「说明这个 App 怎样接入运行时生成，再只实现我选中的方案」。
+
+App Developer 按需读取 Cohub 来源 Space 的最新文件，能否访问取决于当前账号，不需要飞书权限。两种语言已检查结构与引用链接，尚未为本包实测发布或付费执行。
+
 ## 安装
+
+两套 Skill 每次调用都会读取公开上游 `versions.json`，与安装副本的 `version.json` 比较。发现新版只提示，不自动安装或覆盖；检查失败说明情况但不阻塞任务，init 清理后仍保留检查。维护者同步中英文版本。
+
+App Developer 也通过[创作模块](zh-CN/skills/cohub-app-developer/references/创作Space.md)直达选中的 Style、独立 AVG、Fandom、OKP 搜索和 Character Traits Space。本次不包含网站引导。
+
+以下章节介绍轻量的 `cohub` Skill。
 
 把下面这段话交给支持 skill 的 Agent：
 
@@ -36,7 +69,7 @@ cohub auth login
 
 Style、AVG、Fandom、OKP 搜索和 Character Traits 直接列在 `SKILL.md` 中，包含用途、来源 Space ID 和入口路径。Agent 登录后直接读取选中的来源，不经过目录 Space 或目录版本协商，也不在本地打包上游技能。
 
-来源 Space 和外部服务保留各自的权限与依赖。Style 和 Character Traits 当前需要单独取得来源权限；AVG 需要配套运行时和素材，不是只读一段说明就能运行。本版没有付费门，也不保证所有登录用户都有来源权限。新增能力或更换入口需更新 skill；来源内部内容更新不需要重装。原目录 Space 保留，但本 skill 不再调用它。
+来源 Space 和外部服务保留各自的权限与依赖。Character Traits 已开放匿名读取，不代表可执行；AVG 需要配套运行时和素材，不是只读一段说明就能运行。本版没有付费门，也不保证所有登录用户都有来源权限。新增能力或更换入口需更新 skill；来源内部内容更新不需要重装。原目录 Space 保留，但本 skill 不再调用它。
 
 ## 修改
 

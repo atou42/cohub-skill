@@ -1,9 +1,15 @@
 ---
 name: cohub
+metadata:
+  version: "1.1.0"
 description: 本地 Agent 通过 Cohub 生成媒体、发布本地网页，或直接读取 Style、AVG、Fandom、OKP 搜索和 Character Traits 的来源 Space。用户要求 Cohub 创作或使用所列能力时使用；不负责内部 Space 治理或跨 Agent 委派。
 ---
 
 # Cohub
+
+## 每次调用：检查更新
+
+执行工作流前读取并遵循[检查更新](references/检查更新.md)。每次调用都检查上游，只提示，不自动更新安装副本。init 清理后保留此入口。
 
 在本地继续使用用户熟悉的开发工具，通过 Cohub 获得生成能力和发布链接。不要求用户迁移开发环境或理解平台内部结构。
 
@@ -40,14 +46,14 @@ cohub -s <sourceSpaceId> spaces files cat <entryPath>
 | 能力 | 适用任务 | 来源 Space ID | 入口路径 |
 | --- | --- | --- | --- |
 | Style | 生图前筛选画风、看图确认 | `d95744b4-07f6-4836-8209-f1c6ece7658b` | `Studio_Styles/AGENT_GUIDE.md` |
-| AVG | 制作可玩的分支故事、视觉小说 | `3d4c94b0-4737-45aa-b92c-a466aadb759b` | `.agents/skills/create-avg/SKILL.md` |
+| AVG | 制作可玩的分支故事、视觉小说 | `94623e65-f47e-49a5-bb09-7a84b367fd77` | `.agents/skills/create-avg/SKILL.md` |
 | Fandom | 查询 wiki 正文、属性和图片参考 | `1a47e736-d2be-40b9-8414-e4e0c5b204b8` | `.agents/skills/fandom-wiki/SKILL.md` |
 | OKP 搜索 | 读取领域 schema 后检索结构化知识 | `6f356f7e-72b4-4635-958f-e1197dfb4cba` | `.agents/skills/okp-search/SKILL.md` |
 | Character Traits | 塑造 OC 性格、人物矛盾和成长弧线 | `a94237d0-a290-445a-955f-ad2b54045d36` | `.agents/skills/character-traits/SKILL.md` |
 
 每次新任务只读取所选来源的当前说明和必要的包内引用，不经过中间目录 Space。新增能力或更换入口需要更新本表；来源中的具体内容可以独立更新。
 
-- Style 和 Character Traits 当前需要单独取得来源权限。登录不代表所有 Space 都可读。无权访问或入口缺失时说明阻塞，不修改权限、不找受限副本或公开镜像绕过限制。
+- Space 访问取决于当前权限；Character Traits 已开放匿名读取，但不授予执行权限。登录不代表所有 Space 都可读。无权访问或入口缺失时说明阻塞，不修改权限、不找受限副本或公开镜像绕过限制。
 - Style 在同一来源读取 `Studio_Styles/catalog.json`。AVG 需要配套运行时、素材、模板和工具，不能只读入口。Character Traits 需要数据和脚本；旧说明中的 `~/.claude/skills/character-traits/` 路径必须按实际本地安装目录解析，不能假设存在。
 - 已检查的 Fandom 来源描述 HTTP API，不编造 CLI 安装命令。OKP 需单独检查 CLI 和认证，不能假设 Cohub 会话能登录另一项服务。本入口只包含 OKP 搜索，不包含导入、写入或导出。
 - 来源 Space 仅是只读输入，不能当成用户生成、上传、任务或发布的目标。单独保留用户授权的项目上下文。获取配套文件时不覆盖本地文件；执行前检查脚本和依赖。

@@ -1,9 +1,15 @@
 ---
 name: cohub
+metadata:
+  version: "1.1.0"
 description: Use Cohub from a local agent to generate media, publish local websites, or access Style, AVG, Fandom, OKP search, and Character Traits through their source Spaces. Use for Cohub creation or its listed capabilities; not internal Space administration or cross-agent delegation.
 ---
 
 # Cohub
+
+## Every Invocation: Check for Updates
+
+Read and follow [Update check](references/updates.md) before the workflow. Check upstream every invocation; notify only, never update the installation automatically. Keep this hook after init cleanup.
 
 Keep working locally with the user's familiar development tools. Use Cohub for generation and published links without requiring a new development environment or knowledge of platform internals.
 
@@ -40,14 +46,14 @@ cohub -s <sourceSpaceId> spaces files cat <entryPath>
 | Capability | Use for | Source Space ID | Entry path |
 | --- | --- | --- | --- |
 | Style | Select and preview an art style before generation | `d95744b4-07f6-4836-8209-f1c6ece7658b` | `Studio_Styles/AGENT_GUIDE.md` |
-| AVG | Build a playable branching story or visual novel | `3d4c94b0-4737-45aa-b92c-a466aadb759b` | `.agents/skills/create-avg/SKILL.md` |
+| AVG | Build a playable branching story or visual novel | `94623e65-f47e-49a5-bb09-7a84b367fd77` | `.agents/skills/create-avg/SKILL.md` |
 | Fandom | Query wiki pages, attributes, and image references | `1a47e736-d2be-40b9-8414-e4e0c5b204b8` | `.agents/skills/fandom-wiki/SKILL.md` |
 | OKP search | Search structured knowledge after reading its domain schema | `6f356f7e-72b4-4635-958f-e1197dfb4cba` | `.agents/skills/okp-search/SKILL.md` |
 | Character Traits | Develop an OC's personality, contradictions, and character arc | `a94237d0-a290-445a-955f-ad2b54045d36` | `.agents/skills/character-traits/SKILL.md` |
 
 Read only the selected source and necessary package-relative references, freshly for each new task. There is no intermediate directory Space. Adding a capability or changing its entry requires updating this table; source content can evolve independently.
 
-- Style and Character Traits currently require explicit source access. Login alone does not grant access to every Space. On denied or missing sources, report the blocker; do not change permissions, find restricted copies, or use a public mirror to bypass it.
+- Space access depends on current permissions; Character Traits was opened for anonymous reading, but this does not grant execution rights. Login alone does not grant access to every Space. On denied or missing sources, report the blocker; do not change permissions, find restricted copies, or use a public mirror to bypass it.
 - Style selection uses `Studio_Styles/catalog.json` in the same source. AVG needs its bundled runtime, assets, templates, and tools, not just its entry text. Character Traits needs its data and scripts; its legacy `~/.claude/skills/character-traits/` paths must be resolved against the actual local installation, not assumed to exist.
 - Fandom's inspected source describes HTTP APIs; do not invent a CLI installer. OKP needs its own CLI/authentication checks; do not assume a Cohub session authenticates another service. Only OKP search is included, not import, writes, or export.
 - Source Spaces are read-only inputs, never the user's generation, upload, task, or publication destination. Preserve the user's authorized project context independently. Obtain required package files without overwriting local files, inspect scripts, and check dependencies before execution.

@@ -32,16 +32,16 @@ After successful setup, the agent removes only the init guide and its marked ent
 - "Publish this local website publicly with Cohub."
 - "Generate the media, integrate it into this page, then publish the page publicly with Cohub."
 
-The [entry point](skills/cohub/SKILL.md) routes to separate [generate](skills/cohub/references/generate.md), [publish](skills/cohub/references/publish.md), and [creative capability](skills/cohub/references/capabilities.md) instructions. Generation alone does not authorize public publication.
+The [entry point](skills/cohub/SKILL.md) contains the creative capability table and routes to separate [generate](skills/cohub/references/generate.md) and [publish](skills/cohub/references/publish.md) instructions. Generation alone does not authorize public publication.
 
-## Login-Protected Capability Directory
+## Direct Capability Access
 
-[Cohub Creator Capabilities](https://cohub.run/spaces/965d7601-25d8-4fd7-a006-7d4f38085bdf) is a separately maintained, authenticated directory for Style, AVG, Fandom, and OKP search. The public skill contains the connection instructions, not a copy of the directory or upstream packages. New tasks read the live directory without reinstalling the skill.
+Style, AVG, Fandom, OKP search, and Character Traits are listed directly in `SKILL.md`, with their purpose, source Space ID, and entry path. After authentication, the agent reads the chosen source directly. There is no intermediate directory or catalog-version negotiation, and upstream packages are not bundled here.
 
-Directory access is configured as signed-in guest, anonymous denied. Source Spaces and external services retain their own permissions and dependencies. Style currently requires explicit source access; an AVG build needs its runtime and assets, not just a text instruction. There is no paid gate in this release. See [release verification](docs/capability-release.md) for tested behavior and remaining limits.
+Source Spaces and external services retain their own permissions and dependencies. Style and Character Traits currently require explicit source access; an AVG build needs its runtime and assets, not just a text instruction. There is no paid gate or guarantee that every signed-in user can access every source. Adding capabilities or changing entry paths requires updating the skill; changes within a source do not. The former directory Space is retained but no longer used by this skill.
 
 ## Scope and Compatibility
 
-Supports media generation and editing where the selected model provides them, local HTML or built static-site publishing, and discovery through the authenticated creative directory. It does not cover internal Space administration, agent delegation, Actions, or Commerce. Capability-specific backends are not deployed by this bootstrap skill. Publishing a static build does not deploy its backend.
+Supports media generation and editing where the selected model provides them, local HTML or built static-site publishing, and direct access to the listed creative sources. It does not cover internal Space administration, agent delegation, Actions, or Commerce. Capability-specific backends are not deployed by this bootstrap skill. Publishing a static build does not deploy its backend.
 
 Command parameters were checked against CLI 6.9.1. Local publishing requires at least 6.7.0; Home Space defaults are supported from 6.8.0. Always inspect the installed CLI's help and current model schemas. Live paid generation and end-to-end app publication were not exercised as part of packaging this skill.

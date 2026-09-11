@@ -38,3 +38,5 @@ The SDK's `targetRef` is not the same local-path interface as CLI `--source loca
 - Verify SDK integrations in a real App runtime. Localhost/file previews cannot establish that authorization, generation, or commerce works. Without publication authorization, report this part as unverified.
 - If visitor behavior matters, test the agreed anonymous or other signed-in-user path. Do not pass off an owner session as a visitor or use an unauthorized account.
 - Return the link, publication scope, and reusable update command. On failure, preserve errors and remote state rather than deleting the App or creating another Space to retry.
+
+Before updating an App, read its current identity, target, and visibility. Preserve visibility unless the user explicitly requests a change; the public example is not permission to widen access.

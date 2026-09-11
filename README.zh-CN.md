@@ -1,84 +1,46 @@
-# Cohub Skill 中文版
+# Cohub Skill
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-供本地 Agent 配合 Cohub CLI 使用的最小 skill：生成素材，发布本地网页。继续使用熟悉的开发工具，通过 Cohub 获得生成能力和托管链接。
+让本地 Agent 使用 Cohub 生成素材、制作角色与游戏、发布已有作品，并按需为 App 接入访客生成、Actions 和管理能力。保留你的设计、技术栈和本地工作方式。
 
-这是个人维护的 skill，不是 Cohub 官方发行版。
+个人维护，非 Cohub 官方发行。
 
-## 版本管理
+## 只装一个
 
-待发布版本：**cohub 1.2.1**、**cohub-app-developer 1.1.1**。具体变化见[更新记录](CHANGELOG.zh-CN.md)。
+只需安装 **cohub**。App Developer 已成为内部按需模块，不需要理解或安装第二个 Skill。
 
-两套 Skill 独立使用语义版本：不兼容的工作流或安装变化升主版本，兼容的新能力升次版本，修复和说明更正升补丁版本。中英文同步升级；早期没有版本信息的安装仍标为版本未知。
-
-发布时同时更新两种语言的 `SKILL.md metadata.version`、`version.json`、根目录 `versions.json` 和双语更新记录，先检查版本一致性与引用。取得发布授权并成功发布后，分别使用 `cohub-v1.1.0`、`cohub-app-developer-v1.0.0` 标签，不移动已有发布标签；发布成功前不把本地候选标成已发布。来源 Space 内容变化不要求每次发布 Skill。
-
-## 可选 Skill
-
-| Skill | 用途 | 英文版 | 中文版 |
-|---|---|---|---|
-| `cohub` | 轻量媒体生成与本地发布 | [安装来源](skills/cohub/SKILL.md) | [安装来源](zh-CN/skills/cohub/SKILL.md) |
-| `cohub-app-developer` | 将已有项目适配为 Cohub App，按需接入运行时生成、Actions、Space 与管理能力 | [安装来源](skills/cohub-app-developer/SKILL.md) | [安装来源](zh-CN/skills/cohub-app-developer/SKILL.md) |
-
-可以独立安装其中一个，也可以同时安装。App Developer 保留你已有的产品设计和开发流程，不重新做需求探索；会说明相关 Cohub 能力，但不自动增加未选择的功能。
-
-安装中文版 App Developer，把这段话交给 Agent：
-
-> 从 https://github.com/atou42/cohub-skill 安装 cohub-app-developer，目录是 zh-CN/skills/cohub-app-developer。保留已有定制，检查 CLI，需要时引导我登录。
-
-英文版目录为 `skills/cohub-app-developer`。每个 Skill 名称只安装一种语言，并保留包含 `references/` 的完整目录。App Developer 的环境引导会保留，不使用下文 `cohub` 的可移除 init 流程。
-
-使用示例：「把现有项目发布成 Cohub App，不重新设计」「说明这个 App 怎样接入运行时生成，再只实现我选中的方案」。
-
-App Developer 按需读取 Cohub 来源 Space 的最新文件，能否访问取决于当前账号，不需要飞书权限。两种语言已检查结构与引用链接，尚未为本包实测发布或付费执行。
+只选一种说明语言：[简体中文](zh-CN/skills/cohub/SKILL.md)或[English](skills/cohub/SKILL.md)。两者功能相同，**不要同时安装**。说明语言不改变 Agent 的对话语言。
 
 ## 安装
 
-两套 Skill 每次调用都会读取公开上游 `versions.json`，与安装副本的 `version.json` 比较。发现新版只提示，不自动安装或覆盖；检查失败说明情况但不阻塞任务，init 清理后仍保留检查。维护者同步中英文版本。
+当前工作树为 **2.0.0 开发候选版，尚未发布**。正式版由 [versions.json](versions.json) 指向；目前最新正式 cohub 仍为 1.1.0，尚不包含本次合并。不要把 main 候选版当成正式升级。
 
-App Developer 也通过[创作模块](zh-CN/skills/cohub-app-developer/references/创作Space.md)直达选中的 Style、Game Maker、Fandom、OKP 搜索和 Character Traits Space。本次不包含网站引导。
+可以对 Agent 说：
 
-以下章节介绍轻量的 `cohub` Skill。
+> 从 https://github.com/atou42/cohub-skill 安装最新正式发布的 cohub 简体中文版。先检查你实际会加载的 Skill 目录中是否已有 cohub 或 cohub-app-developer，保留定制内容；不要同时安装中英文版。安装后告诉我版本、说明语言和位置，不改变我们的对话语言。需要时引导安装 CLI 和登录。
 
-把下面这段话交给支持 skill 的 Agent：
+明确要试用本次开发候选版时，指定 main 的 zh-CN/skills/cohub 目录。完整保留 references、scripts 和 version.json。已有安装、语言切换及旧 App Developer 迁移见[安装与迁移](zh-CN/skills/cohub/references/安装与迁移.md)。不会未经授权删除旧安装。
 
-> 从 https://github.com/atou42/cohub-skill 安装中文版 cohub skill，目录是 zh-CN/skills/cohub，然后引导我完成首次初始化。如果已经安装了 cohub skill，先比较版本，保留我的定制内容，不要直接覆盖。
+## 开始使用
 
-手动安装时，将整个 `zh-CN/skills/cohub` 目录放进 Agent 支持的技能目录，保留 `SKILL.md` 旁的 `references/` 目录。中英文版名称都为 `cohub`，只安装其中一版；切换语言时保留本地定制和已完成的初始化状态，不要直接覆盖。
+- “介绍有哪些创作能力。”只咨询不会触发登录、生成或发布。
+- “为这个项目生成背景图，放进素材目录，不公开。”
+- “把这个已完成的游戏发布到 Cohub，不重新制作。”
+- “给这个 App 接入访客生图，保留现有设计。”
 
-skill 带有一次性初始化引导。Agent 会检查 CLI，缺失时经你同意安装，引导登录并验证身份。skill 本身不包含 CLI。也可以手动安装和登录：
+首次使用按需检查 CLI、引导登录并报告身份。结合当前项目推荐一两个可选动作，不自动执行付费生成或发布。成功后可按已有授权清理本地 Init 引导；共享挂载和源码仓库保留。安装介绍网站仍未实现。
 
-```bash
-npm install -g @neta-art/cohub-cli
-cohub auth login
-```
+## 环境与边界
 
-初始化成功后，Agent 只会从获准修改、可写的本地安装副本中移除 init 引导及其标记入口。失败时保留引导，方便重试。源码仓库、共享挂载、插件缓存和只读安装保留引导；公开仓库始终包含完整引导。日常 CLI 和身份检查不会被删除。
+需要可读写文件、执行命令的本地 Agent；CLI 安装需要 Node.js/npm，远端能力需要网络及相应登录权限。只咨询不要求 CLI 就绪。CLI 参数原核对版本为 6.9.1，实际以本机帮助为准。
 
-## 使用
+Style、Game Maker、Fandom、OKP 和 Character Traits 按任务直达来源。来源权限、外部认证和执行依赖各自独立；读到说明不等于可运行。参见[准备与验收](zh-CN/skills/cohub/references/能力准备.md)。
 
-- 「看看 Cohub 有哪些创作能力，帮我选择合适的流程。」
-- 「用 Cohub 生成一张背景图，保存到这个项目的素材目录。」
-- 「用 Cohub 公开发布这个本地网站。」
-- 「生成素材，接入这个页面，再用 Cohub 公开发布页面。」
+每次调用检查正式版本，只提示、不自动更新；升级保持说明语言和定制。生成不授权发布，来源 Space 不作写入目标。不负责内部治理或跨 Agent 委派。
 
-[主入口](zh-CN/skills/cohub/SKILL.md) 直接包含创作能力表，并按任务读取独立的[生成](zh-CN/skills/cohub/references/生成.md)和[发布](zh-CN/skills/cohub/references/发布.md)说明。生成本身不包含公开发布授权。
+## 验证与维护
 
-## 直达创作能力
+自动检查覆盖包结构、双语一致性、独立安装引用及升级判断的失败路径；Agent 场景验收见[行为验收](docs/行为验收.md)。没有宣称远程能力、付费生成或访客路径全部通过实测。
 
-Style、Game Maker、Fandom、OKP 搜索和 Character Traits 直接列在 `SKILL.md` 中，包含用途、来源 Space ID 和入口路径。Agent 登录后直接读取选中的来源，不经过目录 Space 或目录版本协商，也不在本地打包上游技能。
-
-来源 Space 和外部服务保留各自的权限与依赖。Character Traits 已开放匿名读取，不代表可执行；AVG 需要配套运行时和素材，不是只读一段说明就能运行。本版没有付费门，也不保证所有登录用户都有来源权限。新增能力或更换入口需更新 skill；来源内部内容更新不需要重装。原目录 Space 保留，但本 skill 不再调用它。
-
-## 修改
-
-中文版完整内容位于 `zh-CN/skills/cohub/`：`SKILL.md` 是入口和能力清单，`references/init.md` 是一次性初始化引导，`references/生成.md` 和 `references/发布.md` 分别描述两条工作流。
-
-可以按自己的习惯修改安装副本。保留命令、参数名和 init 标记；修改 init 标记内的内容后，Agent 会保留该部分而不是自动清理。仓库中的两种语言版本是独立文件，修改共享行为时需要同步更新，避免说明不一致。
-
-## 范围与兼容性
-
-支持模型实际提供的媒体生成与编辑、本地 HTML 或构建后的静态站点发布，以及所列创作来源的直接访问。不包括内部 Space 治理、Agent 委派、Actions 或 Commerce。本入口不部署具体能力所需的后端，发布静态产物也不会部署其后端。
-
-命令参数已对照 CLI 6.9.1。本地发布要求至少 6.7.0；Home Space 默认值从 6.8.0 起支持。实际使用仍以本机 CLI 帮助和当前模型 schema 为准。打包此 skill 时未执行真实付费生成或端到端 App 发布。
+[更新记录](CHANGELOG.zh-CN.md) · [维护与发布](docs/维护与发布.md)

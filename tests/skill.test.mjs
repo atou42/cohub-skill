@@ -57,11 +57,9 @@ test('init cleanup preserves all source rows and ongoing workflows', () => {
   }
 });
 
-test('all four catalogs use the game package with direct genre routes', () => {
+test('both catalogs use the game package with direct genre routes', () => {
   const catalogs = [
     ...editions.map(dir => dir + 'SKILL.md'),
-    'skills/cohub-app-developer/references/creative-spaces.md',
-    'zh-CN/skills/cohub-app-developer/references/创作Space.md',
   ];
   for (const file of catalogs) {
     const text = read(file);
@@ -75,15 +73,26 @@ test('all four catalogs use the game package with direct genre routes', () => {
   }
 });
 
-test('both language editions match the upstream version manifest', () => {
-  const manifest = JSON.parse(read('versions.json'));
-  for (const language of ['', 'zh-CN/']) {
-    for (const name of Object.keys(manifest.skills)) {
-      const dir = language + 'skills/' + name + '/';
-      const local = JSON.parse(read(dir + 'version.json'));
-      assert.equal(local.name, name);
-      assert.equal(local.version, manifest.skills[name].version);
-      assert(read(dir + 'SKILL.md').includes('version: "' + local.version + '"'));
-    }
+test('one self-contained entry per language with matching version and locale', () => {
+  const packages = editions.map(dir => JSON.parse(read(dir + 'version.json')));
+  assert.equal(packages[0].version, packages[1].version);
+  for (const [i, dir] of editions.entries()) {
+    assert.deepEqual(readdirSync(new URL(dir.startsWith('zh-CN') ? 'zh-CN/skills/' : 'skills/', root))
+      .filter(name => readdirSync(new URL((dir.startsWith('zh-CN') ? 'zh-CN/skills/' : 'skills/') + name + '/', root)).includes('SKILL.md')), ['cohub']);
+    assert.equal(packages[i].language, i ? 'zh-CN' : 'en');
+    assert(read(dir + 'SKILL.md').includes('version: "' + packages[i].version + '"'));
+    assert(read(dir + 'SKILL.md').includes('language: "' + packages[i].language + '"'));
+    assert.equal(read(dir + 'scripts/update-check.mjs'), read('scripts/update-check.mjs'));
   }
+});
+
+test('stable pointers are independent of candidate package versions', () => {
+  const manifest = JSON.parse(read('versions.json'));
+  for (const [name, release] of Object.entries(manifest.skills)) {
+    assert.equal(release.released, true);
+    assert.equal(release.tag, name + '-v' + release.version);
+    assert.match(release.commit, /^[a-f0-9]{40}$/);
+  }
+  const candidate = JSON.parse(read(editions[0] + 'version.json'));
+  assert.match(candidate.version, /^\d+\.\d+\.\d+$/);
 });

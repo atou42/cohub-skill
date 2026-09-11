@@ -2,17 +2,23 @@
   "schemaVersion": 1,
   "skills": {
     "cohub": {
-      "version": "1.2.1",
+      "version": "1.1.0",
+      "released": true,
+      "tag": "cohub-v1.1.0",
+      "commit": "064d4705a09074b62855a5adbc6bffdddbd27172",
       "notes": {
-        "en": "Add targeted At Cohub Space fallback research without default Space scans.",
-        "zh-CN": "增加按需 At Cohub Space 查证，不默认扫描 Space。"
+        "en": "Latest stable release: version metadata and update notifications.",
+        "zh-CN": "最新正式版：安装版本记录和升级提示。"
       }
     },
     "cohub-app-developer": {
-      "version": "1.1.1",
+      "version": "1.0.0",
+      "released": true,
+      "tag": "cohub-app-developer-v1.0.0",
+      "commit": "064d4705a09074b62855a5adbc6bffdddbd27172",
       "notes": {
-        "en": "Prefer local interface evidence and use At Cohub Space only for unresolved questions.",
-        "zh-CN": "优先利用本地接口依据，仅为未解决的问题按需查证 Cohub Space。"
+        "en": "Latest standalone stable release. Unified cohub is still in development.",
+        "zh-CN": "最新独立正式版；统一 cohub 仍在开发中。"
       }
     }
   }

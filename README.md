@@ -2,79 +2,45 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-A minimal skill for local agents to generate media and publish local websites with the Cohub CLI. Keep your existing development tools; use Cohub for generation and hosted links.
+Let your local agent use Cohub for media, characters, games and publishing, with optional visitor-time generation, Actions and management. Preserve your design, stack and local workflow.
 
-This is a personally maintained skill, not an official Cohub release.
+Personally maintained, not an official Cohub distribution.
 
-## Versioning
+## Install One Skill
 
-Pending versions: **cohub 1.2.1** and **cohub-app-developer 1.1.1**. See the [changelog](CHANGELOG.md) for changes.
+Install **cohub** only. App Developer is now an internal on-demand module, not another skill to choose or install.
 
-Each skill uses semantic versions independently: MAJOR for incompatible workflow or installation changes, MINOR for compatible capabilities, PATCH for fixes and clarifications. English and Chinese editions advance together. Unversioned older installations remain version-unknown.
-
-For a release, update both editions' `SKILL.md metadata.version` and `version.json`, the root `versions.json`, and both changelogs together. Check version agreement and links before publishing. After authorized publication, tag each skill as `cohub-v1.1.0` or `cohub-app-developer-v1.0.0` respectively; never move an existing release tag. Do not label a local candidate as released before publication succeeds. Source Space content updates alone need no skill release.
-
-## Available Skills
-
-| Skill | Purpose | English | Chinese |
-|---|---|---|---|
-| `cohub` | Lightweight media generation and local publishing | [Install source](skills/cohub/SKILL.md) | [中文版](zh-CN/skills/cohub/SKILL.md) |
-| `cohub-app-developer` | Adapt existing projects into Cohub Apps and optionally integrate runtime generation, Actions, Spaces, and management | [Install source](skills/cohub-app-developer/SKILL.md) | [中文版](zh-CN/skills/cohub-app-developer/SKILL.md) |
-
-Install either skill independently, or both. App Developer preserves your existing product-design and development workflow; it does not restart requirements discovery. It explains relevant Cohub options without adding features you did not choose.
-
-To install App Developer, ask your agent:
-
-> Install cohub-app-developer from https://github.com/atou42/cohub-skill, directory skills/cohub-app-developer. Preserve any existing customizations. Check the CLI and guide me through login if needed.
-
-For Chinese, use `zh-CN/skills/cohub-app-developer`. Install only one language per skill name, keeping the entire directory including `references/`. App Developer's setup instructions remain available; it does not use the removable init flow described below for `cohub`.
-
-Example requests: "Publish my existing project as a Cohub App without redesigning it" or "Explain how this App could use runtime generation, then integrate only the option I choose."
-
-App Developer references current files in the Cohub source Space; access is account-dependent. It does not require Feishu access. Both editions were checked for structure and reference links; live publication and paid execution have not been tested for this package.
+Choose one instruction language: [English](skills/cohub/SKILL.md) or [简体中文](zh-CN/skills/cohub/SKILL.md). Functionality is identical. **Do not install both.** Instruction language does not change conversation language.
 
 ## Install
 
-Both skills check the public upstream `versions.json` at each invocation and compare it with their installed `version.json`. New releases trigger a notice, never an automatic installation or overwrite. Failed checks are reported without blocking the task. This check survives init cleanup. Maintainers keep English and Chinese versions in sync.
+This checkout is the **unreleased 2.0.0 development candidate**. [versions.json](versions.json) points to stable releases; the latest stable cohub is still 1.1.0 and does not contain this consolidation. Do not recommend main as a stable upgrade.
 
-App Developer also directly loads the selected Style, Game Maker, Fandom, OKP search, or Character Traits Space through its [creative modules](skills/cohub-app-developer/references/creative-spaces.md). Website onboarding is not part of this change.
+Ask your agent:
 
-The following sections describe the lightweight `cohub` skill.
+> Install the latest stable English cohub from https://github.com/atou42/cohub-skill. First inspect the skill directories you actually load for existing cohub or cohub-app-developer installations and preserve customizations. Do not install both languages. Report the installed version, instruction language and location without changing our conversation language. Guide CLI installation and login only if needed.
 
-Ask your skill-capable agent:
-
-> Install the cohub skill from https://github.com/atou42/cohub-skill, directory skills/cohub, then guide me through its first-time setup. If I already have a cohub skill, compare the versions and preserve my customizations rather than overwriting it.
-
-For manual installation, place the entire `skills/cohub` directory in your agent's supported skills directory. Keep `references/` alongside `SKILL.md`; do not overwrite an existing installation without reviewing it.
-
-For Chinese instructions, install `zh-CN/skills/cohub` instead. Both editions use the skill name `cohub`; install only one. When switching languages, preserve local customizations and completed setup rather than blindly replacing the installed files.
-
-The skill includes a one-time init guide. Your agent checks for the CLI, installs it with your approval if missing, helps you log in, and verifies your identity. It does not bundle the CLI. To install and log in manually:
-
-```bash
-npm install -g @neta-art/cohub-cli
-cohub auth login
-```
-
-After successful setup, the agent removes only the init guide and its marked entry section from an authorized, writable local installation. Failed setup keeps the guide for retry. Source checkouts, shared mounts, plugin caches, and read-only installations retain it; this public repository always ships the complete guide. The ongoing CLI and identity checks remain in the skill after cleanup.
+To explicitly test this development candidate, select main's skills/cohub directory. Keep references, scripts and version.json. See [installation and migration](skills/cohub/references/installation.md) for existing installations, language changes and legacy App Developer migration. Old installations are not deleted without authorization.
 
 ## Use
 
-- "Show me Cohub's creative capabilities, then help me choose a workflow."
-- "Use Cohub to generate a background image and save it in this project's assets directory."
-- "Publish this local website publicly with Cohub."
-- "Generate the media, integrate it into this page, then publish the page publicly with Cohub."
+- "Explain the creative capabilities." A question does not trigger login, generation or publication.
+- "Generate background images for this project without publishing it."
+- "Publish this finished game without rebuilding it."
+- "Add visitor image generation to this App, preserving its design."
 
-The [entry point](skills/cohub/SKILL.md) contains the creative capability table and routes to separate [generate](skills/cohub/references/generate.md) and [publish](skills/cohub/references/publish.md) instructions. Generation alone does not authorize public publication.
+Setup checks the CLI, guides login as needed and reports identity. Suggest one or two context-relevant next actions without automatically generating paid media or publishing. Authorized local Init cleanup remains optional; source and shared installations retain it. An onboarding website is not implemented.
 
-## Direct Capability Access
+## Environment and Boundaries
 
-Style, Game Maker, Fandom, OKP search, and Character Traits are listed directly in `SKILL.md`, with their purpose, source Space ID, and entry path. After authentication, the agent reads the chosen source directly. There is no intermediate directory or catalog-version negotiation, and upstream packages are not bundled here.
+Requires a local agent with filesystem and command execution. CLI setup needs Node.js/npm; remote capabilities need network access and their respective permissions. Capability questions do not require CLI readiness. Command examples were checked against CLI 6.9.1; installed help remains authoritative.
 
-Source Spaces and external services retain their own permissions and dependencies. Character Traits was opened for anonymous reading, not execution; an AVG build needs its runtime and assets, not just a text instruction. There is no paid gate or guarantee that every signed-in user can access every source. Adding capabilities or changing entry paths requires updating the skill; changes within a source do not. The former directory Space is retained but no longer used by this skill.
+Style, Game Maker, Fandom, OKP and Character Traits route directly to their sources. Permissions, authentication and dependencies are independent; readable instructions do not establish runtime readiness. See [preparation and acceptance](skills/cohub/references/preparation.md).
 
-## Scope and Compatibility
+Each invocation checks stable releases, notifying without automatic updates. Upgrades preserve instruction language and customizations. Generation does not authorize publication; source Spaces are not write destinations. No internal governance or cross-agent delegation.
 
-Supports media generation and editing where the selected model provides them, local HTML or built static-site publishing, and direct access to the listed creative sources. It does not cover internal Space administration, agent delegation, Actions, or Commerce. Capability-specific backends are not deployed by this bootstrap skill. Publishing a static build does not deploy its backend.
+## Validation and Maintenance
 
-Command parameters were checked against CLI 6.9.1. Local publishing requires at least 6.7.0; Home Space defaults are supported from 6.8.0. Always inspect the installed CLI's help and current model schemas. Live paid generation and end-to-end app publication were not exercised as part of packaging this skill.
+Automated checks cover package structure, language consistency, self-contained links and update failure paths. Agent scenarios are recorded in [behavior acceptance](docs/行为验收.md); remote capabilities, paid generation and visitor flows are not claimed fully live-tested.
+
+[Changelog](CHANGELOG.md) · [Maintenance and releases](docs/维护与发布.md)

@@ -25,5 +25,4 @@ cohub -s cf327f11-5065-4f3a-bfe5-cdb0a70f3377 spaces files cat packages/cli/READ
 - 发布形态：`docs/apps-guide.md`。
 - 文档不足时，先定位 `packages/cli/` 中相关实现。
 
-实际 App SDK/API 开发不属于本 Skill；用户需要时使用 cohub-app-developer，不因查证自动扩大任务范围。
-
+用户明确需要 App SDK/API 开发时，按主入口加载 App Developer 内部模块；查证本身不扩大任务范围。

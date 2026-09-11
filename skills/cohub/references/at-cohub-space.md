@@ -25,5 +25,4 @@ Select by question; do not load all entries:
 - Publishing forms: `docs/apps-guide.md`.
 - If docs are insufficient, locate the relevant implementation under `packages/cli/` first.
 
-App SDK/API development remains outside this skill. Use cohub-app-developer when requested; research does not expand the task.
-
+When App SDK/API development is requested, load the internal App Developer module from the main entry; research itself does not expand scope.

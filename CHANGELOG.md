@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased: cohub 2.0.0
+
+- Consolidate App Developer into the single cohub package as an on-demand module.
+- Add single-language installation, migration and conversation-language preservation.
+- Separate stable release pointers from candidates; retain per-invocation checks with a tested read-only checker.
+- Add capability preparation and acceptance guidance; retain optional Init cleanup and original-task recovery.
+
+
 ## Unreleased: cohub 1.2.1 / cohub-app-developer 1.1.1
 
 - Add an on-demand At Cohub Space reference workflow to both skills and languages.

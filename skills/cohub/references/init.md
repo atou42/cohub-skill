@@ -1,5 +1,7 @@
 # Initialize Cohub
 
+First follow installation and migration guidance to establish one installation and its instruction language. Capability questions do not trigger setup. On completion report skill version, instruction language and location, preserving conversation language; suggest one or two relevant next actions without executing them automatically.
+
 Guide the user's agent through setup, then remove this one-time guide only from an eligible local installation. The distributed repository must retain it.
 
 ## 1. Check and Install the CLI

@@ -1,7 +1,7 @@
 ---
 name: cohub-app-developer
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 description: 将已有项目、明确想法或计划适配并发布为 Cohub App，介绍并按需接入运行时生成、Actions、Space、桌面及管理能力。用于 Cohub App 开发、接入、发布和管理；不替代用户的产品设计或通用开发 Skill。
 ---
 
@@ -32,7 +32,7 @@ description: 将已有项目、明确想法或计划适配并发布为 Cohub App
 
 | 当前任务 | 读取 |
 |---|---|
-| 使用 Style、AVG、Fandom、OKP 搜索或 Character Traits | [创作 Space](references/创作Space.md) |
+| 使用 Style、Game Maker、Fandom、OKP 搜索或 Character Traits | [创作 Space](references/创作Space.md) |
 | 已有 HTML、构建产物、服务，或明确开发计划，需要成为 Cohub App | [接入与发布](references/接入与发布.md) |
 | 想知道还能做什么，或选择生成、对话、业务 Action、Space、桌面集成 | [能力发现与接入](references/能力发现与接入.md) |
 | 分享、授权、费用归属、商业权益、版本及访问统计 | [运行与管理](references/运行与管理.md) |

@@ -1,7 +1,7 @@
 ---
 name: cohub-app-developer
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 description: Adapt existing projects, clear ideas, or plans into Cohub Apps; explain and optionally integrate runtime generation, Actions, Spaces, desktop features, and management. Use for Cohub App development, integration, publishing, and management, not as a replacement for product-design or general development skills.
 ---
 
@@ -32,7 +32,7 @@ The user and their local agent decide what to build. This skill brings their wor
 
 | Task | Read |
 |---|---|
-| Use Style, AVG, Fandom, OKP search, or Character Traits | [Creative Spaces](references/creative-spaces.md) |
+| Use Style, Game Maker, Fandom, OKP search, or Character Traits | [Creative Spaces](references/creative-spaces.md) |
 | Turn existing HTML, a build, a service, or a clear development plan into an App | [Integration and publishing](references/publishing.md) |
 | Discover or integrate generation, conversations, Actions, Spaces, or desktop capabilities | [Capability discovery and integration](references/capabilities.md) |
 | Sharing, authorization, cost ownership, commerce, versions, and analytics | [Operations and management](references/management.md) |

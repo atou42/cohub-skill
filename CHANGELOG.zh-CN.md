@@ -1,5 +1,11 @@
 # 更新记录
 
+## 未发布：cohub 1.2.0 / cohub-app-developer 1.1.0
+
+- 中英文目录以 game-skills Space 替代原独立 AVG 来源。
+- AVG、城建和格斗直达对应子模块，其他或未明确类型的游戏使用 game-maker。
+- 保留仅发布已有游戏的流程；不删除远端 Space 或源数据。
+
 [English](CHANGELOG.md) | [简体中文](CHANGELOG.zh-CN.md)
 
 两套 Skill 独立编号，中英文版共用同一版本号。

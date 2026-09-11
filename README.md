@@ -8,7 +8,7 @@ This is a personally maintained skill, not an official Cohub release.
 
 ## Versioning
 
-Current versions: **cohub 1.1.0** and **cohub-app-developer 1.0.0**. See the [changelog](CHANGELOG.md) for changes.
+Pending versions: **cohub 1.2.0** and **cohub-app-developer 1.1.0**. See the [changelog](CHANGELOG.md) for changes.
 
 Each skill uses semantic versions independently: MAJOR for incompatible workflow or installation changes, MINOR for compatible capabilities, PATCH for fixes and clarifications. English and Chinese editions advance together. Unversioned older installations remain version-unknown.
 
@@ -37,7 +37,7 @@ App Developer references current files in the Cohub source Space; access is acco
 
 Both skills check the public upstream `versions.json` at each invocation and compare it with their installed `version.json`. New releases trigger a notice, never an automatic installation or overwrite. Failed checks are reported without blocking the task. This check survives init cleanup. Maintainers keep English and Chinese versions in sync.
 
-App Developer also directly loads the selected Style, independent AVG, Fandom, OKP search, or Character Traits Space through its [creative modules](skills/cohub-app-developer/references/creative-spaces.md). Website onboarding is not part of this change.
+App Developer also directly loads the selected Style, Game Maker, Fandom, OKP search, or Character Traits Space through its [creative modules](skills/cohub-app-developer/references/creative-spaces.md). Website onboarding is not part of this change.
 
 The following sections describe the lightweight `cohub` skill.
 
@@ -69,7 +69,7 @@ The [entry point](skills/cohub/SKILL.md) contains the creative capability table 
 
 ## Direct Capability Access
 
-Style, AVG, Fandom, OKP search, and Character Traits are listed directly in `SKILL.md`, with their purpose, source Space ID, and entry path. After authentication, the agent reads the chosen source directly. There is no intermediate directory or catalog-version negotiation, and upstream packages are not bundled here.
+Style, Game Maker, Fandom, OKP search, and Character Traits are listed directly in `SKILL.md`, with their purpose, source Space ID, and entry path. After authentication, the agent reads the chosen source directly. There is no intermediate directory or catalog-version negotiation, and upstream packages are not bundled here.
 
 Source Spaces and external services retain their own permissions and dependencies. Character Traits was opened for anonymous reading, not execution; an AVG build needs its runtime and assets, not just a text instruction. There is no paid gate or guarantee that every signed-in user can access every source. Adding capabilities or changing entry paths requires updating the skill; changes within a source do not. The former directory Space is retained but no longer used by this skill.
 

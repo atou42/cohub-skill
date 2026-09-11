@@ -8,7 +8,7 @@
 
 ## 版本管理
 
-当前版本：**cohub 1.1.0**、**cohub-app-developer 1.0.0**。具体变化见[更新记录](CHANGELOG.zh-CN.md)。
+待发布版本：**cohub 1.2.0**、**cohub-app-developer 1.1.0**。具体变化见[更新记录](CHANGELOG.zh-CN.md)。
 
 两套 Skill 独立使用语义版本：不兼容的工作流或安装变化升主版本，兼容的新能力升次版本，修复和说明更正升补丁版本。中英文同步升级；早期没有版本信息的安装仍标为版本未知。
 
@@ -37,7 +37,7 @@ App Developer 按需读取 Cohub 来源 Space 的最新文件，能否访问取�
 
 两套 Skill 每次调用都会读取公开上游 `versions.json`，与安装副本的 `version.json` 比较。发现新版只提示，不自动安装或覆盖；检查失败说明情况但不阻塞任务，init 清理后仍保留检查。维护者同步中英文版本。
 
-App Developer 也通过[创作模块](zh-CN/skills/cohub-app-developer/references/创作Space.md)直达选中的 Style、独立 AVG、Fandom、OKP 搜索和 Character Traits Space。本次不包含网站引导。
+App Developer 也通过[创作模块](zh-CN/skills/cohub-app-developer/references/创作Space.md)直达选中的 Style、Game Maker、Fandom、OKP 搜索和 Character Traits Space。本次不包含网站引导。
 
 以下章节介绍轻量的 `cohub` Skill。
 
@@ -67,7 +67,7 @@ cohub auth login
 
 ## 直达创作能力
 
-Style、AVG、Fandom、OKP 搜索和 Character Traits 直接列在 `SKILL.md` 中，包含用途、来源 Space ID 和入口路径。Agent 登录后直接读取选中的来源，不经过目录 Space 或目录版本协商，也不在本地打包上游技能。
+Style、Game Maker、Fandom、OKP 搜索和 Character Traits 直接列在 `SKILL.md` 中，包含用途、来源 Space ID 和入口路径。Agent 登录后直接读取选中的来源，不经过目录 Space 或目录版本协商，也不在本地打包上游技能。
 
 来源 Space 和外部服务保留各自的权限与依赖。Character Traits 已开放匿名读取，不代表可执行；AVG 需要配套运行时和素材，不是只读一段说明就能运行。本版没有付费门，也不保证所有登录用户都有来源权限。新增能力或更换入口需更新 skill；来源内部内容更新不需要重装。原目录 Space 保留，但本 skill 不再调用它。
 

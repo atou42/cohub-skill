@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased: cohub 1.2.0 / cohub-app-developer 1.1.0
+
+- Replace the standalone AVG source with the game-skills Space in both languages.
+- Route AVG, city builders, and fighting games directly to their package entries; use game-maker for other or unspecified game types.
+- Preserve publish-only workflows. No remote Space or source data is deleted.
+
 [English](CHANGELOG.md) | [简体中文](CHANGELOG.zh-CN.md)
 
 Versions are independent per skill. English and Chinese editions share the same version.

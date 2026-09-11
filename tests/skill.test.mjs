@@ -50,7 +50,38 @@ test('init cleanup preserves all source rows and ongoing workflows', () => {
     assert(!cleaned.includes('references/init.md'));
     assert(cleaned.includes('cohub auth whoami --json'));
     assert.deepEqual(sources(cleaned), sources(original));
-    assert.equal([...cleaned.matchAll(/\]\(references\//g)].length, 2);
+    assert.equal([...cleaned.matchAll(/\]\(references\//g)].length, 3);
     checkLinks(new URL(dir + 'SKILL.md', root), cleaned);
+  }
+});
+
+test('all four catalogs use the game package with direct genre routes', () => {
+  const catalogs = [
+    ...editions.map(dir => dir + 'SKILL.md'),
+    'skills/cohub-app-developer/references/creative-spaces.md',
+    'zh-CN/skills/cohub-app-developer/references/创作Space.md',
+  ];
+  for (const file of catalogs) {
+    const text = read(file);
+    assert(!text.includes('94623e65-f47e-49a5-bb09-7a84b367fd77'));
+    assert(sources(text).some(([id, entry]) =>
+      id === '07f109e8-1052-41b0-b819-61fe1eb4ac9e' &&
+      entry === '.agents/skills/game-maker/SKILL.md'));
+    for (const name of ['create-avg', 'city-builder-engine', 'brawl-creator', 'game-maker']) {
+      assert(text.includes('.agents/skills/' + name + '/SKILL.md'));
+    }
+  }
+});
+
+test('both language editions match the upstream version manifest', () => {
+  const manifest = JSON.parse(read('versions.json'));
+  for (const language of ['', 'zh-CN/']) {
+    for (const name of Object.keys(manifest.skills)) {
+      const dir = language + 'skills/' + name + '/';
+      const local = JSON.parse(read(dir + 'version.json'));
+      assert.equal(local.name, name);
+      assert.equal(local.version, manifest.skills[name].version);
+      assert(read(dir + 'SKILL.md').includes('version: "' + local.version + '"'));
+    }
   }
 });

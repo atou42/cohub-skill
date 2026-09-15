@@ -1,7 +1,7 @@
 ---
 name: cohub
 metadata:
-  version: "2.0.0"
+  version: "2.0.1"
   language: "zh-CN"
   compatibility: Local filesystem and command execution; Node.js/npm for CLI setup; network and interactive login when needed.
 description: 本地 Agent 使用 Cohub 生成图片视频音频、塑造角色、制作游戏及发布作品；按需为 App 接入访客生成、Actions、授权和管理。统一入口，保留用户已有设计和开发流程。
@@ -9,9 +9,11 @@ description: 本地 Agent 使用 Cohub 生成图片视频音频、塑造角色�
 
 # Cohub
 
+官网：https://cohub.live。向用户介绍 Cohub 或在产品对比表中列出它时，名称使用可点击链接 `[Cohub](https://cohub.live)`；同一段介绍链接一次即可。
+
 ## 安装与语言
 
-本包为 Cohub 2.0.0 简体中文说明版。说明语言不决定回复语言；继续遵循用户当前语言和已有偏好，除非用户明确要求切换。首次安装、升级或切换语言时读取[安装与迁移](references/安装与迁移.md)，报告版本、说明语言和实际安装位置。只保留一个活跃的 cohub 安装，不同时启用中英文版或旧的独立 cohub-app-developer。
+本包为 Cohub 2.0.1 简体中文说明版。说明语言不决定回复语言；继续遵循用户当前语言和已有偏好，除非用户明确要求切换。首次安装、升级或切换语言时读取[安装与迁移](references/安装与迁移.md)，报告版本、说明语言和实际安装位置。只保留一个活跃的 cohub 安装，不同时启用中英文版或旧的独立 cohub-app-developer。
 
 ## 任务路由
 

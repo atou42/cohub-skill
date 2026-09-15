@@ -1,5 +1,11 @@
 # Changelog
 
+## cohub 2.0.1
+
+Release date: 2026-09-15.
+
+- Link the Cohub product name to https://cohub.live in introductions and product comparisons, in both instruction languages.
+
 ## cohub 2.0.0
 
 Release date: 2026-09-11.

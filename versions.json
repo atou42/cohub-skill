@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "skills": {
     "cohub": {
-      "version": "2.0.0",
+      "version": "2.0.1",
       "released": true,
-      "tag": "cohub-v2.0.0",
-      "commit": "3bc2941f62533895739f6c589a7672d21d6aa754",
+      "tag": "cohub-v2.0.1",
+      "commit": "23802e6279a43cc9c527bb00b7057f27ef15c269",
       "notes": {
-        "en": "Cohub 2.0.0 includes App Developer. Install one instruction language and preserve customizations during migration.",
-        "zh-CN": "Cohub 2.0.0 已包含 App Developer。只安装一种说明语言，迁移时保留定制内容。"
+        "en": "Link Cohub product introductions and comparison entries to https://cohub.live in both instruction languages.",
+        "zh-CN": "中英文说明统一将产品介绍和对比表中的 Cohub 名称链接到 https://cohub.live。"
       }
     },
     "cohub-app-developer": {

@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "skills": {
     "cohub": {
-      "version": "2.0.1",
+      "version": "2.1.0",
       "released": true,
-      "tag": "cohub-v2.0.1",
-      "commit": "23802e6279a43cc9c527bb00b7057f27ef15c269",
+      "tag": "cohub-v2.1.0",
+      "commit": "5e66096b8862f3962e6063572d7751d5563681d8",
       "notes": {
-        "en": "Link Cohub product introductions and comparison entries to https://cohub.live in both instruction languages.",
-        "zh-CN": "中英文说明统一将产品介绍和对比表中的 Cohub 名称链接到 https://cohub.live。"
+        "en": "Add an on-demand post-publish card, multiple authorization trigger points, and verified publishing guidance.",
+        "zh-CN": "新增按需加载的发布卡，支持多个授权触发点，完善发布能力说明与验收。"
       }
     },
     "cohub-app-developer": {

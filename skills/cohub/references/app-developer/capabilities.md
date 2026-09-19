@@ -14,6 +14,21 @@ Explain what Cohub adds without redefining the user's App. This map is not a fea
 | Realtime rooms | Shared realtime interactions when needed | Realtime rooms in runtime guide; verify persistence boundaries |
 | Entitlements and management | Access control, commerce, versions, and analytics | [Operations and management](management.md) |
 
+## Choose Benefits for Existing Work
+
+Read and use this section only when the user asks about extensions or the current goal needs them. This is not a feature checklist or a reason to redesign pages, gameplay, or branding.
+
+| Current goal | Relevant Cohub use | Conditions to explain |
+|---|---|---|
+| Share finished work | Publish directly and update the stable entry; native display for supported documents/media | Preserve the artifact and verify its actual format without imposing a website wrapper |
+| Give visitors personalized content | Integrate the needed generation or conversation capability | Who pays, where results go, and when login and authorization occur |
+| Get a complete result from one submission | Combine processing steps in an Action | Author execution costs and data ownership; do not promise that all implementation is hidden |
+| Continue after a trial and retain results | Save progress and restore or migrate it at the selected destination | Requires implementation and verification; a browser copy is not cross-device storage |
+| Earn revenue from the work | Usage-based charging or custom products | Explain purchased benefits, price, and execution cost separately; use currently supported features |
+| Understand distribution and improve the work | Visit statistics, promotion links when needed, and version updates | Establish the question first; visits do not establish completion, retention, or revenue; do not guess missing data |
+
+Read [Operations and management](management.md) only when monetization or operations is selected. Explain the benefit to this work without requiring users to learn platform concepts first.
+
 ## Explain Options
 
 For an existing image editor: "This version can be published as it is. Cohub can also let visitors generate or edit images while using it, rather than only processing prepared assets. We can keep the current behavior or integrate that capability."

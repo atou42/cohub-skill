@@ -1,5 +1,7 @@
 # Publish Local Artifacts
 
+Use [Publication experience](publication-experience.md) to check first use and the core workflow for the work’s purpose; preserve the existing design.
+
 ## Identify the Artifact and Target
 
 - Use `--file` for a single HTML file and `--dir` for a site directory containing `index.html`. When a build is needed, inspect the project configuration and use its existing build command; do not assume the output is named `dist`.
@@ -29,4 +31,4 @@ For updates, rebuild and run `apps publish` with the same Space and slug and the
 
 On failure, inspect the original task or App state before creating anything again. If identity configuration lacks a username or Space slug, explain the required public identity and ask the user to provide or confirm it; do not silently change their profile.
 
-Return the actual clickable link and, when useful, a brief description of the published artifact. Logs or URL prefixes are not delivery links.
+Only when a real publication result exists and final delivery is ready, read [Publication card](publication-card.md) and fill in its ten attributes. Do not load it before publication or while diagnosing failures. Logs or URL prefixes are not delivery links.

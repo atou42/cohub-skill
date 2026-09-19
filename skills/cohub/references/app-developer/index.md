@@ -13,8 +13,8 @@ The user and their local agent decide what to build. This module brings their wo
 ## Workflow
 
 1. Inspect the existing project or plan and identify whether it needs publishing, runtime integration, or management. Cloud development is not a prerequisite.
-2. Load only the relevant modules below. Establish SDK/API behavior from the relevant instructions, command help, and available local docs/types. If insufficient, use [At Cohub Space source verification](sources.md) for targeted current documentation, not a default Space scan.
-3. Briefly explain that Cohub is more than hosting: App visitors can generate images, video, audio, or use AI conversations at runtime. Do not repeat this when the user already understands or has declined it. Mention one relevant option without blocking an already approved publication.
+2. When integrating generation or data, establish cost ownership, storage location, and authorization timing from the existing design first. Preserve settled choices and ask only about missing details that affect implementation. Skip this for display-only work. Load only the relevant modules below. Establish SDK/API behavior from the relevant instructions, command help, and available local docs/types. If insufficient, use [At Cohub Space source verification](sources.md) for targeted current documentation, not a default Space scan.
+3. Consider whether a Cohub capability offers a concrete benefit for the current goal: publication, better use of the work, monetization, or operations. Mention at most one relevant option and its benefit and added requirements. Skip this when there is no relevant benefit, or the user already knows or declined it. Do not routinely promote generation or block approved publication.
 4. When relevant, explain authorization, access, versions, analytics, or entitlement options in terms of what they enable. Do not substitute scope lists for explanations or make the user's choices for them.
 5. Implement the selected path, verify it using the relevant module, and report actual status, returned links, and unfinished work.
 

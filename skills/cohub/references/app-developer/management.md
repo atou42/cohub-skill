@@ -19,7 +19,9 @@ Direct `generation.create` and account-level scopes cannot be inserted into publ
 
 `user.space.list` lists Spaces; it does not grant access to their contents. Public Apps, public Space files, and runtime authorization are separate settings.
 
-Explain authorization purpose, trigger it from an appropriate user action, and handle denial, revocation, and insufficient permissions. Never silently widen scope or loop consent dialogs. Missing result-read permissions must not be hidden as a task that is still running.
+Explain authorization purpose and trigger it from an appropriate user action. Request necessary related permissions together for a complete workflow and reuse valid grants. Do not prompt for each underlying call or request unrelated permissions in advance. Supplement authorization when purpose, target, or permissions change. Handle denial, revocation, and insufficient permissions. Never silently widen scope or loop consent dialogs. Missing result-read permissions must not be hidden as a task that is still running.
+
+An App may have different authorizations and multiple trigger points. Reduce unnecessary separate requests, but do not force independent features together. In the delivery card’s “Authorization trigger points,” list permissions, targets, and purposes for each actual operation. Login is an identity prerequisite, not an authorization record; do not imply that every operation prompts again when valid authorization exists.
 
 ## Cost and Commerce
 
@@ -28,6 +30,14 @@ Verify the execution actor, platform cost owner, visitor entitlements, and resul
 App commerce Space credits differ from platform Cohub Balance. Read `docs/app-commerce-guide.md` when implementing monetization, including entitlement lookup, purchase, return confirmation, and consumption where required. Do not promise undocumented automatic payouts, subscriptions, or refunds.
 
 Never initiate a purchase during initialization. For potentially repeated tasks, consumption, or resource creation, inspect existing operation state before retrying. Actual charges, product configuration, and permission expansion require corresponding authorization.
+
+## Monetization and Operations by Goal
+
+Preserve existing charging and usage design; do not require product design when the user has no monetization goal. When needed, distinguish purchased benefits, consumption units, platform cost, and author revenue, preserving settled choices. Author-paid execution does not imply free use for visitors. Before promising charging behavior, verify post-purchase entitlement, consumption, and failed-operation retries; identify untested parts.
+
+For operations, establish the question first: whether the work was visited, how many visits came from a promotion entry, or whether an update improved the main issue. Use only available data. Explain when completion, retention, or conversion requires additional recording; do not add tracking or change flows by default. Check current help for actual fields and promotion capabilities.
+
+Distinguish browser copies from cloud results. If the work promises continuation after a trial or on another device, verify actual restoration. Preserve original progress on migration failure; do not call a temporary cache a durable save.
 
 ## Management Entry Points
 

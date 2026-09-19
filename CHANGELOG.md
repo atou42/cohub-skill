@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.1.0
+
+- Add an on-demand, ten-field post-publish card that describes the delivered App without adding an approval step or changing its design.
+- Report multiple authorization trigger points, separating sign-in, requested permissions, target resources and purpose.
+- Keep the top data display bar and Remix banner separate, with verified limits and an Agent-assisted adaptation workflow.
+- Strengthen publication checks for visitor behavior, mobile layouts, storage, generation costs and commerce; retain progressive reference loading.
+- Validation: package checks and a real static App publishing trial. This is not evidence of a controlled Skill-versus-no-Skill improvement or a complete visitor authorization/commerce test.
+
 ## cohub 2.0.1
 
 Release date: 2026-09-15.

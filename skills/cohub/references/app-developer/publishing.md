@@ -17,7 +17,7 @@ A port means a supported public Cohub Sandbox port, not local localhost; do not 
 
 ## Publish Local Work
 
-1. Use the project's build/tests and inspect the output. Exclude `.env`, credentials, development files, and private data. Do not publish the repository root as dist.
+1. When rebuilding is needed, use the project's existing build process and checks relevant to the change; otherwise inspect the existing build output directly. Exclude `.env`, credentials, development files, and private data. Do not publish the repository root as dist.
 2. Check `cohub apps publish --help`. Establish the account, target Space, slug, visibility, and whether this updates an existing App. Do not overwrite an unrelated same-name App. If no destination is specified, establish the CLI's actual default; never use the reference Space as the default.
 3. Execute only within approved publication scope. Replace verified targets in these templates; use `public` only when the user chose public access:
 
@@ -34,9 +34,11 @@ The SDK's `targetRef` is not the same local-path interface as CLI `--source loca
 
 ## Verify
 
-- Open the returned App link and check key interactions, relative assets, mobile layout, and routing. HTTP 200 on an error shell is insufficient.
+Select applicable user journeys from [Publication experience](../publication-experience.md), then apply these Cohub integration checks.
+
+- Open the returned App link and check key interactions, relative assets, layouts for the promised devices, and existing routes. HTTP 200 on an error shell is insufficient.
 - Verify SDK integrations in a real App runtime. Localhost/file previews cannot establish that authorization, generation, or commerce works. Without publication authorization, report this part as unverified.
 - If visitor behavior matters, test the agreed anonymous or other signed-in-user path. Do not pass off an owner session as a visitor or use an unauthorized account.
-- Return the link, publication scope, and reusable update command. On failure, preserve errors and remote state rather than deleting the App or creating another Space to retry.
+- Only when a real publication result exists and final delivery is ready, read [Publication card](../publication-card.md) and return the link and ten attributes. Do not load it during integration, before publication, or while diagnosing failures. Append a reusable update command when useful. On failure, preserve errors and remote state rather than deleting the App or creating another Space to retry.
 
 Before updating an App, read its current identity, target, and visibility. Preserve visibility unless the user explicitly requests a change; the public example is not permission to widen access.

@@ -31,7 +31,7 @@ Keep all ten rows in order, not five compressed rows. Use consistent terms with 
 
 > **App name · Actual publication status**
 > Open App: actual returned link
-> **App custom domain:** `actual-app-link-name` (the last part of the URL; customizable—tell me what you would like instead. Changing it changes the share address.)
+> **App custom domain:** `actual-app-link-name`
 >
 > | Current attribute | This publication |
 > |---|---|
@@ -50,7 +50,7 @@ Keep all ten rows in order, not five compressed rows. Use consistent terms with 
 > Tell me anytime if you want to change an attribute.
 > [Explore the full capabilities of Cohub Apps](https://cohub.live/zh/docs/developers/apps)
 
-Use the actual App slug and check it against the returned URL; label it “App custom domain” for the user, always clarifying “the last part of the URL”; this does not mean support for connecting an independent domain. Place this line beside the App link, without adding an eleventh attribute. It refers only to the final App portion of the URL, not the account, Space or domain. Keep the App title separate from its link name; do not change an existing address unasked or promise automatic redirects from old links.
+Use the actual App slug and check it against the returned URL; label it “App custom domain” for the user. Show only the label and actual value on the card, without explanatory annotations. Do not describe this as support for connecting an independent domain. Place this line beside the App link, without adding an eleventh attribute. It refers only to the final App portion of the URL, not the account, Space or domain. Keep the App title separate from its link name; do not change an existing address unasked or promise automatic redirects from old links.
 
 No after-the-fact approval or confirmation button. Implement and reverify requested changes within actual capabilities; the invitation to request changes does not promise every product property can be edited in place. Optional capability suggestions are limited to one sentence and must not claim unintegrated capabilities. Before formal adoption, assess the card's accuracy and readability in real publishing scenarios.
 

@@ -19,6 +19,7 @@ A port means a supported public Cohub Sandbox port, not local localhost; do not 
 
 1. When rebuilding is needed, use the project's existing build process and checks relevant to the change; otherwise inspect the existing build output directly. Exclude `.env`, credentials, development files, and private data. Do not publish the repository root as dist.
 2. Check `cohub apps publish --help`. Establish the account, target Space, slug, visibility, and whether this updates an existing App. Do not overwrite an unrelated same-name App. If no destination is specified, establish the CLI's actual default; never use the reference Space as the default.
+   Tell the user the final link name (slug) is customizable and show the chosen name. If unspecified, choose a readable name and proceed. Do not rename an existing link unprompted; explain address changes and do not promise automatic redirects.
 3. Execute only within approved publication scope. Replace verified targets in these templates; use `public` only when the user chose public access:
 
 ```sh

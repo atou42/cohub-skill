@@ -27,6 +27,15 @@ For public sharing, retain or supply a recognizable title, short purpose descrip
 
 Cover only relevant states: first-use empty, running, success, failure; test denial and expiration when login/authorization exists, and cost explanations and insufficient balance when paid features exist. Errors should preserve input and acquired results and give an actionable next step, not pretend failure means no data or endless waiting.
 
+## Share-preview cards
+
+These are the cards shown when a link is shared in chat or social platforms, distinct from the ten-field post-publication card delivered to the author.
+
+- Check against the intended audience, purpose and existing copy: an accurate, understandable title; a description of what visitors can see or do; a relevant cover with legible content after cropping; and the correct App link. Do not force a newly generated cover. Do not expose restricted content in public preview information.
+- Before publishing, inspect the page title, description, share image and icon. After publishing, inspect the preview information returned by the real share URL and whether its images are accessible. Catch default titles, outdated copy, unrelated covers, local image paths and sign-in-protected images. Preserve unrelated App settings when editing metadata.
+- For a user-specified platform, inspect an available preview or draft without sending messages just to test it. If no platform is specified, check public preview information and images. Report “preview information checked; third-party platform rendering unverified” when that is the actual evidence; do not claim an observed platform preview.
+- When the preview is wrong, distinguish published content, platform retrieval and caching problems, fix the evidenced cause and recheck. Do not rename the slug or create another App to mask the issue, or promise immediate refresh on every platform. Correct obvious defects within the publishing request; propose new marketing positioning or visual design rather than changing the user’s expression unasked.
+
 ## Cohub Identity, Generation, and Cost
 
 Static reading needs no account or generation integration merely for testing. Only when runtime capabilities are selected, read the relevant [App Developer](app-developer/index.md) module and verify current documentation and version.

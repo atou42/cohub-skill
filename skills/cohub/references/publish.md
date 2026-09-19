@@ -8,6 +8,7 @@ Use [Publication experience](publication-experience.md) to check first use and t
 - Publish build output, not the entire source tree, `.git`, dependencies, or development configuration. Ensure referenced images, fonts, scripts, and styles are included, with no local absolute paths or local-only URLs.
 - Check for secrets, internal links, and unsanitized content. Identify affected files before proceeding; do not silently sanitize user source files.
 - Reuse the user-specified or existing slug. For a new app, choose a short, readable project name rather than a random UUID. Check the target Space with `cohub apps ls --json` for an App with the same slug. If ownership of the update target is unclear, confirm rather than overwrite.
+- Tell the user that the final name in the link (slug) is customizable, and show the chosen name. Reuse an explicit choice; otherwise choose a readable name and proceed without a mandatory question. Do not rename existing Apps unprompted. When a rename is requested, explain that the share address changes, check conflicts and the new URL, and do not promise redirects from the old URL.
 - An explicit request for public publication authorizes publishing; previewing, testing, or generating alone does not. Use `--visibility space` for Space-only access and `--visibility public` when creating a public App. Before updating, read `cohub apps get <appId> --json` and preserve existing visibility unless the user requests a change.
 
 ## Publish and Update
@@ -28,6 +29,8 @@ For updates, rebuild and run `apps publish` with the same Space and slug and the
 1. Check the exit status and JSON. Record the actual App ID and returned URL rather than deriving a link from the slug. If only a task ID is returned, inspect the task using current help; do not claim publication is complete.
 2. Open the returned URL. Check for error pages, unexpected login walls, blank content, and failed images, scripts, or styles. Verify within the requested visibility scope; do not make the app public just to inspect it.
 3. For updates, confirm the App identity and link are unchanged and the content is updated. Report unverified results when CDN delays or unavailable browser access prevent confirmation. Command success does not replace visual verification.
+
+4. Check the share-preview title, description, cover and link against the user’s needs using [publication experience](publication-experience.md). A working page does not prove a correct share preview. Briefly report what was checked and which platforms remain unverified.
 
 On failure, inspect the original task or App state before creating anything again. If identity configuration lacks a username or Space slug, explain the required public identity and ask the user to provide or confirm it; do not silently change their profile.
 

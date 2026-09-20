@@ -39,6 +39,7 @@ If `references/init.md` is present, read [Init](references/init.md) before the f
 Read only files needed for the current step, not every linked reference recursively. Load the publication card only when delivering a real publication result; do not preload its definitions, options, or template. Reuse unchanged instructions already in context.
 
 - For Style, Game Maker, Fandom, OKP search, or Character Traits, use the capability table below and read the source directly.
+- Upload 100 or more files into a Space workspace, or handle observably slow small-file uploads: read [Bulk upload](references/bulk-upload.md); prefer an archive upload followed by extraction when appropriate.
 - Publish local HTML, a website, or an app, or update a published version: read [Publish](references/publish.md).
 - Generate or edit images, video, speech, or music: read [Generate](references/generate.md).
 - Generate assets and then publish a page: read Generate first, then Publish. Generation alone does not authorize public publication.

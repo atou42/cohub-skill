@@ -36,7 +36,7 @@ If `references/init.md` is present, read [Init](references/init.md) before the f
 
 ## Read by Task
 
-Read only files needed for the current step, not every linked reference recursively. Load the publication card only when delivering a real publication result; do not preload its definitions, options, or template. Reuse unchanged instructions already in context.
+Read only files needed for the current step, not every linked reference recursively. Every successful publication handoff, including updates to an existing version, must include the publication card. Load its instructions only at delivery; do not preload its definitions, options, or template. Reuse unchanged instructions already in context.
 
 - For Style, Game Maker, Fandom, OKP search, or Character Traits, use the capability table below and read the source directly.
 - Upload 100 or more files into a Space workspace, or handle observably slow small-file uploads: read [Bulk upload](references/bulk-upload.md); prefer an archive upload followed by extraction when appropriate.

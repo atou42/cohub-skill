@@ -54,3 +54,5 @@ Read `cohub apps --help` and the relevant subcommand help first. Use only what t
 
 Test promised identity paths rather than requiring every App to support anonymous use. Verify public browsing, signed-in use, or denied consent according to integration scope.
 Record the tested identity type. Without another account or paid-test authorization, report those paths as untested; owner success is not evidence of visitor or charging success.
+
+After successfully publishing a new version, read [Publication card](../publication-card.md) at delivery and output the complete card. This includes updates to existing Apps; “updated” plus a link is insufficient. Read-only statistics or version queries do not trigger a card. Report errors and recovery state when publication fails.

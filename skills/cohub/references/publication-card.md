@@ -1,8 +1,8 @@
 # Publication Delivery: Ten-Attribute Card
 
-Load only when a real publication result exists and final delivery is ready, or when the user explicitly asks to view/change the card. Do not load before publishing, during asset generation, ordinary development, or failure investigation. Report publication failures and recovery state directly. Reuse this file if already in context.
+Load only when a real publication result exists and final delivery is ready, or when the user explicitly asks to view/change the card. Do not load before publishing, during asset generation, ordinary development, or failure investigation. Report publication failures and recovery state directly. Reuse this file if already in context; this does not permit omitting the card from the current delivery.
 
-Deliver one card in the author's conversation after publication, with exactly the ten dimensions below. Do not add, remove, or merge dimensions. Include the actual App link and publication status in the heading. Use professional, plain language: a fixed option plus one necessary explanation of actual settings and behavior. This is not a confirmation questionnaire; do not wait for a reply or insert it into the public App by default.
+Every successful publication handoff—including first publication, updates to an existing App, and republication after fixes—must include one complete card in the author's conversation. Unchanged attributes must still appear; do not replace them with ‘same as before’. Check values against the current version; a previous card is not evidence that the new version was verified. When a single task publishes several corrective versions, output one card at the final handoff. Use exactly the ten dimensions below. Do not add, remove, or merge dimensions. Include the actual App link and publication status in the heading. Use professional, plain language: a fixed option plus one necessary explanation of actual settings and behavior. This is not a confirmation questionnaire; do not wait for a reply or insert it into the public App by default.
 
 ## Ten Dimensions and Options
 

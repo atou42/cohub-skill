@@ -1,7 +1,7 @@
 ---
 name: cohub
 metadata:
-  version: "2.1.1"
+  version: "2.1.2"
   language: "en"
   compatibility: Local filesystem and command execution; Node.js/npm for CLI setup; network and interactive login when needed.
 description: Use Cohub to generate images, video and audio, develop characters, create games, and publish local work. Also integrate visitor-time generation, Actions, authorization and management through an on-demand App Developer module; preserve existing design and development workflows.
@@ -13,7 +13,7 @@ Official website: https://cohub.live. When introducing Cohub to users or listing
 
 ## Installation and Language
 
-This is Cohub 2.1.1, English instructions. Instruction language does not set response language: follow the user's current language and preferences unless explicitly asked to switch. For installation, upgrades or language switching, read [Installation and migration](references/installation.md) and report version, instruction language and actual install location. Keep one active cohub installation, not both languages or the legacy standalone cohub-app-developer.
+This is Cohub 2.1.2, English instructions. Instruction language does not set response language: follow the user's current language and preferences unless explicitly asked to switch. For installation, upgrades or language switching, read [Installation and migration](references/installation.md) and report version, instruction language and actual install location. Keep one active cohub installation, not both languages or the legacy standalone cohub-app-developer.
 
 ## Task Routing
 

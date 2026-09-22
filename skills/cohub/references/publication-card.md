@@ -27,28 +27,34 @@ When identity/authorization, generation billing, Actions, or storage evidence is
 
 ## Card Format
 
+Display the complete card using a Markdown heading and table, with blank lines between sections.
+
 Keep all ten rows in order, not five compressed rows. Use consistent terms with short limitations, avoiding jargon. This is an unfilled template, not an actual delivery:
 
-> **App name · Actual publication status**
-> Open App: actual returned link
-> **App custom domain:** `actual-app-link-name`
->
-> | Current attribute | This publication |
-> |---|---|
-> | Access | Fill from evidence |
-> | Account purpose | Fill from evidence |
-> | Authorization trigger points | No authorization needed, or each “Operation → permissions and purpose”; valid existing authorization usually avoids repeat requests |
-> | Generation | Fill from evidence |
-> | Storage | Fill from evidence |
-> | Cost ownership | Fill from evidence |
-> | Monetization | Fill from evidence |
-> | Device support | Desktop, Mobile, or Desktop + mobile; explain unknowns |
-> | Data display bar | Visible / Hidden / Unverified; briefly name information actually shown at the top |
-> | Remix banner | Actual status and whether visitors can continue creating here; name missing evidence when unverified |
->
-> **Verification:** One sentence on tried features/devices and unresolved issues affecting use.
-> Tell me anytime if you want to change an attribute.
-> [Explore the full capabilities of Cohub Apps](https://cohub.live/zh/docs/developers/apps)
+### App name · Actual publication status
+
+Open App: actual returned link
+
+**App custom domain:** `actual-app-link-name`
+
+| Current attribute | This publication |
+|---|---|
+| Access | Fill from evidence |
+| Account purpose | Fill from evidence |
+| Authorization trigger points | No authorization needed, or each “Operation → permissions and purpose”; valid existing authorization usually avoids repeat requests |
+| Generation | Fill from evidence |
+| Storage | Fill from evidence |
+| Cost ownership | Fill from evidence |
+| Monetization | Fill from evidence |
+| Device support | Desktop, Mobile, or Desktop + mobile; explain unknowns |
+| Data display bar | Visible / Hidden / Unverified; briefly name information actually shown at the top |
+| Remix banner | Actual status and whether visitors can continue creating here; name missing evidence when unverified |
+
+**Verification:** One sentence on tried features/devices and unresolved issues affecting use.
+
+Tell me anytime if you want to change an attribute.
+
+[Explore the full capabilities of Cohub Apps](https://cohub.live/zh/docs/developers/apps)
 
 Use the actual App slug and check it against the returned URL; label it “App custom domain” for the user. Show only the label and actual value on the card, without explanatory annotations. Do not describe this as support for connecting an independent domain. Place this line beside the App link, without adding an eleventh attribute. It refers only to the final App portion of the URL, not the account, Space or domain. Keep the App title separate from its link name; do not change an existing address unasked or promise automatic redirects from old links.
 

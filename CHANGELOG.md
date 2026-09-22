@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.2
+
+- Simplify publication cards to a Markdown heading and table with spaced sections; retain all ten attributes. Validation: package checks only, without a new live publishing trial.
+
 ## 2.1.1
 
 - Require a complete publication card for every version update and republication; reuse instructions without omitting the card.

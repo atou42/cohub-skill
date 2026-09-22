@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "skills": {
     "cohub": {
-      "version": "2.1.1",
+      "version": "2.1.2",
       "released": true,
-      "tag": "cohub-v2.1.1",
-      "commit": "ad198396ba387bb52b96fcd29e6242185deb21cf",
+      "tag": "cohub-v2.1.2",
+      "commit": "170be2f819893e1d5c7e84fa1a85998c98160688",
       "notes": {
-        "en": "Require cards on every version update; improve custom App names, share preview checks and bulk uploads.",
-        "zh-CN": "每次版本更新都交付发布卡；完善 App 自定义名称、分享预览检查与批量上传。"
+        "en": "Simplify publication cards to a Markdown heading and table, preserving all ten attributes.",
+        "zh-CN": "发布卡用 Markdown 标题和表格直接展示，精简说明并保留全部十项属性。"
       }
     },
     "cohub-app-developer": {

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1.1
+
+- Require a complete publication card for every version update and republication; reuse instructions without omitting the card.
+- Clarify App custom names and verify share previews.
+- Add ZIP upload guidance for 100 or more files.
+- Validation: 12 package checks; no new multi-turn Agent behavior trial.
+
 ## 2.1.0
 
 - Add an on-demand, ten-field post-publish card that describes the delivered App without adding an approval step or changing its design.

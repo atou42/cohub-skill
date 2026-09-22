@@ -14,13 +14,13 @@ Choose one instruction language: [English](skills/cohub/SKILL.md) or [简体中�
 
 ## Install
 
-Latest stable release: [Cohub 2.1.0](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.1.0). [versions.json](versions.json) points to the verified release tag and commit. Install from that tag, not a potentially newer main checkout.
+Latest stable release: [Cohub 2.1.1](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.1.1). [versions.json](versions.json) points to the verified release tag and commit. Install from that tag, not a potentially newer main checkout.
 
 Ask your agent:
 
 > Install the latest stable English cohub from https://github.com/atou42/cohub-skill. First inspect the skill directories you actually load for existing cohub or cohub-app-developer installations and preserve customizations. Do not install both languages. Report the installed version, instruction language and location without changing our conversation language. Guide CLI installation and login only if needed.
 
-For this stable release, select cohub-v2.1.0's skills/cohub directory; use main only for explicitly requested development testing. Keep references, scripts and version.json. See [installation and migration](skills/cohub/references/installation.md) for existing installations, language changes and legacy App Developer migration. Old installations are not deleted without authorization.
+For this stable release, select cohub-v2.1.1's skills/cohub directory; use main only for explicitly requested development testing. Keep references, scripts and version.json. See [installation and migration](skills/cohub/references/installation.md) for existing installations, language changes and legacy App Developer migration. Old installations are not deleted without authorization.
 
 ## Use
 

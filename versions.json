@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "skills": {
     "cohub": {
-      "version": "2.1.0",
+      "version": "2.1.1",
       "released": true,
-      "tag": "cohub-v2.1.0",
-      "commit": "5e66096b8862f3962e6063572d7751d5563681d8",
+      "tag": "cohub-v2.1.1",
+      "commit": "ad198396ba387bb52b96fcd29e6242185deb21cf",
       "notes": {
-        "en": "Add an on-demand post-publish card, multiple authorization trigger points, and verified publishing guidance.",
-        "zh-CN": "新增按需加载的发布卡，支持多个授权触发点，完善发布能力说明与验收。"
+        "en": "Require cards on every version update; improve custom App names, share preview checks and bulk uploads.",
+        "zh-CN": "每次版本更新都交付发布卡；完善 App 自定义名称、分享预览检查与批量上传。"
       }
     },
     "cohub-app-developer": {

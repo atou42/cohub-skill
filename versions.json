@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "skills": {
     "cohub": {
-      "version": "2.2.0",
+      "version": "2.2.1",
       "released": true,
-      "tag": "cohub-v2.2.0",
-      "commit": "e09ba39a156e083180d687b1518c5dbf92bfa0b2",
+      "tag": "cohub-v2.2.1",
+      "commit": "0902e619628af513d165a386548003e750ce2b9f",
       "notes": {
-        "en": "Add capability-first onboarding, project Space and optional Runtime guidance, and Cohub Explore references; retain the 2.1.2 publication cards.",
-        "zh-CN": "增加能力优先的上手介绍、Space 项目与可选 Runtime 指引及 Cohub Explore 参考；保留 2.1.2 发布卡改进。"
+        "en": "Fix symlink update checks; clarify private inputs, billing recovery and structured authorization; refresh App documentation links.",
+        "zh-CN": "修复软链接更新检查，补齐私有输入、计费恢复与结构化授权指引，更新 App 文档入口。"
       }
     },
     "cohub-app-developer": {

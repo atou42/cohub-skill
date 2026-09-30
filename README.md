@@ -14,7 +14,7 @@ Choose one instruction language: [English](skills/cohub/SKILL.md) or [简体中�
 
 ## Install
 
-For the latest stable release, follow [versions.json on main](https://raw.githubusercontent.com/atou42/cohub-skill/main/versions.json), which points to the verified release tag and commit. Install from that tag, not a potentially newer main checkout.
+Latest stable release: [Cohub 2.2.1](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.2.1). [versions.json](versions.json) points to the verified release tag and commit. Install from that tag, not a potentially newer main checkout.
 
 Ask your agent:
 

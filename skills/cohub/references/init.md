@@ -1,6 +1,6 @@
 # Initialize Cohub
 
-First follow installation and migration guidance to establish one installation and its instruction language. Capability questions do not trigger setup. On completion report skill version, instruction language and location, preserving conversation language; suggest one or two relevant next actions without executing them automatically.
+First follow installation and migration guidance to establish one installation and its instruction language. Capability questions do not trigger setup. On completion report skill version, instruction language and location, preserving conversation language. With no explicit task to resume, follow "Introduce Capabilities" in the entrypoint: explain what users can access and combine, then offer relevant works as references rather than asking the user to request a capability list. Otherwise continue the explicit task.
 
 Guide the user's agent through setup, then remove this one-time guide only from an eligible local installation. The distributed repository must retain it.
 
@@ -26,7 +26,7 @@ cohub auth whoami --json
 - Reuse a valid session. Report the account identity without exposing credentials. If it is not the user's intended account, resolve that before proceeding; do not silently log out or switch accounts.
 - Only when the response indicates an unauthenticated session, inspect `cohub auth login -h` and run `cohub auth login`. Follow the CLI's actual login instructions, let the user complete browser or interactive steps, and wait when their action is required. Do not invent a login URL or ask them to paste tokens into chat.
 - Run `cohub auth whoami --json` again afterward. Login-command completion alone does not prove authentication succeeded. Distinguish network, service, and permission errors from missing authentication.
-- Keep credentials under the CLI's management, never in skill files or the repository. Preserve the existing Space context. Setup does not require creating a Space, changing a profile, generating paid media, or publishing an App.
+- Keep credentials under the CLI's management, never in skill files or the repository. Preserve the existing Space context. Setup does not create Spaces, change profiles, generate paid media, publish Apps or run `runtime up/attach/import`. Introducing Spaces and optional connection does not require listing remote Spaces, reading local history or making the user choose a Space immediately.
 
 Setup is complete only when the CLI version check succeeds, the version supports the requested workflow, and the identity check confirms the intended authenticated account. Failure, cancellation, or uncertainty leaves the init content intact for a later attempt.
 
@@ -41,4 +41,4 @@ For an eligible local copy:
 3. Delete only this local `references/init.md`, not the references directory. If another installed skill file links to it, retain it and report that cleanup is incomplete rather than breaking the link or editing unrelated files. Do not run recursive deletion or commit or push cleanup changes.
 4. Verify that `SKILL.md` no longer references the removed guide, and that the generate and publish references still exist and resolve. If deletion fails, report the retained file; do not claim cleanup succeeded.
 
-Report the CLI version, authenticated account, and whether local init content was removed or retained. Continue the user's originally requested workflow when authorized. Do not run generation or publication just to demonstrate setup.
+Report the CLI version, authenticated account, and whether local init content was removed or retained. Distinguish "CLI and login ready" from "local connection established": setup alone does not mean files or conversations sync to the web. Continue the user's originally requested workflow when authorized. Do not generate, publish or enable sync merely to demonstrate setup.

@@ -1,32 +1,52 @@
 ---
 name: cohub
 metadata:
-  version: "2.1.2"
+  version: "2.2.0"
   language: "en"
   compatibility: Local filesystem and command execution; Node.js/npm for CLI setup; network and interactive login when needed.
-description: Use Cohub to generate images, video and audio, develop characters, create games, and publish local work. Also integrate visitor-time generation, Actions, authorization and management through an on-demand App Developer module; preserve existing design and development workflows.
+description: Use Cohub for games, websites and apps, media generation, characters and publishing. Explain project Space targeting and optionally connect a local Runtime or visitor-time App capabilities; preserve existing design and development workflows.
 ---
 
 # Cohub
 
 Official website: https://cohub.live. When introducing Cohub to users or listing it in a product comparison, link its name as `[Cohub](https://cohub.live)`; one link per introduction is enough.
 
+## Introduce Capabilities
+
+When asked about capabilities, or after first-time setup succeeds with no explicit task to resume, introduce what users can access and combine, then use relevant works to show those capabilities in use. Games and websites are examples, not the limits of the platform. Do not make users ask again for an overview or describe Cohub only as an asset generator or publishing tool. Continue an explicit task without repeating the tour or requiring menu selections.
+
+| Capability | What users can gain |
+| --- | --- |
+| Multimodal generation and editing | Images, video, speech and music, both as author-time assets and capabilities visitors can use inside an app. |
+| Creative knowledge and workflows | Style selection, character traits, Fandom, structured knowledge and game-making workflows, combined as needed. |
+| In-app AI and interaction | AI conversation and Agents, Actions, realtime rooms, and authorized file and conversation access, not just pre-generated displays. |
+| Publishing and runtime | Publish and update works, control access, and optionally add entitlements and analytics. |
+| Project organization and continuity | Organize work with Spaces; optionally connect local directories and supported conversations, never a prerequisite for ordinary CLI calls. |
+
+The current agent still develops games, websites and small apps using the existing design and stack; Cohub supplies the selected workflows, media and app capabilities. Introducing capabilities neither proves dependencies ready nor authorizes generation, publication, Space creation or sync. Verify models, prices, permissions and harness compatibility before actual use; load detailed App Developer integration guidance only after the user selects an in-app capability.
+
+Use only public works actually read and verified as examples. If the catalog is unavailable or no relevant work is found, still explain capabilities; do not invent works, authors or Explore URLs, or present a proposed example as an existing work.
+
+For the initial tour and when examples are requested, follow [Work references](references/examples.md) to read the Cohub-only Explore catalog, select relevant works and return the actual collection link. The page and reader use the same catalog; do not preload every work or substitute another platform's collection.
+
 ## Installation and Language
 
-This is Cohub 2.1.2, English instructions. Instruction language does not set response language: follow the user's current language and preferences unless explicitly asked to switch. For installation, upgrades or language switching, read [Installation and migration](references/installation.md) and report version, instruction language and actual install location. Keep one active cohub installation, not both languages or the legacy standalone cohub-app-developer.
+This is Cohub 2.2.0, English instructions. Instruction language does not set response language: follow the user's current language and preferences unless explicitly asked to switch. For installation, upgrades or language switching, read [Installation and migration](references/installation.md) and report version, instruction language and actual install location. Keep one active cohub installation, not both languages or the legacy standalone cohub-app-developer.
 
 ## Task Routing
 
-- Capability questions only: answer from local instructions without installation, login, remote creative-source reads, generation or publication. Still perform the update check below.
+- Capability questions only: explain capabilities from local instructions; anonymously read the public catalog when examples are needed. No installation, login, restricted creative-source reads, generation or publication. Still perform the update check below.
 - Author-time assets, characters, game creation and static publication: use the core workflows below.
 - Visitor-time generation, Actions, authorization, management or non-static hosting: read [App Developer](references/app-developer/index.md) only as needed. No separate skill installation, repeated update check or repeated completed environment check.
 - For mixed work, load only relevant modules, retaining one target App and the user's plan. Publishing an already completed game does not start game production.
+- Space usage, project targeting or a wrong destination: read [Spaces and projects](references/spaces-and-projects.md). Ordinary generation does not require choosing a Space first.
+- Connect a local directory, sync conversations, import history or continue on the web: read [Local connection](references/local-connection.md). CLI installation or login is not an established connection.
 
 ## Every Invocation: Check for Updates
 
 Read and follow [Update check](references/updates.md) before the workflow. Check upstream every invocation; notify only, never update the installation automatically. Keep this hook after init cleanup.
 
-Keep working locally with the user's familiar development tools. Use Cohub for generation and published links without requiring a new development environment or knowledge of platform internals.
+Keep the user's familiar local development tools and use Cohub's creative, publishing and project capabilities as needed. No environment migration is required; local connection is optional and is not enabled during ordinary setup.
 
 <!-- COHUB_INIT_START -->
 ## First-Time Setup
@@ -52,10 +72,10 @@ If this skill and relevant CLI help cannot establish the next action, evidence c
 
 The following environment and identity checks apply only to actual Cohub execution; capability questions skip them and Init.
 
-1. On first use, check `cohub --version`; use the current subcommand's `-h` as the authority for flags. These parameters were checked against CLI 6.9.1. Local publishing requires at least 6.7.0; Home Space defaults are supported from 6.8.0. Report version mismatches rather than guessing legacy commands or upgrading automatically.
+1. On first use, check `cohub --version`; use the current subcommand's `-h` as the authority for flags. Generation and publication examples were originally checked against CLI 6.9.1; Space targeting and local connection were checked against 8.4.0. Local publishing requires at least 6.7.0; Home Space defaults are supported from 6.8.0. Report version mismatches rather than guessing legacy commands or upgrading automatically.
 2. If the CLI is missing, explain `npm install -g @neta-art/cohub-cli`. Follow the environment's installation authorization rules; activating this skill does not authorize installation.
 3. Before execution, confirm identity with `cohub auth whoami --json`. If unauthenticated, guide the user through `cohub auth login` and wait when user interaction is required. Distinguish network, service, and permission failures from authentication failures.
-4. When the user specifies a Space, use `cohub -s <spaceId> ...`. Otherwise preserve the current `COHUB_SPACE_ID` context, with the CLI falling back to Home Space when unset. Do not clear the environment, guess IDs, or create another Space. Clarify uncertain ownership when it affects publication or charges.
+4. Ordinary Space commands resolve `-s <spaceId>`, then `COHUB_SPACE_ID`, the current directory's Runtime binding, and finally Home Space. Bindings are also scoped to account and environment. Keep the actual project directory; do not clear the environment, guess IDs or create another Space. Resolve conflicts between the requested project and actual target before writes or charges. Runtime commands never fall back to Home; see [Spaces and projects](references/spaces-and-projects.md).
 5. Read actual response fields with `--json`. Preserve original errors and existing task IDs on failure. Do not expose tokens or authentication files, change permissions to proceed, or overwrite user files.
 6. Do not request repeated approval for generation or publication the user explicitly requested. Additional cost scale, wider public exposure, or overwriting an unidentified target is outside that authorization. Check whether the CLI may auto-update in the background; use `COHUB_CLI_AUTO_UPDATE=0` when keeping this run's version stable, without permanently changing configuration.
 

@@ -1,5 +1,8 @@
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync, cpSync, mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join, relative, isAbsolute } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { test } from 'node:test';
 
 const root = new URL('../', import.meta.url);
@@ -54,6 +57,38 @@ test('init cleanup preserves all source rows and ongoing workflows', () => {
       .map(([, target]) => target).filter(target => target !== 'references/init.md');
     assert.deepEqual(referenceTargets(cleaned), referenceTargets(original));
     checkLinks(new URL(dir + 'SKILL.md', root), cleaned);
+  }
+});
+
+test('each installed edition stays self-contained before and after init cleanup', () => {
+  const temporary = mkdtempSync(join(tmpdir(), 'cohub-package-'));
+  try {
+    for (const [index, dir] of editions.entries()) {
+      const installed = join(temporary, String(index));
+      cpSync(new URL(dir, root), installed, { recursive: true });
+      const skill = join(installed, 'SKILL.md');
+      function checkDirectory(path) {
+        for (const entry of readdirSync(path, { withFileTypes: true })) {
+          const file = join(path, entry.name);
+          if (entry.isDirectory()) checkDirectory(file);
+          else if (entry.name.endsWith('.md')) {
+            for (const [, target] of readFileSync(file, 'utf8').matchAll(/\]\(([^)]+)\)/g)) {
+              if (/^https?:/.test(target)) continue;
+              const resolved = fileURLToPath(new URL(target, pathToFileURL(file)));
+              const local = relative(installed, resolved);
+              assert(!isAbsolute(local) && local !== '..' && !local.startsWith('../'), `Reference escapes installed package: ${file} -> ${target}`);
+              assert(existsSync(resolved), `Missing installed reference: ${file} -> ${target}`);
+            }
+          }
+        }
+      }
+      checkDirectory(installed);
+      writeFileSync(skill, readFileSync(skill, 'utf8').replace(/<!-- COHUB_INIT_START -->[\s\S]*?<!-- COHUB_INIT_END -->/, ''));
+      rmSync(join(installed, 'references/init.md'));
+      checkDirectory(installed);
+    }
+  } finally {
+    rmSync(temporary, { recursive: true, force: true });
   }
 });
 

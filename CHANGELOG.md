@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.0
+
+- Introduce capabilities directly after setup while continuing an already explicit task without another tour.
+- Add project Space targeting and optional local Runtime guidance, including host compatibility, consent boundaries and failure handling.
+- Add Cohub-only Explore references backed by one public catalog shared with the browsing page. The catalog includes 21 verified public previews, with Hogwarts Tower Lofi first.
+- Keep the 2.1.1 and 2.1.2 publishing improvements, including complete ten-field publication cards in heading-and-table format.
+- Validation: 23 automated checks, bilingual package validation, independent scenario review and desktop/mobile Explore checks. Public previews do not establish that every backend, paid generation or visitor flow has been tested.
+
 ## 2.1.2
 
 - Simplify publication cards to a Markdown heading and table with spaced sections; retain all ten attributes. Validation: package checks only, without a new live publishing trial.

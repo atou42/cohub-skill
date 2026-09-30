@@ -22,7 +22,7 @@ cohub -s cf327f11-5065-4f3a-bfe5-cdb0a70f3377 spaces files cat packages/cli/READ
 
 按问题选择文件，不全部加载：
 - CLI 用法或版本差异：`packages/cli/README.md`、`packages/cli/CHANGELOG.md`。
-- 发布形态：`docs/apps-guide.md`。
+- 发布形态：公开的 [Apps 文档](https://cohub.live/zh/docs/create/apps)，或参考 Space 中的 `docs/product/zh/create/apps.md`。
 - 文档不足时，先定位 `packages/cli/` 中相关实现。
 
 用户明确需要 App SDK/API 开发时，按主入口加载 App Developer 内部模块；查证本身不扩大任务范围。

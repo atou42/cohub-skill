@@ -1,7 +1,7 @@
 ---
 name: cohub
 metadata:
-  version: "2.2.0"
+  version: "2.2.1"
   language: "zh-CN"
   compatibility: Local filesystem and command execution; Node.js/npm for CLI setup; network and interactive login when needed.
 description: 本地 Agent 使用 Cohub 做游戏、网页和应用，生成素材、塑造角色及发布作品；解释 Space 项目归属，按需接入本地 Runtime 或 App 访客能力。保留用户已有设计和开发流程。
@@ -31,7 +31,7 @@ description: 本地 Agent 使用 Cohub 做游戏、网页和应用，生成素�
 
 ## 安装与语言
 
-本包为 Cohub 2.2.0 简体中文说明版。说明语言不决定回复语言；继续遵循用户当前语言和已有偏好，除非用户明确要求切换。首次安装、升级或切换语言时读取[安装与迁移](references/安装与迁移.md)，报告版本、说明语言和实际安装位置。只保留一个活跃的 cohub 安装，不同时启用中英文版或旧的独立 cohub-app-developer。
+本包为 Cohub 2.2.1 简体中文说明版。说明语言不决定回复语言；继续遵循用户当前语言和已有偏好，除非用户明确要求切换。首次安装、升级或切换语言时读取[安装与迁移](references/安装与迁移.md)，报告版本、说明语言和实际安装位置。只保留一个活跃的 cohub 安装，不同时启用中英文版或旧的独立 cohub-app-developer。
 
 ## 任务路由
 
@@ -41,6 +41,7 @@ description: 本地 Agent 使用 Cohub 做游戏、网页和应用，生成素�
 - 混合任务只加载所需模块，沿用一个目标 App 和用户计划。纯发布已完成的游戏不启动制作流程。
 - 询问 Space 用法、指定项目归属或排查目标错误：读 [Space 与项目](references/Space与项目.md)。普通生成不强制先选 Space。
 - 要连接本地目录、同步会话、导入历史或在网页继续：读[本地接入](references/本地接入.md)。不要把安装 CLI 或登录成功当成已连接。
+- 余额、套餐或 App 积分错误，以及充值提示相关问题：读[费用与恢复](references/费用与恢复.md)。不自动打开结账页或重复提交付费任务。
 
 ## 每次调用：检查更新
 

@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+import { readFile, realpath } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 
 const version = value => {
@@ -40,6 +40,6 @@ export async function runCheck(localUrl, fetcher = fetch) {
     return { status: 'unavailable', reason: error.message };
   }
 }
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(await realpath(process.argv[1])).href) {
   console.log(JSON.stringify(await runCheck(new URL('../version.json', import.meta.url))));
 }

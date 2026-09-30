@@ -14,7 +14,7 @@
 
 ## 安装
 
-最新正式版：[Cohub 2.2.0](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.2.0)。[versions.json](versions.json) 指向已核实的发布标签与提交；正式安装使用该标签，不使用可能更新的 main 工作树。
+最新正式版以 [main 上的 versions.json](https://raw.githubusercontent.com/atou42/cohub-skill/main/versions.json) 为准，它指向已核实的发布标签与提交；正式安装使用该标签，不使用可能更新的 main 工作树。
 
 可以对 Agent 说：
 

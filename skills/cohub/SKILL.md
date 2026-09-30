@@ -1,7 +1,7 @@
 ---
 name: cohub
 metadata:
-  version: "2.2.0"
+  version: "2.2.1"
   language: "en"
   compatibility: Local filesystem and command execution; Node.js/npm for CLI setup; network and interactive login when needed.
 description: Use Cohub for games, websites and apps, media generation, characters and publishing. Explain project Space targeting and optionally connect a local Runtime or visitor-time App capabilities; preserve existing design and development workflows.
@@ -31,7 +31,7 @@ For the initial tour and when examples are requested, follow [Work references](r
 
 ## Installation and Language
 
-This is Cohub 2.2.0, English instructions. Instruction language does not set response language: follow the user's current language and preferences unless explicitly asked to switch. For installation, upgrades or language switching, read [Installation and migration](references/installation.md) and report version, instruction language and actual install location. Keep one active cohub installation, not both languages or the legacy standalone cohub-app-developer.
+This is Cohub 2.2.1, English instructions. Instruction language does not set response language: follow the user's current language and preferences unless explicitly asked to switch. For installation, upgrades or language switching, read [Installation and migration](references/installation.md) and report version, instruction language and actual install location. Keep one active cohub installation, not both languages or the legacy standalone cohub-app-developer.
 
 ## Task Routing
 
@@ -41,6 +41,7 @@ This is Cohub 2.2.0, English instructions. Instruction language does not set res
 - For mixed work, load only relevant modules, retaining one target App and the user's plan. Publishing an already completed game does not start game production.
 - Space usage, project targeting or a wrong destination: read [Spaces and projects](references/spaces-and-projects.md). Ordinary generation does not require choosing a Space first.
 - Connect a local directory, sync conversations, import history or continue on the web: read [Local connection](references/local-connection.md). CLI installation or login is not an established connection.
+- Balance, plan or App-credit errors, or questions about recharge prompts: read [Billing and recovery](references/billing.md). Do not open checkout or repeat a paid task automatically.
 
 ## Every Invocation: Check for Updates
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.1
+
+- Fix update checks launched through directory, chained or file symlinks; report missing metadata instead of silent success.
+- Document local generation-input uploads and use `--inline` in private-input examples without promising local-only processing.
+- Replace moved App documentation references with current public documentation and source paths.
+- Add on-demand billing guidance that separates balance, plan and App-credit gates, user-triggered checkout and recovery without duplicate charges.
+- Add structured viewer authorization guidance and executable examples for selected targets, cancellation, denial and malformed responses.
+
 ## 2.2.0
 
 - Introduce capabilities directly after setup while continuing an already explicit task without another tour.

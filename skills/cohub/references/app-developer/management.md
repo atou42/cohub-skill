@@ -23,11 +23,41 @@ Explain authorization purpose and trigger it from an appropriate user action. Re
 
 An App may have different authorizations and multiple trigger points. Reduce unnecessary separate requests, but do not force independent features together. In the delivery card’s “Authorization trigger points,” list permissions, targets, and purposes for each actual operation. Login is an identity prerequisite, not an authorization record; do not imply that every operation prompts again when valid authorization exists.
 
+## Structured Viewer Authorization
+
+For new App integrations use `client.auth.authorize({ target, scopes, reason, fallback })`. Account data uses `{ kind: "account" }`; Space operations use `{ kind: "space", spaceId }` or `{ kind: "pick-space" }`. Invoke it from the selected feature's user gesture, not page initialization. Request only that workflow's permissions, including result-read access when needed.
+
+The following example only resolves a generation destination; it submits no paid task. Call it with the fixed Space target, or `pick-space` when the user is choosing. `fallback: "none"` prevents a fixed destination from silently changing:
+
+```js
+async function authorizeGenerationTarget(client, target) {
+  const consent = await client.auth.authorize({
+    target,
+    scopes: ["generation.create", "taskrun.view"],
+    reason: "Generate media in the selected Space and read the result.",
+    fallback: "none",
+  });
+  if (consent.status === "cancelled") return null;
+  if (consent.status !== "granted") throw new Error("Authorization denied");
+  if (consent.target?.kind !== "space" || typeof consent.target.spaceId !== "string" || !consent.target.spaceId.trim()) {
+    throw new Error("Expected a Space grant");
+  }
+  if (target.kind === "space" && consent.target.spaceId !== target.spaceId) {
+    throw new Error("Authorization returned a different Space");
+  }
+  return consent.target.spaceId;
+}
+```
+
+If cancellation returns `null`, stop that action without writes, charges or another consent loop; show denials and other errors through the App's existing error state. After success, use the returned Space ID for generation and its results, not `requestedTarget`, invocation or the App's home Space. When a workflow explicitly permits viewer-selected fallback, use `fallback: "allow"`, inspect `resolution` / `target` / `grant`, and make the actual destination clear before writing. A malformed or incomplete result is an error, not a Home fallback.
+
+For an additional capability, request the necessary scopes on the same actual target; the structured host flow extends an existing grant and reuses valid authorization. SDK 8.24.0's `auth.authorize()` does not accept a `scopeMode` field: `scopeMode: "extend"` belongs to the lower-level App authorization API, and `apps authorize --extend` to the CLI. Do not copy parameters across these surfaces. Older hosts may not support structured authorization; report that limit rather than silently using a legacy boolean result and guessing the destination.
+
 ## Cost and Commerce
 
 Verify the execution actor, platform cost owner, visitor entitlements, and result destination separately. Login alone does not establish who pays.
 
-App commerce Space credits differ from platform Cohub Balance. Read `docs/app-commerce-guide.md` when implementing monetization, including entitlement lookup, purchase, return confirmation, and consumption where required. Do not promise undocumented automatic payouts, subscriptions, or refunds.
+App commerce Space credits differ from platform Cohub Balance. Use the Commerce section of the current [App development documentation](https://cohub.live/docs/developers/apps) for entitlement lookup, purchase, return confirmation and consumption. For balance gates and recharge behavior, read [Billing and recovery](../billing.md). Do not promise undocumented automatic payouts, subscriptions, or refunds.
 
 Never initiate a purchase during initialization. For potentially repeated tasks, consumption, or resource creation, inspect existing operation state before retrying. Actual charges, product configuration, and permission expansion require corresponding authorization.
 

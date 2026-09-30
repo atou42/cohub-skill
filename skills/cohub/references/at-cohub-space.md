@@ -22,7 +22,7 @@ cohub -s cf327f11-5065-4f3a-bfe5-cdb0a70f3377 spaces files cat packages/cli/READ
 
 Select by question; do not load all entries:
 - CLI usage or version differences: `packages/cli/README.md`, `packages/cli/CHANGELOG.md`.
-- Publishing forms: `docs/apps-guide.md`.
+- Publishing forms: the public [Apps documentation](https://cohub.live/docs/create/apps), or `docs/product/en/create/apps.md` in the reference Space.
 - If docs are insufficient, locate the relevant implementation under `packages/cli/` first.
 
 When App SDK/API development is requested, load the internal App Developer module from the main entry; research itself does not expand scope.

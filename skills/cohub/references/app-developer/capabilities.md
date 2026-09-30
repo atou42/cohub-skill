@@ -2,16 +2,18 @@
 
 Explain what Cohub adds without redefining the user's App. This map is not a feature checklist for every project.
 
+The current [App development reference](https://cohub.live/docs/developers/apps) covers runtime integration; use [Source verification](sources.md) only for unresolved details.
+
 | Capability | User value | Consult before implementing |
 |---|---|---|
-| Runtime generation | Visitors generate or edit images, video, speech, or music during use, not just once during development | Runtime guide, available models, selected model parameters |
-| AI conversations and agents | Invoke conversations or Space workflows and read streaming progress/results | Runtime guide; distinguish model chat from tool-enabled Space prompts |
-| App Actions | Expose generation, file processing, and business logic as callable tasks | Run App Actions in apps-guide |
-| Space files and sessions | Read/write authorized content and build tools around existing work | Runtime guide, permissions, and data ownership |
-| Select or create a Space | Let visitors select a workspace or create their own from the App | Current `requestSpace` / `requestCreateSpace` contracts |
-| Desktop context and interaction | Follow the current session or expose UI methods to an agent | Context, surface, and desktop sections in apps-guide |
-| Overlays and embedded Apps | Floating tools or compositions of existing Apps | Relevant apps-guide sections and examples |
-| Realtime rooms | Shared realtime interactions when needed | Realtime rooms in runtime guide; verify persistence boundaries |
+| Runtime generation | Visitors generate or edit images, video, speech, or music during use, not just once during development | App development: generation; available models and selected parameters |
+| AI conversations and agents | Invoke conversations or Space workflows and read streaming progress/results | App development: AI; distinguish model chat from tool-enabled Space prompts |
+| App Actions | Expose generation, file processing, and business logic as callable tasks | App development: App Actions |
+| Space files and sessions | Read/write authorized content and build tools around existing work | App development: files, permissions, and data ownership |
+| Select or create a Space | Let visitors select a workspace or create their own from the App | `auth.authorize()` with a Space target or `pick-space`; `requestCreateSpace` only for creation |
+| Desktop context and interaction | Follow the current session or expose UI methods to an agent | App development: context, surface, and desktop |
+| Overlays and embedded Apps | Floating tools or compositions of existing Apps | App development: overlays, embedding, and examples |
+| Realtime rooms | Shared realtime interactions when needed | App development: realtime rooms; verify persistence boundaries |
 | Entitlements and management | Access control, commerce, versions, and analytics | [Operations and management](management.md) |
 
 ## Choose Benefits for Existing Work
@@ -37,8 +39,9 @@ Explain actual benefit and integration cost. Do not promise free, unlimited, log
 
 ## Implementation Notes
 
-- Obtain identity through the SDK runtime, not an author token embedded in the browser. The Cohub iframe, standalone broker configuration, and ordinary local previews differ; consult the current runtime guide.
+- Obtain identity through the SDK runtime, not an author token embedded in the browser. The Cohub iframe, standalone broker configuration, and ordinary local previews differ; consult the current App development reference.
 - Distinguish App home Space, opening invocation, current shell location, and user-selected data Space. Select the target for the feature explicitly, not through a universal fallback chain. Possessing an ID does not grant access.
+- For new viewer integrations use the structured `auth.authorize()` flow in [Operations and management](management.md). Continue with the returned target, not the requested or home Space; a cancelled or denied request authorizes no operation.
 - Discover available models and parameters. Implement task creation, waiting/subscription, result extraction, and visible failures. A Task ID is not a completed generation. Paid verification requires user authorization.
 - If `requestCreateSpace` returns a created Space but initialization/authorization failed, report the retained resource rather than repeatedly creating new Spaces.
 

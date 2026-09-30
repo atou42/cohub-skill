@@ -14,7 +14,7 @@ Choose one instruction language: [English](skills/cohub/SKILL.md) or [简体中�
 
 ## Install
 
-For the latest stable release, follow [versions.json on main](https://raw.githubusercontent.com/atou42/cohub-skill/main/versions.json), which points to the verified release tag and commit. Install from that tag, not a potentially newer main checkout.
+Latest stable release: [Cohub 2.2.0](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.2.0). [versions.json](versions.json) points to the verified release tag and commit. Install from that tag, not a potentially newer main checkout.
 
 Ask your agent:
 
@@ -35,7 +35,7 @@ After first-time setup, introduce generation and editing, creative knowledge and
 
 [Spaces and projects](skills/cohub/references/spaces-and-projects.md) supports both ad hoc and project-organized work. [Local connection](skills/cohub/references/local-connection.md) is optional: ordinary CLI calls are not conversation sync. CLI 8.4.0 local connection supports Pi/Codex, not a promise of Claude Code conversation sync.
 
-The Cohub-only [public Explore page](https://cohub.live/atou/home/w/cohub-explore) and the skill's [work references](skills/cohub/references/examples.md) share one [catalog](explore/catalog.json), without Neta Studio examples. The development checkout points to a [stable public JSON endpoint](https://public.cohub.live/p/863b6242-2ba4-47a9-9bfd-e401020a639f/cohub-explore/catalog.json); publishing the page does not release these skill changes. See [Explore maintenance](docs/Explore维护.md) for deployment and updates.
+The Cohub-only [public Explore page](https://cohub.live/atou/home/w/cohub-explore) and the skill's [work references](skills/cohub/references/examples.md) share one [catalog](explore/catalog.json), without Neta Studio examples. Both instruction-language packages use the same [stable public JSON endpoint](https://public.cohub.live/p/863b6242-2ba4-47a9-9bfd-e401020a639f/cohub-explore/catalog.json). Catalog updates do not require reinstalling the skill. See [Explore maintenance](docs/Explore维护.md) for deployment and updates.
 
 ## Environment and Boundaries
 

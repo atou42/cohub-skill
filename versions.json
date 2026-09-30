@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "skills": {
     "cohub": {
-      "version": "2.1.2",
+      "version": "2.2.0",
       "released": true,
-      "tag": "cohub-v2.1.2",
-      "commit": "170be2f819893e1d5c7e84fa1a85998c98160688",
+      "tag": "cohub-v2.2.0",
+      "commit": "e09ba39a156e083180d687b1518c5dbf92bfa0b2",
       "notes": {
-        "en": "Simplify publication cards to a Markdown heading and table, preserving all ten attributes.",
-        "zh-CN": "发布卡用 Markdown 标题和表格直接展示，精简说明并保留全部十项属性。"
+        "en": "Add capability-first onboarding, project Space and optional Runtime guidance, and Cohub Explore references; retain the 2.1.2 publication cards.",
+        "zh-CN": "增加能力优先的上手介绍、Space 项目与可选 Runtime 指引及 Cohub Explore 参考；保留 2.1.2 发布卡改进。"
       }
     },
     "cohub-app-developer": {

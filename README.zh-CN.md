@@ -14,7 +14,7 @@
 
 ## 安装
 
-最新正式版以 [main 上的 versions.json](https://raw.githubusercontent.com/atou42/cohub-skill/main/versions.json) 为准，它指向已核实的发布标签与提交；正式安装使用该标签，不使用可能更新的 main 工作树。
+最新正式版：[Cohub 2.2.0](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.2.0)。[versions.json](versions.json) 指向已核实的发布标签与提交；正式安装使用该标签，不使用可能更新的 main 工作树。
 
 可以对 Agent 说：
 
@@ -35,7 +35,7 @@
 
 [Space 与项目](zh-CN/skills/cohub/references/Space与项目.md)同时支持随手使用与按项目组织；[本地接入](zh-CN/skills/cohub/references/本地接入.md)是可选模块，普通 CLI 调用不等于会话同步。CLI 8.4.0 本地接入支持 Pi/Codex，不承诺 Claude Code 会话同步。
 
-纯 Cohub 的 [Explore 公开页面](https://cohub.live/atou/home/w/cohub-explore)与 Skill 的[作品参考](zh-CN/skills/cohub/references/作品参考.md)共用 [案例目录](explore/catalog.json)，不混用 Neta Studio。开发源码已配置[固定公开 JSON](https://public.cohub.live/p/863b6242-2ba4-47a9-9bfd-e401020a639f/cohub-explore/catalog.json)；页面发布不代表此 Skill 改动已正式发版。部署与日常维护见 [Explore 维护](docs/Explore维护.md)。
+纯 Cohub 的 [Explore 公开页面](https://cohub.live/atou/home/w/cohub-explore)与 Skill 的[作品参考](zh-CN/skills/cohub/references/作品参考.md)共用 [案例目录](explore/catalog.json)，不混用 Neta Studio。双语包使用同一个[固定公开 JSON](https://public.cohub.live/p/863b6242-2ba4-47a9-9bfd-e401020a639f/cohub-explore/catalog.json)，日常更新案例无需重新安装 Skill。部署与日常维护见 [Explore 维护](docs/Explore维护.md)。
 
 ## 环境与边界
 

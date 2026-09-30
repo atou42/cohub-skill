@@ -39,4 +39,4 @@ node skills/cohub/scripts/read-explore.mjs --catalog explore/catalog.json --capa
 - App：[Cohub Explore](https://cohub.live/atou/home/w/cohub-explore)，ID `ac986581-fc63-4e82-a27b-298ec6250e94`，v2，公开、无 App scopes。
 - 固定目录：[catalog.json](https://public.cohub.live/p/863b6242-2ba4-47a9-9bfd-e401020a639f/cohub-explore/catalog.json)，21 个作品，内容与作者源一致；用户指定的 Hogwarts Tower Lofi 排在第一位，使用 Cohub 入口。
 - 同目录包含页面快照与真实预览图，方便匿名读取相对资源；不依赖 App 的版本哈希地址。
-- 双语开发包来源已同步配置。此次没有提交或推送 Git、创建 Skill Release 或替换本机旧安装。
+- 9 月 29 日仅发布 Explore，未进行 Skill 发版或本机安装。9 月 30 日双语包随 [Cohub 2.2.0](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.2.0) 正式发布，来源仍为上述固定目录。

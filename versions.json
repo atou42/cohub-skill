@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "skills": {
     "cohub": {
-      "version": "2.2.1",
+      "version": "2.3.0",
       "released": true,
-      "tag": "cohub-v2.2.1",
-      "commit": "0902e619628af513d165a386548003e750ce2b9f",
+      "tag": "cohub-v2.3.0",
+      "commit": "df967ca6cf5123df786fde51a2b3eef7002b6a81",
       "notes": {
-        "en": "Fix symlink update checks; clarify private inputs, billing recovery and structured authorization; refresh App documentation links.",
-        "zh-CN": "修复软链接更新检查，补齐私有输入、计费恢复与结构化授权指引，更新 App 文档入口。"
+        "en": "Unify standalone Skill and optional plugin in cohub-skill; share one Skill, preserve installation URLs and reuse compatible entries without duplication.",
+        "zh-CN": "统一独立 Skill 与可选插件的来源；插件包含同一份 Skill，保留安装地址，并复用兼容入口避免重复。"
       }
     },
     "cohub-app-developer": {

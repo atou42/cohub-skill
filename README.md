@@ -4,7 +4,7 @@
 
 Let your local agent work with Cohub on games, websites and small apps, media, characters and publishing. Optionally organize projects with Spaces, connect supported local conversations, or add visitor-time generation and Actions. Preserve your design, stack and local workflow.
 
-Personally maintained, not an official Cohub distribution. Source versions: **Skill 2.3.0 / plugin 0.6.0**. Use the [published releases](https://github.com/atou42/cohub-skill/releases) and public version manifest to confirm availability.
+Personally maintained, not an official Cohub distribution. Current release: [Skill 2.3.0 / plugin 0.6.0](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.3.0).
 
 ## Choose How You Use Cohub
 

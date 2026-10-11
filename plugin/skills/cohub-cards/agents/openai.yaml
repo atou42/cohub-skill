@@ -1,0 +1,5 @@
+interface:
+  display_name: "Cohub 创作"
+  short_description: "在聊天中共同创作图片、视频、配音和音乐，展开卡片调整细节"
+policy:
+  allow_implicit_invocation: true

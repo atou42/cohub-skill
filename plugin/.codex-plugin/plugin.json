@@ -1,0 +1,26 @@
+{
+  "name": "cohub-cards",
+  "version": "0.5.0",
+  "description": "提到 Cohub 或直接提出画图、改图、视频、配音、歌曲与背景音乐创作需求，即可在聊天卡片中与 Agent 共同编辑和生成。",
+  "author": {
+    "name": "ATou"
+  },
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Cohub 创作",
+    "shortDescription": "共同创作，作品就在对话里",
+    "category": "Creativity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "用 cohub 帮我画一张图",
+      "让这张图片动起来",
+      "给这段文字配音",
+      "做一段背景音乐"
+    ]
+  }
+}

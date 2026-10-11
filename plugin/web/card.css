@@ -1,0 +1,32 @@
+/* Result and publication card. Shared tokens and components live in tokens.css. */
+
+.cohub-card .card-media { background: var(--canvas); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cohub-card .card-media:empty { display: none; }
+.cohub-card .cc-progress-stage, .cohub-card .card-empty-stage { min-height: 220px; }
+.card-empty-stage { display: grid; place-items: center; align-content: center; gap: 4px; padding: 28px 24px; }
+.card-empty-stage .cc-empty-copy { padding: 8px 0 0; }
+.cc-frame--failed { color: var(--danger); border-color: var(--danger-line); background: color-mix(in oklab, var(--danger) 6%, var(--card)); }
+.cc-frame--failed .icon { color: var(--danger); }
+
+.publication-stage { min-height: 220px; place-items: stretch; padding: 28px; }
+.publication-plate { display: grid; align-content: end; gap: 10px; min-height: 164px; }
+.publication-eyebrow { color: var(--brand-ink); font: 500 11px/1 var(--font-sans); letter-spacing: .08em; }
+.publication-name { margin: 0; max-width: 92%; color: var(--ink); font-size: clamp(24px, 5vw, 36px); font-weight: 600; line-height: 1.2; letter-spacing: -.03em; overflow-wrap: anywhere; }
+.publication-host { color: var(--ink-3); font: 12px/1.4 var(--font-mono); }
+
+.card-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 16px; }
+.card-caption { flex: 1; min-width: 0; }
+.card-title { margin: 0; color: var(--ink); font-size: 14.5px; font-weight: 600; line-height: 1.4; letter-spacing: -.01em; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card-prompt { margin: 3px 0 0; color: var(--ink-3); font-size: 12.5px; line-height: 1.55; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card-meta { margin: 6px 0 0; color: var(--ink-4); font: 11.5px/1.5 var(--font-mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-actions { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 6px; flex-shrink: 0; }
+
+.card-notices { display: grid; gap: 6px; padding: 0 16px 14px; }
+.card-notices[hidden] { display: none; }
+.cohub-card .details-content { padding-top: 0; }
+
+@media (max-width: 520px) {
+  .card-footer { flex-direction: column; align-items: stretch; gap: 12px; }
+  .card-actions { justify-content: flex-start; }
+  .publication-stage { padding: 22px; }
+}

@@ -1,0 +1,1901 @@
+[
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "birefnet-general",
+    "title": "BiRefNet General",
+    "category": "image",
+    "description": "Single-image background removal model that produces images with transparent backgrounds. Well suited to image post-processing and creating web assets. Fast and extremely low cost. Only image URL input is supported.",
+    "pricing": {
+      "unit": "image",
+      "amount": 0.007
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": false,
+          "max": 16,
+          "merge": "newline",
+          "description": "Optional workflow prompt. Accepted for compatibility but ignored by the model."
+        },
+        {
+          "type": "image",
+          "required": true,
+          "min": 1,
+          "max": 1,
+          "sources": [
+            "url"
+          ],
+          "description": "Single source image."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Remove background",
+        "request": {
+          "model": "birefnet-general",
+          "content": [
+            {
+              "type": "image",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/portrait.png"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "gemini-3.1-flash-image-preview",
+    "title": "Gemini 3.1 Flash Image Preview",
+    "category": "image",
+    "description": "Excels at text rendering, UI components and icons, commercial visuals, and image editing. It handles both photorealistic and non-photorealistic styles reliably, producing clean, consistent images while preserving key features from references. Strong natural-language understanding and broad world knowledge help it follow complex prompts. Its images are generally less expressive than those from gpt-image-2, and its style-transfer capabilities are weaker. Moderate speed, but relatively expensive. Base64 image input is supported but planned for deprecation.",
+    "pricing": {
+      "unit": "image",
+      "min": 0.07,
+      "max": 0.31
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Prompt text."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 14,
+          "sources": [
+            "url",
+            "base64"
+          ],
+          "description": "Optional reference images."
+        }
+      ]
+    },
+    "parameters": {
+      "aspect_ratio": {
+        "type": "string",
+        "optional": true,
+        "default": "1:1",
+        "enum": [
+          "1:1",
+          "16:9",
+          "4:3",
+          "3:2",
+          "3:4",
+          "2:3",
+          "9:16",
+          "5:4",
+          "4:5",
+          "21:9",
+          "1:4",
+          "4:1",
+          "1:8",
+          "8:1"
+        ],
+        "description": "Output aspect ratio."
+      },
+      "image_size": {
+        "type": "string",
+        "optional": true,
+        "default": "2K",
+        "enum": [
+          "512",
+          "1K",
+          "2K",
+          "4K"
+        ],
+        "description": "Output image resolution."
+      }
+    },
+    "examples": [
+      {
+        "title": "Basic image",
+        "request": {
+          "model": "gemini-3.1-flash-image-preview",
+          "content": [
+            {
+              "type": "text",
+              "text": "a vibrant infographic explaining photosynthesis with clear readable labels"
+            }
+          ],
+          "parameters": {
+            "aspect_ratio": "16:9",
+            "image_size": "1K"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "gemini-3.1-flash-lite-image",
+    "title": "Gemini 3.1 Flash Lite Image",
+    "category": "image",
+    "description": "Excels at text rendering, UI components and icons, commercial visuals, and image editing. It supports both photorealistic and non-photorealistic styles, producing clean, consistent results while preserving key features from references. Strong natural-language understanding and broad world knowledge help it follow complex prompts. This Lite variant produces fixed 1K output and is optimized for fast generation at a moderate price. Base64 image input is supported but planned for deprecation.",
+    "pricing": {
+      "unit": "image",
+      "min": 0.03,
+      "max": 0.1
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Prompt text."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 14,
+          "sources": [
+            "url",
+            "base64"
+          ],
+          "description": "Optional reference images."
+        }
+      ]
+    },
+    "parameters": {
+      "aspect_ratio": {
+        "type": "string",
+        "optional": true,
+        "default": "1:1",
+        "enum": [
+          "1:1",
+          "16:9",
+          "4:3",
+          "3:2",
+          "3:4",
+          "2:3",
+          "9:16",
+          "5:4",
+          "4:5",
+          "21:9",
+          "1:4",
+          "4:1",
+          "1:8",
+          "8:1"
+        ],
+        "description": "Output aspect ratio."
+      }
+    },
+    "examples": [
+      {
+        "title": "Basic image",
+        "request": {
+          "model": "gemini-3.1-flash-lite-image",
+          "content": [
+            {
+              "type": "text",
+              "text": "a vibrant infographic explaining photosynthesis with clear readable labels"
+            }
+          ],
+          "parameters": {
+            "aspect_ratio": "16:9"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "gpt-image-2",
+    "title": "GPT Image 2",
+    "category": "image",
+    "description": "Excels at photorealism, fine detail, text rendering, and sophisticated layouts. It accepts uploaded images as base or reference images and is particularly well suited to realistic imagery, mock website screenshots, infographics, and highly stylized, visually striking illustrations. Strong natural-language understanding and broad world knowledge help it follow complex prompts. Non-photorealistic styles may develop fine-grained texture and lighting artifacts, which can be corrected through prompt refinement or reference images. Low cost, but relatively slow. Base64 image input is supported but planned for deprecation.",
+    "pricing": {
+      "unit": "image",
+      "min": 0.04,
+      "max": 0.73
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Prompt text."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 16,
+          "sources": [
+            "url",
+            "base64"
+          ],
+          "description": "Optional reference images."
+        }
+      ]
+    },
+    "parameters": {
+      "size": {
+        "type": "string",
+        "dimensions": {
+          "min": 512,
+          "max": 3840,
+          "multipleOf": 16
+        },
+        "optional": true,
+        "default": "1024x1024",
+        "description": "Output image size.",
+        "examples": [
+          "auto",
+          "1024x1024",
+          "1536x1024",
+          "1024x1536",
+          "2048x2048",
+          "2048x1152",
+          "3840x2160",
+          "2160x3840"
+        ]
+      },
+      "quality": {
+        "type": "string",
+        "optional": true,
+        "default": "auto",
+        "enum": [
+          "auto",
+          "low",
+          "medium",
+          "high"
+        ],
+        "description": "Image quality."
+      },
+      "background": {
+        "type": "string",
+        "optional": true,
+        "enum": [
+          "auto",
+          "opaque",
+          "transparent"
+        ],
+        "description": "Requested background. Transparent output requires png or webp."
+      },
+      "output_format": {
+        "type": "string",
+        "optional": true,
+        "enum": [
+          "png",
+          "jpeg",
+          "webp"
+        ],
+        "description": "Requested output file format. JPEG cannot preserve a transparent background."
+      }
+    },
+    "examples": [
+      {
+        "title": "Basic image",
+        "request": {
+          "model": "gpt-image-2",
+          "content": [
+            {
+              "type": "text",
+              "text": "a cyberpunk cat in neon rain"
+            }
+          ],
+          "parameters": {
+            "size": "1024x1024",
+            "quality": "auto"
+          }
+        }
+      },
+      {
+        "title": "Transparent background",
+        "request": {
+          "model": "gpt-image-2",
+          "content": [
+            {
+              "type": "text",
+              "text": "a ceramic cup isolated on a transparent background"
+            }
+          ],
+          "parameters": {
+            "size": "1024x1024",
+            "quality": "high",
+            "background": "transparent",
+            "output_format": "png"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "gpt-image-2.5",
+    "title": "GPT Image 2.5",
+    "category": "image",
+    "description": "Fast, low-latency image generation at up to 1K resolution, built for high-throughput batch generation, social media assets, e-commerce imagery, quick prototypes, and high-frequency Agent calls. It accepts uploaded images as base or reference images and follows complex prompts well thanks to strong natural-language understanding and broad world knowledge. Suited to rapid iteration rather than maximum-fidelity output; use gpt-image-2 when higher resolution or maximum detail is required. Base64 image input is supported but planned for deprecation.",
+    "pricing": {
+      "unit": "image",
+      "min": 0.05,
+      "max": 0.24
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Prompt text."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 16,
+          "sources": [
+            "url",
+            "base64"
+          ],
+          "description": "Optional reference images."
+        }
+      ]
+    },
+    "parameters": {
+      "size": {
+        "type": "string",
+        "dimensions": {
+          "min": 512,
+          "max": 1536,
+          "multipleOf": 16
+        },
+        "optional": true,
+        "default": "1024x1024",
+        "description": "Output image size. Up to 1K resolution.",
+        "examples": [
+          "1024x1024",
+          "1536x1024",
+          "1024x1536"
+        ]
+      },
+      "quality": {
+        "type": "string",
+        "optional": true,
+        "default": "auto",
+        "enum": [
+          "auto",
+          "low",
+          "medium",
+          "high"
+        ],
+        "description": "Image quality."
+      },
+      "background": {
+        "type": "string",
+        "optional": true,
+        "enum": [
+          "auto",
+          "opaque",
+          "transparent"
+        ],
+        "description": "Requested background. Transparent output requires png or webp."
+      },
+      "output_format": {
+        "type": "string",
+        "optional": true,
+        "enum": [
+          "png",
+          "jpeg",
+          "webp"
+        ],
+        "description": "Requested output file format. JPEG cannot preserve a transparent background."
+      }
+    },
+    "examples": [
+      {
+        "title": "Basic image",
+        "request": {
+          "model": "gpt-image-2.5",
+          "content": [
+            {
+              "type": "text",
+              "text": "a cyberpunk cat in neon rain"
+            }
+          ],
+          "parameters": {
+            "size": "1024x1024",
+            "quality": "auto"
+          }
+        }
+      },
+      {
+        "title": "Transparent background",
+        "request": {
+          "model": "gpt-image-2.5",
+          "content": [
+            {
+              "type": "text",
+              "text": "a ceramic cup isolated on a transparent background"
+            }
+          ],
+          "parameters": {
+            "size": "1024x1024",
+            "quality": "high",
+            "background": "transparent",
+            "output_format": "png"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "higgs-tts",
+    "title": "Higgs TTS",
+    "description": "Modes: built-in; one-reference high-fidelity clone; weighted 2-16-reference blend. Default: delegated generic voice (natural/suitable). Blend: all references, full text, one request. Conflict: clone + redesign; ask user, do not reinterpret. Dependency: clone prior generated audio.",
+    "pricing": {
+      "unit": "1m_tokens",
+      "amount": 140
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 1,
+          "description": "Exactly one non-empty text block to speak."
+        },
+        {
+          "type": "audio",
+          "required": false,
+          "max": 16,
+          "sources": [
+            "url"
+          ],
+          "description": "Reference: one may omit weight; 2-16 require positive finite weights. Dependency: use prior generated audio."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Default voice",
+        "request": {
+          "model": "higgs-tts",
+          "content": [
+            {
+              "type": "text",
+              "text": "使用默认音色朗读这段文本。"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Single reference",
+        "request": {
+          "model": "higgs-tts",
+          "content": [
+            {
+              "type": "text",
+              "text": "使用单条参考音频朗读这段文本。"
+            },
+            {
+              "type": "audio",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/reference.mp3"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "Weighted single reference",
+        "request": {
+          "model": "higgs-tts",
+          "content": [
+            {
+              "type": "text",
+              "text": "使用带权重的单条参考音频朗读这段文本。"
+            },
+            {
+              "type": "audio",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/reference.mp3"
+              },
+              "meta": {
+                "weight": 1
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "Multiple references",
+        "request": {
+          "model": "higgs-tts",
+          "content": [
+            {
+              "type": "text",
+              "text": "使用多参考融合音色朗读这段文本。"
+            },
+            {
+              "type": "audio",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/reference-a.mp3"
+              },
+              "meta": {
+                "weight": 0.5
+              }
+            },
+            {
+              "type": "audio",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/reference-b.mp3"
+              },
+              "meta": {
+                "weight": 0.5
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "kling-image-to-video",
+    "title": "Kling Image To Video",
+    "category": "video",
+    "description": "Animates a reference image into a short video. It has the same cost as Kling text-to-video and more permissive content moderation than Seedance. Base64 image input is supported but planned for deprecation.",
+    "pricing": {
+      "unit": "second",
+      "min": 0.126,
+      "max": 0.168,
+      "note": "std–pro"
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Video prompt."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 2,
+          "sources": [
+            "url",
+            "base64"
+          ],
+          "description": "First frame and optional tail frame image input. Provider-native image input may be passed in meta."
+        }
+      ]
+    },
+    "parameters": {
+      "duration": {
+        "type": "integer",
+        "optional": true,
+        "default": 5,
+        "min": 5,
+        "max": 10,
+        "description": "Video duration in seconds."
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "optional": true,
+        "default": "16:9",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "description": "Output aspect ratio."
+      },
+      "mode": {
+        "type": "string",
+        "optional": true,
+        "default": "std",
+        "enum": [
+          "std",
+          "pro"
+        ],
+        "description": "Kling generation mode."
+      },
+      "cfg_scale": {
+        "type": "number",
+        "optional": true,
+        "default": 0.5,
+        "min": 0,
+        "max": 1,
+        "description": "Prompt adherence scale."
+      },
+      "negative_prompt": {
+        "type": "string",
+        "optional": true,
+        "description": "Negative prompt."
+      },
+      "seed": {
+        "type": "integer",
+        "optional": true,
+        "description": "Random seed for reproducibility."
+      }
+    },
+    "examples": [
+      {
+        "title": "Image to video",
+        "request": {
+          "model": "kling-image-to-video",
+          "content": [
+            {
+              "type": "text",
+              "text": "gently turn toward the camera with soft natural motion"
+            },
+            {
+              "type": "image",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/input.png"
+              }
+            }
+          ],
+          "parameters": {
+            "duration": 5,
+            "aspect_ratio": "16:9"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "kling-text-to-video",
+    "title": "Kling Text To Video",
+    "category": "video",
+    "description": "One of the more affordable text-to-video models, well suited to short-form social media content and rapid creative validation.",
+    "pricing": {
+      "unit": "second",
+      "min": 0.126,
+      "max": 0.168,
+      "note": "std–pro"
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Video prompt."
+        }
+      ]
+    },
+    "parameters": {
+      "duration": {
+        "type": "integer",
+        "optional": true,
+        "default": 5,
+        "min": 5,
+        "max": 10,
+        "description": "Video duration in seconds."
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "optional": true,
+        "default": "16:9",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "description": "Output aspect ratio."
+      },
+      "mode": {
+        "type": "string",
+        "optional": true,
+        "default": "std",
+        "enum": [
+          "std",
+          "pro"
+        ],
+        "description": "Kling generation mode."
+      },
+      "cfg_scale": {
+        "type": "number",
+        "optional": true,
+        "default": 0.5,
+        "min": 0,
+        "max": 1,
+        "description": "Prompt adherence scale."
+      },
+      "negative_prompt": {
+        "type": "string",
+        "optional": true,
+        "description": "Negative prompt."
+      },
+      "seed": {
+        "type": "integer",
+        "optional": true,
+        "description": "Random seed for reproducibility."
+      }
+    },
+    "examples": [
+      {
+        "title": "Text to video",
+        "request": {
+          "model": "kling-text-to-video",
+          "content": [
+            {
+              "type": "text",
+              "text": "a small paper boat floating on calm water, cinematic motion"
+            }
+          ],
+          "parameters": {
+            "duration": 5,
+            "aspect_ratio": "16:9",
+            "mode": "std"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "krea2",
+    "title": "Krea 2",
+    "category": "image",
+    "description": "Excels at expressive illustrations, graphic design exploration, and fast iterative ideation, delivering strong aesthetic quality and stylistic variety. Text-only input; reference images are not supported. Text rendering is a known weakness — avoid prompts that require legible text, captions, or typography. Relatively fast and low cost.",
+    "pricing": {
+      "unit": "image",
+      "amount": 0.01
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Prompt text. Keep the subject clear and add style language early. Avoid text-dependent content (legible text, captions, typography)."
+        }
+      ]
+    },
+    "parameters": {
+      "size": {
+        "type": "string",
+        "optional": true,
+        "default": "1024x1024",
+        "description": "Output image size as WIDTHxHEIGHT. Both dimensions must be between 256 and 1024 and must be multiples of 16.",
+        "dimensions": {
+          "min": 256,
+          "max": 1024,
+          "multipleOf": 16
+        },
+        "examples": [
+          "1024x1024",
+          "1024x768",
+          "768x1024",
+          "768x768",
+          "512x512",
+          "256x256"
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Text-to-image",
+        "request": {
+          "model": "krea2",
+          "content": [
+            {
+              "type": "text",
+              "text": "an elegant editorial portrait with sculptural lighting"
+            }
+          ],
+          "parameters": {
+            "size": "1024x1024"
+          }
+        }
+      },
+      {
+        "title": "Ligne claire ocean illustration",
+        "request": {
+          "model": "krea2",
+          "content": [
+            {
+              "type": "text",
+              "text": "A minimalist flat-color illustration of a person wading through expansive shallow ocean waves beneath a pale peach sky. The dark-skinned figure, wearing an orange swim cap, light blue top, and bright green shorts, steps carefully through knee-deep water. The ocean is rendered in muted mint green with delicate, thin black linework detailing the continuous ripples and gentle whitecaps. Soft pinkish-peach reflections echo the sky on the water's surface. A dark, jagged rock rests in the lower left foreground near a pale grey shoreline. The horizon features a solid purplish-blue landmass and a stylized, layered yellow and blue cloud. The high-angle wide perspective emphasizes the vast negative space of the water, utilizing a clean ligne claire drawing aesthetic with a subtle paper texture."
+            }
+          ],
+          "parameters": {
+            "size": "1024x1024"
+          }
+        }
+      },
+      {
+        "title": "Dynamic sailor uniform painting",
+        "request": {
+          "model": "krea2",
+          "content": [
+            {
+              "type": "text",
+              "text": "A dynamic digital painting of a joyful girl in a sailor uniform stretching her arms high against a solid vibrant blue background. She has short dark windblown hair, amber eyes, and a bright smile. She wears a white shirt, striped blue collar, flowing red neckerchief, and a billowing blue pleated skirt. Expressive thick brushstrokes and bold shading emphasize energetic motion."
+            }
+          ],
+          "parameters": {
+            "size": "1024x1024"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "minimax-h3",
+    "title": "MiniMax H3",
+    "category": "video",
+    "description": "H3 excels at precise instruction following, accurate rendering of text and brand assets, and motion transfer in video-to-video (V2V) workflows. It is well suited for animation, graphic design, advertising, branding, e-commerce, product design, UI/UX, and gaming. H3 can understand context across text, images, video, and audio to generate videos with native stereo audio at 768P resolution and up to 15 seconds in length.",
+    "pricing": {
+      "unit": "second",
+      "amount": 0.08
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Video prompt. Merged text must not exceed 7000 characters."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 9,
+          "sources": [
+            "url"
+          ],
+          "roles": [
+            "first_frame",
+            "last_frame",
+            "reference_image"
+          ],
+          "roleRequired": true,
+          "description": "Use first_frame or last_frame for frame generation, or reference_image for multimodal reference generation. Frame and reference roles cannot be mixed."
+        },
+        {
+          "type": "video",
+          "required": false,
+          "max": 3,
+          "sources": [
+            "url"
+          ],
+          "roles": [
+            "reference_video"
+          ],
+          "roleRequired": true,
+          "description": "Reference video input for multimodal reference generation."
+        },
+        {
+          "type": "audio",
+          "required": false,
+          "max": 3,
+          "sources": [
+            "url"
+          ],
+          "roles": [
+            "reference_audio"
+          ],
+          "roleRequired": true,
+          "description": "Reference audio input."
+        }
+      ]
+    },
+    "parameters": {
+      "duration": {
+        "type": "integer",
+        "optional": true,
+        "default": 5,
+        "min": 1,
+        "max": 15,
+        "description": "Output duration in seconds. Recommended range is 3-15 seconds."
+      },
+      "resolution": {
+        "type": "string",
+        "optional": true,
+        "default": "768P",
+        "enum": [
+          "768P"
+        ],
+        "description": "Output resolution."
+      },
+      "ratio": {
+        "type": "string",
+        "optional": true,
+        "default": "16:9",
+        "enum": [
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "description": "Output aspect ratio for text, frame, and reference generation modes."
+      }
+    },
+    "examples": [
+      {
+        "title": "Text to video",
+        "request": {
+          "model": "minimax-h3",
+          "content": [
+            {
+              "type": "text",
+              "text": "A cinematic tracking shot through a rain-soaked neon market."
+            }
+          ],
+          "parameters": {
+            "duration": 5,
+            "resolution": "768P",
+            "ratio": "16:9"
+          }
+        }
+      },
+      {
+        "title": "First and last frame",
+        "request": {
+          "model": "minimax-h3",
+          "content": [
+            {
+              "type": "text",
+              "text": "Create a smooth transition between the opening and closing frames."
+            },
+            {
+              "type": "image",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/start.png"
+              },
+              "meta": {
+                "role": "first_frame"
+              }
+            },
+            {
+              "type": "image",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/end.png"
+              },
+              "meta": {
+                "role": "last_frame"
+              }
+            }
+          ],
+          "parameters": {
+            "duration": 8,
+            "resolution": "768P",
+            "ratio": "16:9"
+          }
+        }
+      },
+      {
+        "title": "Multimodal references",
+        "request": {
+          "model": "minimax-h3",
+          "content": [
+            {
+              "type": "text",
+              "text": "Keep the character identity and follow the reference soundtrack."
+            },
+            {
+              "type": "image",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/character.png"
+              },
+              "meta": {
+                "role": "reference_image"
+              }
+            },
+            {
+              "type": "audio",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/reference.mp3"
+              },
+              "meta": {
+                "role": "reference_audio"
+              }
+            }
+          ],
+          "parameters": {
+            "duration": 5,
+            "resolution": "768P",
+            "ratio": "16:9"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "minimax-h3-max-turbo",
+    "title": "MiniMax H3 Max Turbo",
+    "category": "video",
+    "description": "MiniMax H3 Max Turbo video generation. 5-15 seconds at 480P or 768P. Text-to-video, or image-to-video with a first frame and optional last frame. Reference images, video, and audio are not supported.",
+    "pricing": {
+      "unit": "second",
+      "amount": 0.04
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Video prompt."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 2,
+          "sources": [
+            "url"
+          ],
+          "roles": [
+            "first_frame",
+            "last_frame"
+          ],
+          "roleRequired": true,
+          "description": "Optional first_frame and last_frame images for image-to-video."
+        }
+      ]
+    },
+    "parameters": {
+      "duration": {
+        "type": "integer",
+        "optional": true,
+        "default": 5,
+        "min": 5,
+        "max": 15,
+        "description": "Output duration in seconds."
+      },
+      "resolution": {
+        "type": "string",
+        "optional": true,
+        "default": "768P",
+        "enum": [
+          "480P",
+          "768P"
+        ],
+        "description": "Output resolution."
+      },
+      "ratio": {
+        "type": "string",
+        "optional": true,
+        "default": "16:9",
+        "enum": [
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "description": "Output aspect ratio for text-to-video. Image-to-video follows the frame image."
+      }
+    },
+    "examples": [
+      {
+        "title": "Text to video",
+        "request": {
+          "model": "minimax-h3-max-turbo",
+          "content": [
+            {
+              "type": "text",
+              "text": "A cinematic tracking shot through a rain-soaked neon market."
+            }
+          ],
+          "parameters": {
+            "duration": 5,
+            "resolution": "768P",
+            "ratio": "16:9"
+          }
+        }
+      },
+      {
+        "title": "First and last frame",
+        "request": {
+          "model": "minimax-h3-max-turbo",
+          "content": [
+            {
+              "type": "text",
+              "text": "Create a smooth transition between the opening and closing frames."
+            },
+            {
+              "type": "image",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/start.png"
+              },
+              "meta": {
+                "role": "first_frame"
+              }
+            },
+            {
+              "type": "image",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/end.png"
+              },
+              "meta": {
+                "role": "last_frame"
+              }
+            }
+          ],
+          "parameters": {
+            "duration": 8,
+            "resolution": "768P",
+            "ratio": "16:9"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "noobxl",
+    "title": "NoobXL",
+    "category": "image",
+    "description": "Anime-specialized NoobXL image model. Text-only requests generate a new image; a single source image switches to image-to-image. It works best with English Danbooru tags, which can invoke specific anime characters and illustrator styles. Natural-language understanding is limited. Fast and extremely low cost.",
+    "allowUnknownParameters": true,
+    "pricing": {
+      "unit": "image",
+      "amount": 0.007
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Prompt text."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 1,
+          "sources": [
+            "url",
+            "base64"
+          ],
+          "description": "Optional source image. Present selects image-to-image; absent selects text-to-image."
+        }
+      ]
+    },
+    "parameters": {
+      "size": {
+        "type": "string",
+        "optional": true,
+        "default": "1024x1024",
+        "enum": [
+          "1024x1024",
+          "896x1152",
+          "1152x896",
+          "1344x768",
+          "768x1344"
+        ],
+        "description": "Output image size."
+      },
+      "negative_prompt": {
+        "type": "string",
+        "optional": true,
+        "description": "Content to avoid in generated images."
+      },
+      "seed": {
+        "type": "integer",
+        "optional": true,
+        "min": 0,
+        "description": "Random seed for reproducibility."
+      },
+      "controlnet_weight": {
+        "type": "number",
+        "optional": true,
+        "min": 0,
+        "max": 2,
+        "description": "ControlNet tile weight. Used for image-to-image. The provider default is 0.8."
+      },
+      "ipadapter_face_image_ref": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional face reference image URL for IP-Adapter."
+      },
+      "ipadapter_face_weight": {
+        "type": "number",
+        "optional": true,
+        "min": 0,
+        "max": 2,
+        "description": "IP-Adapter face weight. The provider default is 0.6 when a face reference is supplied."
+      }
+    },
+    "examples": [
+      {
+        "title": "Text to image",
+        "request": {
+          "model": "noobxl",
+          "content": [
+            {
+              "type": "text",
+              "text": "anime key visual, luminous city at night, crisp linework"
+            }
+          ],
+          "parameters": {
+            "size": "1024x1024",
+            "negative_prompt": "low quality, blurry"
+          }
+        }
+      },
+      {
+        "title": "Image to image",
+        "request": {
+          "model": "noobxl",
+          "content": [
+            {
+              "type": "text",
+              "text": "keep the character identity, redraw as a polished anime illustration"
+            },
+            {
+              "type": "image",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/reference.png"
+              }
+            }
+          ],
+          "parameters": {
+            "size": "1024x1024",
+            "controlnet_weight": 0.8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "qwen-audio-3.0-tts-plus",
+    "title": "Qwen Audio 3.0 TTS Plus",
+    "description": "Modes: voice_prompt design OR one-reference clone. Text: >=15 Unicode code points. Conflict: ask user; never combine/reinterpret. Dependency: clone prior generated audio.",
+    "pricing": {
+      "unit": "1m_tokens",
+      "amount": 140
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 1,
+          "description": "Exactly one non-empty text block to speak, with at least 15 Unicode code points."
+        },
+        {
+          "type": "audio",
+          "required": false,
+          "max": 1,
+          "sources": [
+            "url"
+          ],
+          "description": "Clone: one URL; no voice_prompt. Dependency: use prior generated audio."
+        }
+      ]
+    },
+    "meta": {
+      "fields": {
+        "voice_prompt": {
+          "type": "string",
+          "optional": true,
+          "description": "Design: custom voice text; no reference audio."
+        }
+      }
+    },
+    "examples": [
+      {
+        "title": "Voice design",
+        "request": {
+          "model": "qwen-audio-3.0-tts-plus",
+          "content": [
+            {
+              "type": "text",
+              "text": "这是一段长度足够并且表达清晰自然的语音合成测试文本。"
+            }
+          ],
+          "meta": {
+            "voice_prompt": "一位沉稳干练的男性播音员声音，吐字清晰有力"
+          }
+        }
+      },
+      {
+        "title": "Voice clone",
+        "request": {
+          "model": "qwen-audio-3.0-tts-plus",
+          "content": [
+            {
+              "type": "text",
+              "text": "这是一段长度足够并且表达清晰自然的语音合成测试文本。"
+            },
+            {
+              "type": "audio",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/reference.mp3"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "qwen-image-2.1",
+    "title": "Qwen Image 2.1",
+    "category": "image",
+    "description": "Extremely fast image model with solid quality and a low price. Excels at photorealistic human subjects and anime illustrations. Text-only requests generate a new image; providing reference image URLs switches to editing, where it is stronger at editing an existing image than at referencing it to generate a new one. Solid at both text-to-image and image-to-image.",
+    "pricing": {
+      "unit": "image",
+      "amount": 0.01
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Prompt text."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 16,
+          "sources": [
+            "url"
+          ],
+          "description": "Optional reference image URLs. Present selects edit; absent selects text-to-image."
+        }
+      ]
+    },
+    "parameters": {
+      "size": {
+        "type": "string",
+        "optional": true,
+        "default": "1024x1024",
+        "description": "Output size as WIDTHxHEIGHT. Used when no reference image is present."
+      },
+      "negative_prompt": {
+        "type": "string",
+        "optional": true,
+        "description": "Content to avoid."
+      },
+      "seed": {
+        "type": "integer",
+        "optional": true,
+        "min": 0,
+        "description": "Random seed."
+      },
+      "max_side": {
+        "type": "integer",
+        "optional": true,
+        "min": 1,
+        "description": "Long-side limit for edit. Only send this when a reference image is present."
+      }
+    },
+    "examples": [
+      {
+        "title": "Text to image",
+        "request": {
+          "model": "qwen-image-2.1",
+          "content": [
+            {
+              "type": "text",
+              "text": "a red apple on a white table, studio photo"
+            }
+          ],
+          "parameters": {
+            "size": "1024x1024",
+            "negative_prompt": "blurry"
+          }
+        }
+      },
+      {
+        "title": "Edit",
+        "request": {
+          "model": "qwen-image-2.1",
+          "content": [
+            {
+              "type": "text",
+              "text": "replace the background with a clean white studio"
+            },
+            {
+              "type": "image",
+              "source": {
+                "type": "url",
+                "url": "https://example.com/reference.png"
+              }
+            }
+          ],
+          "parameters": {
+            "max_side": 1024
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "seedance-2-0",
+    "title": "Seedance 2.0",
+    "category": "video",
+    "description": "High-quality video generation model that accepts text, image, video, and audio inputs. Supports resolutions from 480p to 2K and is well suited to final deliverables. Base64 image input is supported but planned for deprecation.",
+    "pricing": {
+      "unit": "second",
+      "min": 0.07,
+      "max": 0.38,
+      "note": "480p–1080p"
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Video prompt."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 9,
+          "sources": [
+            "url",
+            "base64"
+          ],
+          "roles": [
+            "first_frame",
+            "last_frame",
+            "reference_image"
+          ],
+          "description": "Optional image input. Use meta.role as first_frame, last_frame, or reference_image."
+        },
+        {
+          "type": "video",
+          "required": false,
+          "max": 1,
+          "sources": [
+            "url"
+          ],
+          "roles": [
+            "reference_video"
+          ],
+          "roleRequired": true,
+          "description": "Optional public URL reference video input. Use meta.role as reference_video. Video edit and extend keep the default ratio adaptive."
+        },
+        {
+          "type": "audio",
+          "required": false,
+          "max": 3,
+          "sources": [
+            "url"
+          ],
+          "roles": [
+            "reference_audio"
+          ],
+          "roleRequired": true,
+          "description": "Optional public URL reference audio. Use meta.role reference_audio. Audio cannot be the only media input; include at least one image or video. Do not mix first_frame/last_frame with reference_audio."
+        }
+      ]
+    },
+    "parameters": {
+      "duration": {
+        "type": "integer",
+        "optional": true,
+        "default": 5,
+        "min": 4,
+        "max": 15,
+        "description": "Video duration in seconds."
+      },
+      "resolution": {
+        "type": "string",
+        "optional": true,
+        "default": "1080p",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p",
+          "2K"
+        ],
+        "description": "Output video resolution."
+      },
+      "ratio": {
+        "type": "string",
+        "optional": true,
+        "default": "adaptive",
+        "enum": [
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16",
+          "21:9",
+          "adaptive"
+        ],
+        "description": "Output aspect ratio. Default adaptive follows the prompt or input media. First/last-frame, video edit, and video extend require adaptive."
+      },
+      "seed": {
+        "type": "integer",
+        "optional": true,
+        "description": "Random seed for reproducibility."
+      },
+      "camera_fixed": {
+        "type": "boolean",
+        "optional": true,
+        "default": false,
+        "description": "Fix camera position when supported."
+      }
+    }
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "seedance-2-0-fast",
+    "title": "Seedance 2.0 Fast",
+    "category": "video",
+    "description": "Fast video generation model that accepts text, image, video, and audio inputs. Faster and less expensive than seedance-2-0, making it well suited to creative validation and draft iteration. Base64 image input is supported but planned for deprecation.",
+    "pricing": {
+      "unit": "second",
+      "min": 0.06,
+      "max": 0.13,
+      "note": "480p–720p"
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Video prompt."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 9,
+          "sources": [
+            "url",
+            "base64"
+          ],
+          "roles": [
+            "first_frame",
+            "last_frame",
+            "reference_image"
+          ],
+          "description": "Optional image input. Use meta.role as first_frame, last_frame, or reference_image."
+        },
+        {
+          "type": "video",
+          "required": false,
+          "max": 1,
+          "sources": [
+            "url"
+          ],
+          "roles": [
+            "reference_video"
+          ],
+          "roleRequired": true,
+          "description": "Optional public URL reference video input. Use meta.role as reference_video. Video edit and extend keep the default ratio adaptive."
+        },
+        {
+          "type": "audio",
+          "required": false,
+          "max": 3,
+          "sources": [
+            "url"
+          ],
+          "roles": [
+            "reference_audio"
+          ],
+          "roleRequired": true,
+          "description": "Optional public URL reference audio. Use meta.role reference_audio. Audio cannot be the only media input; include at least one image or video. Do not mix first_frame/last_frame with reference_audio."
+        }
+      ]
+    },
+    "parameters": {
+      "duration": {
+        "type": "integer",
+        "optional": true,
+        "default": 5,
+        "min": 4,
+        "max": 15,
+        "description": "Video duration in seconds."
+      },
+      "resolution": {
+        "type": "string",
+        "optional": true,
+        "default": "720p",
+        "enum": [
+          "480p",
+          "720p"
+        ],
+        "description": "Output video resolution."
+      },
+      "ratio": {
+        "type": "string",
+        "optional": true,
+        "default": "adaptive",
+        "enum": [
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16",
+          "21:9",
+          "adaptive"
+        ],
+        "description": "Output aspect ratio. Default adaptive follows the prompt or input media. First/last-frame, video edit, and video extend require adaptive."
+      },
+      "seed": {
+        "type": "integer",
+        "optional": true,
+        "description": "Random seed for reproducibility."
+      },
+      "camera_fixed": {
+        "type": "boolean",
+        "optional": true,
+        "default": false,
+        "description": "Fix camera position when supported."
+      }
+    }
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "seedance-2-5",
+    "title": "Seedance 2.5",
+    "category": "video",
+    "description": "High-quality video generation model that accepts text, image, video, and audio inputs. Supports resolutions from 480p to 1080p and is well suited to final deliverables. Images must be provided as public URLs. Unlike Seedance 2.0, reference audio may be used without an image or video.",
+    "pricing": {
+      "unit": "second",
+      "min": 0.1,
+      "max": 0.57,
+      "note": "480p–1080p"
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "min": 1,
+          "max": 16,
+          "merge": "newline",
+          "description": "Video prompt."
+        },
+        {
+          "type": "image",
+          "required": false,
+          "max": 30,
+          "sources": [
+            "url"
+          ],
+          "roles": [
+            "first_frame",
+            "last_frame",
+            "reference_image"
+          ],
+          "description": "Optional image input. Use meta.role as first_frame, last_frame, or reference_image."
+        },
+        {
+          "type": "video",
+          "required": false,
+          "max": 10,
+          "sources": [
+            "url"
+          ],
+          "roles": [
+            "reference_video"
+          ],
+          "roleRequired": true,
+          "description": "Optional public URL reference video input, up to 10 videos, each within 50 MB. Use meta.role as reference_video. Video edit and extend keep the default ratio adaptive."
+        },
+        {
+          "type": "audio",
+          "required": false,
+          "max": 10,
+          "sources": [
+            "url"
+          ],
+          "roles": [
+            "reference_audio"
+          ],
+          "roleRequired": true,
+          "description": "Optional public URL reference audio. Use meta.role reference_audio. Seedance 2.5 allows audio-only input (no image or video required). wav/mp3, 2–30s each, up to 10 clips, total duration ≤30s."
+        }
+      ]
+    },
+    "parameters": {
+      "duration": {
+        "type": "integer",
+        "optional": true,
+        "default": 5,
+        "min": -1,
+        "max": 30,
+        "description": "Video duration in seconds."
+      },
+      "resolution": {
+        "type": "string",
+        "optional": true,
+        "default": "720p",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "description": "Output video resolution."
+      },
+      "ratio": {
+        "type": "string",
+        "optional": true,
+        "default": "adaptive",
+        "enum": [
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16",
+          "21:9",
+          "adaptive"
+        ],
+        "description": "Output aspect ratio. Default adaptive follows the prompt or input media. First/last-frame, video edit, and video extend require adaptive."
+      }
+    }
+  },
+  {
+    "schema": "neta.generation.model.v1",
+    "model": "suno_music_chirp_fenix",
+    "title": "Suno Music Chirp Fenix v5.5",
+    "category": "audio",
+    "description": "High-quality music generation model for soundtracks and background music. Produces two MP3 tracks and two JPG cover images per request.",
+    "pricing": {
+      "unit": "request",
+      "amount": 1.2
+    },
+    "content": {
+      "input": [
+        {
+          "type": "text",
+          "required": true,
+          "max": 16,
+          "merge": "newline",
+          "description": "Song description. Suno writes lyrics unless meta.lyrics is set."
+        }
+      ]
+    },
+    "parameters": {
+      "poll_interval": {
+        "type": "integer",
+        "optional": true,
+        "default": 5,
+        "min": 1,
+        "max": 60,
+        "description": "Seconds between task status checks."
+      }
+    },
+    "meta": {
+      "fields": {
+        "title": {
+          "type": "string",
+          "optional": true,
+          "description": "Suno song title."
+        },
+        "tags": {
+          "type": "string",
+          "optional": true,
+          "description": "Comma-separated Suno music style tags."
+        },
+        "lyrics": {
+          "type": "string",
+          "optional": true,
+          "description": "Explicit lyrics; omit to let Suno write lyrics from the prompt."
+        },
+        "negative_tags": {
+          "type": "string",
+          "optional": true,
+          "description": "Styles to avoid."
+        },
+        "generation_type": {
+          "type": "string",
+          "optional": true,
+          "description": "Suno generation type."
+        },
+        "make_instrumental": {
+          "type": "boolean",
+          "optional": true,
+          "default": false,
+          "description": "Generate instrumental music."
+        },
+        "metadata": {
+          "type": "object",
+          "optional": true,
+          "description": "Suno provider metadata payload."
+        },
+        "metadata_params": {
+          "type": "object",
+          "optional": true,
+          "description": "Suno task-specific metadata payload."
+        }
+      }
+    },
+    "examples": [
+      {
+        "title": "Music generation",
+        "request": {
+          "model": "suno_music_chirp_fenix",
+          "content": [
+            {
+              "type": "text",
+              "text": "uplifting cinematic pop with warm piano and clear chorus"
+            }
+          ],
+          "meta": {
+            "title": "Warm Horizon",
+            "tags": "cinematic pop, warm piano",
+            "make_instrumental": false
+          }
+        }
+      }
+    ]
+  }
+]

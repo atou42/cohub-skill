@@ -1,0 +1,20 @@
+{
+  "name": "cohub-cards-local",
+  "interface": {
+    "displayName": "Cohub Cards"
+  },
+  "plugins": [
+    {
+      "name": "cohub-cards",
+      "source": {
+        "source": "local",
+        "path": "./release"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creativity"
+    }
+  ]
+}

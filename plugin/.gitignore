@@ -1,0 +1,7 @@
+node_modules/
+evidence/
+demo/
+release/
+.DS_Store
+VERIFICATION.md
+scripts/preview.mjs

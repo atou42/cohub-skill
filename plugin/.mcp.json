@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "cohub_cards": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["src/server.mjs"],
+      "cwd": "."
+    }
+  }
+}

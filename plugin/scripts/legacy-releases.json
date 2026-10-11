@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "https://github.com/atou42/cohub-plugin",
+  "description": "Exact published plugin files before unified package language metadata. Unknown or modified releases require explicit reconciliation.",
+  "releases": {
+    "0.3.0": {
+      "commit": "99d294c15b3b0abeafcaf93e0c3383ed2bd13795",
+      "language": "zh-CN",
+      "manifestSha256": "5044d048f651ed3855b98334965a7e42b0a34735612be78089b6dd9a5365a8f2",
+      "skillSha256": "ef83353ca3cd454e3193018737e1bb1fbd3b058a191c2c4c669698dd7051fec1"
+    },
+    "0.3.1": {
+      "commit": "7a27761afcb74e920a095379de326313e4062a3c",
+      "language": "zh-CN",
+      "manifestSha256": "09f2d76390f16d015476412e78892dbe919b19c3844810dcf5600a31dd8748d1",
+      "skillSha256": "1a299c509562cbdae332e45146a933be79d54dd913a9493bc576ca1bdca2e9e5"
+    },
+    "0.3.2": {
+      "commit": "3adf56ff4183c1cffb3cc8cd4ab7faf5fb6f3f81",
+      "language": "zh-CN",
+      "manifestSha256": "2189df4b5112bdd23b88fc389fea30100419a88876872454386653b0d021e235",
+      "skillSha256": "42462365d76afebaf313ed80ce2bd82f317dc225e1787dddd69ed3010da921be"
+    },
+    "0.4.0": {
+      "commit": "0d97f877985b98889eb4f31bb81f49d6923b5e3e",
+      "language": "zh-CN",
+      "manifestSha256": "b5cde268db9bc0a56327279f0027710d40a0e71dd523db98167e150bca965a36",
+      "skillSha256": "42462365d76afebaf313ed80ce2bd82f317dc225e1787dddd69ed3010da921be"
+    },
+    "0.5.0": {
+      "commit": "aa16dc3a9d365f8ffb0c2e8c4be72133fbc9bf44",
+      "language": "zh-CN",
+      "manifestSha256": "4351c57d2c21ef209213375e3f8227b14a33d9242c01ea8527405b5129fe1753",
+      "skillSha256": "73bc7f3513ba45c0ec95d3213e4376b6deab8e97747f77d661d6c6d0480d36fe"
+    }
+  }
+}

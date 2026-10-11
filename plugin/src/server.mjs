@@ -7,7 +7,7 @@ import {createReader,querySchema} from './cards.mjs';
 import {createGenerationService,prepareSchema,readDraftSchema,updateDraftSchema,revisionSchema,addReferenceSchema,confirmGenerationSchema} from './generation.mjs';
 export const UI_URI='ui://cohub-cards/result.html';
 export function createServer(reader=createReader(),generation=createGenerationService()) {
-  const server=new McpServer({name:'cohub-cards',version:'0.5.0'});
+  const server=new McpServer({name:'cohub-cards',version:'0.6.0'});
   const annotations={readOnlyHint:true,destructiveHint:false,idempotentHint:true,openWorldHint:true};
   const ui={resourceUri:UI_URI};
   registerAppResource(server,'cohub-result',UI_URI,{},async()=>({contents:[{

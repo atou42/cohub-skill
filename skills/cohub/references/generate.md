@@ -2,6 +2,8 @@
 
 Support image generation and editing, video, speech, and music as provided by the selected model. Do not assume every generation request is an image request.
 
+Prepare and authorize the actual brief using [Creative brief and authorization](creative-approval.md). If Cohub plugin tools are available, use [Plugin interaction](plugin.md) for the shared draft unless the user chooses direct CLI. Without plugin tools, present and approve the brief in conversation and use the commands below; do not require a plugin. An already approved plan needs no duplicate confirmation.
+
 ## Select the Model and Inputs
 
 ```bash
@@ -18,7 +20,7 @@ cohub models show <model> --json
 
 ## Submit
 
-Replace placeholders with the current model and actual inputs. Select the Space using the entry point's shared rules.
+For direct CLI use, replace placeholders with the approved model, prompt and actual inputs. Select the Space using the entry point's shared rules. These examples are not an alternate submission route for an existing plugin draft.
 
 ```bash
 # Text-driven generation, returning the result directly
@@ -43,7 +45,7 @@ These local-input examples avoid the public-input upload with `--inline`. Omit i
 - Prefer `--async --json` for long tasks such as video, and save the returned `taskRunId` immediately. Async submission does not automatically download the result even if `--output` is also supplied.
 - Query the original task with `cohub tasks get <taskRunId> --json`, waiting reasonably between checks. Queued or running is not complete; avoid tight polling.
 - A synchronous call can limit waiting with `--timeout-ms`, but a wait timeout does not mean generation failed. Continue inspecting the original task when its ID is known. If the ID is missing or the response is lost, report uncertain submission status instead of immediately resubmitting.
-- Distinguish generation, download, and validation failures. If generation succeeded but download failed, retry only the download. Confirm before a retry that incurs another charge; do not automatically change models, reduce specifications, or increase attempts.
+- Distinguish generation, download, and validation failures. If generation succeeded but download failed, retry only the download. A new paid attempt requires approval or explicit task-scoped authority covering it; model/specification/attempt changes follow the same brief and budget rules. No authority permits repeating an unknown submission.
 - On a balance or plan gate, follow [Billing and recovery](billing.md). A top-up or checkout return does not authorize a second submission or prove that the original task failed.
 
 ## Retrieve and Deliver

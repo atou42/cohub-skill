@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased: Skill 2.3.0 / plugin 0.6.0
+
+- Make cohub-skill the main source for the independently installable Skill and optional plugin; retain imported plugin history under plugin/.
+- Bundle the same bilingual Skill in the plugin and remove the separate creative entry. Share brief, approval, autonomy, budget, cancellation and uncertain-submission rules across CLI and plugin tools.
+- Select one active Cohub entry: bundle it for a fresh host or reuse a compatible external Skill. Stop on older, customized or damaged packages; preserve standalone installations and other environments.
+- Keep existing Skill installation URLs, tags, language paths and update endpoint. Prepare a pinned old-plugin upgrade bridge, to be activated only after the main release and stable pointer succeed.
+- Keep plugin packages in fresh directories and retain the internal plugin identity. Plugin-managed Skills update through their plugin rather than by overwriting caches.
+- This is a candidate record, not a release announcement. The stable Skill pointer remains 2.2.1 until the new release is verified.
+
 ## 2.2.1
 
 - Fix update checks launched through directory, chained or file symlinks; report missing metadata instead of silent success.

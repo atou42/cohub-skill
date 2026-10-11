@@ -1,7 +1,7 @@
 ---
 name: cohub
 metadata:
-  version: "2.2.1"
+  version: "2.3.0"
   language: "zh-CN"
   compatibility: Local filesystem and command execution; Node.js/npm for CLI setup; network and interactive login when needed.
 description: 本地 Agent 使用 Cohub 做游戏、网页和应用，生成素材、塑造角色及发布作品；解释 Space 项目归属，按需接入本地 Runtime 或 App 访客能力。保留用户已有设计和开发流程。
@@ -31,7 +31,9 @@ description: 本地 Agent 使用 Cohub 做游戏、网页和应用，生成素�
 
 ## 安装与语言
 
-本包为 Cohub 2.2.1 简体中文说明版。说明语言不决定回复语言；继续遵循用户当前语言和已有偏好，除非用户明确要求切换。首次安装、升级或切换语言时读取[安装与迁移](references/安装与迁移.md)，报告版本、说明语言和实际安装位置。只保留一个活跃的 cohub 安装，不同时启用中英文版或旧的独立 cohub-app-developer。
+本包为 Cohub 2.3.0 简体中文说明版。说明语言不决定回复语言；继续遵循用户当前语言和已有偏好，除非用户明确要求切换。首次安装、升级或切换语言时读取[安装与迁移](references/安装与迁移.md)，报告版本、说明语言和实际安装位置。同一宿主只保留一个活跃 cohub 入口，不重复启用独立版与插件内置版、中英文版或旧的独立 cohub-app-developer；保留其他环境仍在使用的安装。
+
+独立 Skill 完整支持 CLI 工作流；可选插件包含同一份 Skill，增加共享草稿与结果展示。对应交互使用当前可用的插件工具；能否显示卡片取决于宿主能力，不以桌面或 CLI 名称区分。使用这些工具时才读取[插件交互](references/plugin.md)。没有插件不影响独立使用。
 
 ## 任务路由
 
@@ -78,7 +80,8 @@ description: 本地 Agent 使用 Cohub 做游戏、网页和应用，生成素�
 3. 执行前用 `cohub auth whoami --json` 确认身份。未登录时引导 `cohub auth login`；登录步骤需要用户操作时等待。网络、服务、权限错误分别处理，不把所有失败都当成未登录。
 4. 普通 Space 命令按 `-s <spaceId>`、`COHUB_SPACE_ID`、当前目录的 Runtime 绑定、Home Space 的顺序解析目标，绑定还受账号与环境约束。沿用实际项目目录；不要清空环境、猜 ID 或另建 Space。用户指定项目与实际目标冲突时，在写入或计费前核对。Runtime 命令不回退 Home，详见[Space 与项目](references/Space与项目.md)。
 5. 用 `--json` 读取实际返回字段；失败保留原始错误和已有任务 ID。不展示令牌、认证文件内容，不为继续执行修改权限或覆盖用户文件。
-6. 用户明确要求的生成或发布无需重复审批；新增费用规模、公开范围或覆盖不明对象不在原授权内。检查当前 CLI 是否会后台自更新；只想保持本次版本稳定时可用 `COHUB_CLI_AUTO_UPDATE=0`，不永久修改配置。
+6. 生成或发布前遵循[创作方案与授权](references/创作授权.md)：模糊需求先给可审阅方案；具体方案已经批准则不重复确认。明确的任务内自主授权可覆盖预算内后续决策。保留取消状态，结果不明时核对原次提交而不重提，生成不包含发布授权。插件与直接 CLI 使用同一规则。
+7. 检查当前 CLI 是否会后台自更新；只想保持本次版本稳定时可用 `COHUB_CLI_AUTO_UPDATE=0`，不永久修改配置。
 
 ## 创作能力
 

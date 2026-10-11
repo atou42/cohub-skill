@@ -1,7 +1,7 @@
 ---
 name: cohub
 metadata:
-  version: "2.2.1"
+  version: "2.3.0"
   language: "en"
   compatibility: Local filesystem and command execution; Node.js/npm for CLI setup; network and interactive login when needed.
 description: Use Cohub for games, websites and apps, media generation, characters and publishing. Explain project Space targeting and optionally connect a local Runtime or visitor-time App capabilities; preserve existing design and development workflows.
@@ -31,7 +31,9 @@ For the initial tour and when examples are requested, follow [Work references](r
 
 ## Installation and Language
 
-This is Cohub 2.2.1, English instructions. Instruction language does not set response language: follow the user's current language and preferences unless explicitly asked to switch. For installation, upgrades or language switching, read [Installation and migration](references/installation.md) and report version, instruction language and actual install location. Keep one active cohub installation, not both languages or the legacy standalone cohub-app-developer.
+This is Cohub 2.3.0, English instructions. Instruction language does not set response language: follow the user's current language and preferences unless explicitly asked to switch. For installation, upgrades or language switching, read [Installation and migration](references/installation.md) and report version, instruction language and actual install location. Keep one active cohub entry per host, not duplicate standalone/plugin entries, both languages or the legacy standalone cohub-app-developer. Preserve installations used by other environments.
+
+The standalone Skill supports the full CLI workflows. The optional plugin bundles this same Skill and adds shared drafts and presentation. Use available plugin tools for those interactions; cards depend on the host, not whether the environment is called desktop or CLI. Read [Plugin interaction](references/plugin.md) only when using those tools. Their absence does not block standalone use.
 
 ## Task Routing
 
@@ -78,7 +80,8 @@ The following environment and identity checks apply only to actual Cohub executi
 3. Before execution, confirm identity with `cohub auth whoami --json`. If unauthenticated, guide the user through `cohub auth login` and wait when user interaction is required. Distinguish network, service, and permission failures from authentication failures.
 4. Ordinary Space commands resolve `-s <spaceId>`, then `COHUB_SPACE_ID`, the current directory's Runtime binding, and finally Home Space. Bindings are also scoped to account and environment. Keep the actual project directory; do not clear the environment, guess IDs or create another Space. Resolve conflicts between the requested project and actual target before writes or charges. Runtime commands never fall back to Home; see [Spaces and projects](references/spaces-and-projects.md).
 5. Read actual response fields with `--json`. Preserve original errors and existing task IDs on failure. Do not expose tokens or authentication files, change permissions to proceed, or overwrite user files.
-6. Do not request repeated approval for generation or publication the user explicitly requested. Additional cost scale, wider public exposure, or overwriting an unidentified target is outside that authorization. Check whether the CLI may auto-update in the background; use `COHUB_CLI_AUTO_UPDATE=0` when keeping this run's version stable, without permanently changing configuration.
+6. Before generation or publication, follow [Creative brief and authorization](references/creative-approval.md): a vague request needs a reviewable plan; an already specific, approved plan needs no repeat confirmation. Explicit task-scoped autonomy may cover further decisions within its budget. Preserve cancellation, reconcile unknown submissions without resubmitting, and never infer publication permission from generation. The same rules apply to plugin and direct CLI use.
+7. Check whether the CLI may auto-update in the background; use `COHUB_CLI_AUTO_UPDATE=0` when keeping this run's version stable, without permanently changing configuration.
 
 ## Creative Capabilities
 

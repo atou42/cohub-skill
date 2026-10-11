@@ -1,15 +1,15 @@
 {
   "name": "cohub-cards",
-  "version": "0.5.0",
-  "description": "提到 Cohub 或直接提出画图、改图、视频、配音、歌曲与背景音乐创作需求，即可在聊天卡片中与 Agent 共同编辑和生成。",
+  "version": "0.6.0",
+  "description": "包含通用 Cohub Skill，连接项目与对话、创作素材、制作并发布作品；支持卡片的客户端可共同编辑创作方案。",
   "author": {
     "name": "ATou"
   },
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "Cohub 创作",
-    "shortDescription": "共同创作，作品就在对话里",
+    "displayName": "Cohub",
+    "shortDescription": "连接项目、创作素材、制作并发布作品",
     "category": "Creativity",
     "capabilities": [
       "Interactive",

@@ -30,7 +30,7 @@ test('both editions route directly to the same five unique source entries', () =
 test('repository Markdown links resolve and no old directory dependency remains', () => {
   function walk(dir) {
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
-      if (entry.name === '.git') continue;
+      if (['.git', 'node_modules', '.packages', 'dist', 'release', 'evidence', 'output'].includes(entry.name)) continue;
       const url = new URL(entry.name + (entry.isDirectory() ? '/' : ''), dir);
       if (entry.isDirectory()) walk(url);
       else if (entry.name.endsWith('.md')) {

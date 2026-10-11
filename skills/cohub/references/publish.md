@@ -2,6 +2,8 @@
 
 Use [Publication experience](publication-experience.md) to check first use and the core workflow for the work’s purpose; preserve the existing design.
 
+Apply [Creative brief and authorization](creative-approval.md): show the artifact, target Space and visibility before execution, reusing an already specific approved request without another question. Generation, preview or testing alone does not authorize publication. Plugin availability changes result presentation, not publication authority.
+
 ## Identify the Artifact and Target
 
 - Use `--file` for a single HTML file and `--dir` for a site directory containing `index.html`. When a build is needed, inspect the project configuration and use its existing build command; do not assume the output is named `dist`.

@@ -2,6 +2,8 @@ node_modules/
 evidence/
 demo/
 release/
+.packages/
+dist/
 .DS_Store
 VERIFICATION.md
 scripts/preview.mjs

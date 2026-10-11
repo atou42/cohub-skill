@@ -5,7 +5,7 @@
 - Make cohub-skill the main source for the independently installable Skill and optional plugin; retain imported plugin history under plugin/.
 - Bundle the same bilingual Skill in the plugin and remove the separate creative entry. Share brief, approval, autonomy, budget, cancellation and uncertain-submission rules across CLI and plugin tools.
 - Select one active Cohub entry: bundle it for a fresh host or reuse a compatible external Skill. Stop on older, customized or damaged packages; preserve standalone installations and other environments.
-- Keep existing Skill installation URLs, tags, language paths and update endpoint. Prepare a pinned old-plugin upgrade bridge, to be activated only after the main release and stable pointer succeed.
+- Keep existing Skill installation URLs, tags, language paths and update endpoint. Keep the old-plugin upgrade entry pinned to the verified main release after updating the stable pointer.
 - Keep plugin packages in fresh directories and retain the internal plugin identity. Plugin-managed Skills update through their plugin rather than by overwriting caches.
 - Published as cohub-v2.3.0. Validation: 28 Skill checks, 149 plugin tests and 9 legacy bridge tests; isolated native upgrade, entry switching, uninstall and failure recovery checks. No new paid generation or production publication.
 

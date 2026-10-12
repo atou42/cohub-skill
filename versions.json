@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "skills": {
     "cohub": {
-      "version": "2.3.0",
+      "version": "2.4.0",
       "released": true,
-      "tag": "cohub-v2.3.0",
-      "commit": "df967ca6cf5123df786fde51a2b3eef7002b6a81",
+      "tag": "cohub-v2.4.0",
+      "commit": "709efc165a4adcead56bafdaa0aed793bb6b8172",
       "notes": {
-        "en": "Unify standalone Skill and optional plugin in cohub-skill; share one Skill, preserve installation URLs and reuse compatible entries without duplication.",
-        "zh-CN": "统一独立 Skill 与可选插件的来源；插件包含同一份 Skill，保留安装地址，并复用兼容入口避免重复。"
+        "en": "Report only changes on App updates; retain first-publication cards and important issues, and remove unsolicited full-capability introductions.",
+        "zh-CN": "App 更新只报告改动，保留首次发布完整卡和重要问题，不再主动附完整能力介绍。"
       }
     },
     "cohub-app-developer": {

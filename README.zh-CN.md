@@ -6,6 +6,8 @@
 
 个人维护，非 Cohub 官方发行。当前正式版：[Skill 2.3.0 / 插件 0.6.0](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.3.0)。
 
+当前源码为尚未发布的 Skill 2.4.0 候选版，插件仍为 0.6.0。正式安装继续使用上方已核实的发行版。
+
 ## 按使用环境选择
 
 两种方式使用相同的 Cohub 能力和授权规则。独立 Skill 完整可用；插件增加共同编辑与展示。

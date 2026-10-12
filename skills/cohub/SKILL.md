@@ -1,7 +1,7 @@
 ---
 name: cohub
 metadata:
-  version: "2.3.0"
+  version: "2.4.0"
   language: "en"
   compatibility: Local filesystem and command execution; Node.js/npm for CLI setup; network and interactive login when needed.
 description: Use Cohub for games, websites and apps, media generation, characters and publishing. Explain project Space targeting and optionally connect a local Runtime or visitor-time App capabilities; preserve existing design and development workflows.
@@ -31,7 +31,7 @@ For the initial tour and when examples are requested, follow [Work references](r
 
 ## Installation and Language
 
-This is Cohub 2.3.0, English instructions. Instruction language does not set response language: follow the user's current language and preferences unless explicitly asked to switch. For installation, upgrades or language switching, read [Installation and migration](references/installation.md) and report version, instruction language and actual install location. Keep one active cohub entry per host, not duplicate standalone/plugin entries, both languages or the legacy standalone cohub-app-developer. Preserve installations used by other environments.
+This is Cohub 2.4.0, English instructions. Instruction language does not set response language: follow the user's current language and preferences unless explicitly asked to switch. For installation, upgrades or language switching, read [Installation and migration](references/installation.md) and report version, instruction language and actual install location. Keep one active cohub entry per host, not duplicate standalone/plugin entries, both languages or the legacy standalone cohub-app-developer. Preserve installations used by other environments.
 
 The standalone Skill supports the full CLI workflows. The optional plugin bundles this same Skill and adds shared drafts and presentation. Use available plugin tools for those interactions; cards depend on the host, not whether the environment is called desktop or CLI. Read [Plugin interaction](references/plugin.md) only when using those tools. Their absence does not block standalone use.
 
@@ -59,7 +59,7 @@ If `references/init.md` is present, read [Init](references/init.md) before the f
 
 ## Read by Task
 
-Read only files needed for the current step, not every linked reference recursively. Every successful publication handoff, including updates to an existing version, must include the publication card. Load its instructions only at delivery; do not preload its definitions, options, or template. Reuse unchanged instructions already in context.
+Read only files needed for the current step, not every linked reference recursively. At successful delivery, use the complete publication card for first publication. For updates to an existing App, report only this update's changes, the actual App link, and necessary verification or issues; do not repeat unchanged attributes. Show the complete card on explicit request. Load delivery instructions only at handoff; do not preload definitions, options, or templates. Reuse unchanged instructions already in context.
 
 - For Style, Game Maker, Fandom, OKP search, or Character Traits, use the capability table below and read the source directly.
 - Upload 100 or more files into a Space workspace, or handle observably slow small-file uploads: read [Bulk upload](references/bulk-upload.md); prefer an archive upload followed by extraction when appropriate.

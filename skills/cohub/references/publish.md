@@ -36,4 +36,4 @@ For updates, rebuild and run `apps publish` with the same Space and slug and the
 
 On failure, inspect the original task or App state before creating anything again. If identity configuration lacks a username or Space slug, explain the required public identity and ask the user to provide or confirm it; do not silently change their profile.
 
-At every successful publication handoff, including updates to an existing App and republication after fixes, read [Publication card](publication-card.md) and fill in its ten attributes. Do not load it before publication or while diagnosing failures. Logs or URL prefixes are not delivery links.
+At successful publication handoff, read [Publication card](publication-card.md): fill in ten attributes for first publication; for updates or republication after fixes, report only this update's changes, the actual App link, and necessary verification or issues. Show the complete card on explicit request. Do not load it before publication or while diagnosing failures. Logs or URL prefixes are not delivery links.

@@ -1,8 +1,22 @@
-# Publication Delivery: Ten-Attribute Card
+# Publication Delivery: Full Card First, Changes on Updates
 
-Load only when a real publication result exists and final delivery is ready, or when the user explicitly asks to view/change the card. Do not load before publishing, during asset generation, ordinary development, or failure investigation. Report publication failures and recovery state directly. Reuse this file if already in context; this does not permit omitting the card from the current delivery.
+Load only when a real publication result exists and final delivery is ready, or when the user explicitly asks to view/change the card. Do not load before publishing, during asset generation, ordinary development, or failure investigation. Report publication failures and recovery state directly. Reuse this file if already in context.
 
-Every successful publication handoff—including first publication, updates to an existing App, and republication after fixes—must include one complete card in the author's conversation. Unchanged attributes must still appear; do not replace them with ‘same as before’. Check values against the current version; a previous card is not evidence that the new version was verified. When a single task publishes several corrective versions, output one card at the final handoff. Use exactly the ten dimensions below. Do not add, remove, or merge dimensions. Include the actual App link and publication status in the heading. Use professional, plain language: a fixed option plus one necessary explanation of actual settings and behavior. This is not a confirmation questionnaire; do not wait for a reply or insert it into the public App by default.
+For first publication, deliver the complete ten-attribute card in the author's conversation. For updates to an existing App or republication after fixes, report only the actual changes, the real App link, and necessary verification or issues. Do not repeat unchanged attributes or output the ten-row table unless the user explicitly requests the complete card. A previous card is not evidence that the new version was verified. When a single task publishes several corrective versions, summarize once at final delivery. This is not a confirmation questionnaire; do not wait for a reply or insert it into the public App by default.
+
+## Update Delivery
+
+Use short paragraphs or a brief list to say what changed, not merely “updated.” Explicitly describe changes to access, authorization, storage, costs, or monetization and their effects. Label uncertain changes honestly rather than assuming they are unchanged. Retain unverified items and known issues affecting use. For republication without functional changes, state the actual reason.
+
+Example structure, filled from real results:
+
+Changes: specific changes and effects.
+
+Open App: actual returned link.
+
+Verification or issues: necessary check results, unverified items, or known issues.
+
+Do not append capability introductions, documentation links, expansion suggestions, or prompts to view the complete card. Answer questions about platform capabilities or the complete card only when the user asks.
 
 ## Ten Dimensions and Options
 
@@ -23,9 +37,9 @@ These are reporting terms, not ten directly configurable Cohub switches. Without
 
 ## Read Only When Unclear
 
-When identity/authorization, generation billing, Actions, or storage evidence is insufficient or conflicting, read the relevant section of [Publication attribute verification](publication-attributes.md). Ordinary card filling does not load it or platform capability documents automatically; the capability link is for the user.
+When identity/authorization, generation billing, Actions, or storage evidence is insufficient or conflicting, read the relevant section of [Publication attribute verification](publication-attributes.md). Ordinary card filling does not load it or platform capability documents automatically.
 
-## Card Format
+## Complete Card for First Publication or Explicit Requests
 
 Display the complete card using a Markdown heading and table, with blank lines between sections.
 
@@ -52,13 +66,9 @@ Open App: actual returned link
 
 **Verification:** One sentence on tried features/devices and unresolved issues affecting use.
 
-Tell me anytime if you want to change an attribute.
-
-[Explore the full capabilities of Cohub Apps](https://cohub.live/zh/docs/developers/apps)
-
 Use the actual App slug and check it against the returned URL; label it “App custom domain” for the user. Show only the label and actual value on the card, without explanatory annotations. Do not describe this as support for connecting an independent domain. Place this line beside the App link, without adding an eleventh attribute. It refers only to the final App portion of the URL, not the account, Space or domain. Keep the App title separate from its link name; do not change an existing address unasked or promise automatic redirects from old links.
 
-No after-the-fact approval or confirmation button. Implement and reverify requested changes within actual capabilities; the invitation to request changes does not promise every product property can be edited in place. Optional capability suggestions are limited to one sentence and must not claim unintegrated capabilities. Before formal adoption, assess the card's accuracy and readability in real publishing scenarios.
+No after-the-fact approval or confirmation button. Implement and reverify requested changes within actual capabilities. Do not promise every product property can be edited in place or claim unintegrated capabilities.
 
 Authorization example, only when true: “On first generation: request generation and result-read permissions to create images. On first saving to a personal Space: request write permission for that Space to save work. Signed-out users log in first; valid authorization is reused.” Request related necessary permissions together for one complete operation to reduce interruption, not unrelated permissions in advance. List genuinely independent feature trigger points without merging or changing the original flow just to simplify the card.
 
@@ -66,4 +76,4 @@ Authorization example, only when true: “On first generation: request generatio
 
 The ten attributes describe the actual delivery, not a new design the user must accept. Preserve agreed behavior. Identify concrete mismatches between promises and behavior and how to fix them; do not rewrite the card to hide defects.
 
-Only with a relevant benefit, add one optional direction after the card: generation, storage, monetization, or operations according to the user's goal, clearly marked as not integrated. Do not routinely promote generation or charging, load all instructions to show alternatives, or add dimensions. Keep the full-capabilities link. Load the selected module only after the user chooses it.
+Do not proactively append full-capability introductions, links, or capability expansion suggestions to either first publication or update delivery. Load the relevant module only after the user requests new functionality.

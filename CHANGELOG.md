@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased: Skill 2.4.0
+
+- Report actual changes, the App link, and necessary verification or issues when updating an existing App, instead of repeating the full ten-attribute card.
+- Keep the complete card for first publication or an explicit request. Preserve important changes to permissions, storage, and costs, plus unresolved issues.
+- Remove unsolicited full-capability introductions, documentation links, and expansion prompts from publication handoffs.
+- Keep English and Chinese instructions equivalent. Plugin 0.6.0 is unchanged; the stable Skill pointer remains at the verified 2.3.0 release until 2.4.0 is published.
+
 ## Skill 2.3.0 / plugin 0.6.0 — 2026-10-11
 
 - Make cohub-skill the main source for the independently installable Skill and optional plugin; retain imported plugin history under plugin/.

@@ -1,11 +1,12 @@
 # Changelog
 
-## Unreleased: Skill 2.4.0
+## Skill 2.4.0 / plugin 0.6.0 (2026-10-12)
 
 - Report actual changes, the App link, and necessary verification or issues when updating an existing App, instead of repeating the full ten-attribute card.
 - Keep the complete card for first publication or an explicit request. Preserve important changes to permissions, storage, and costs, plus unresolved issues.
 - Remove unsolicited full-capability introductions, documentation links, and expansion prompts from publication handoffs.
-- Keep English and Chinese instructions equivalent. Plugin 0.6.0 is unchanged; the stable Skill pointer remains at the verified 2.3.0 release until 2.4.0 is published.
+- Keep English and Chinese instructions equivalent. Plugin 0.6.0 is unchanged. Published as cohub-v2.4.0; stable installs and the legacy upgrade bridge point to the verified release.
+- Validation: 28 Skill checks, 149 plugin tests, 9 isolated legacy bridge tests, build and bilingual packaging checks. No new paid generation, production App publication, or host UI trial. The local raw-CDN update request timed out; the online version manifest was verified through the GitHub contents API.
 
 ## Skill 2.3.0 / plugin 0.6.0 — 2026-10-11
 

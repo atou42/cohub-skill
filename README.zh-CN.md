@@ -4,9 +4,7 @@
 
 让本地 Agent 配合 Cohub 做游戏、网页和小应用，生成素材、塑造角色并发布作品。按需使用 Space 组织项目、连接受支持的本地会话，或为 App 接入访客生成与 Actions。保留你的设计、技术栈和本地工作方式。
 
-个人维护，非 Cohub 官方发行。当前正式版：[Skill 2.3.0 / 插件 0.6.0](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.3.0)。
-
-当前源码为尚未发布的 Skill 2.4.0 候选版，插件仍为 0.6.0。正式安装继续使用上方已核实的发行版。
+个人维护，非 Cohub 官方发行。当前正式版：[Skill 2.4.0 / 插件 0.6.0](https://github.com/atou42/cohub-skill/releases/tag/cohub-v2.4.0)。
 
 ## 按使用环境选择
 
